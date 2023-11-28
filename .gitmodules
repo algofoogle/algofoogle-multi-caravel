@@ -1,0 +1,4 @@
+[submodule "verilog/rtl/raybox-zero"]
+	path = verilog/rtl/raybox-zero
+	url = git@github.com:algofoogle/raybox-zero
+	branch = ew

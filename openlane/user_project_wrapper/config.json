@@ -11,18 +11,18 @@
 	"CLOCK_PERIOD": 25,
 	"MACRO_PLACEMENT_CFG": "dir::macro.cfg",
 	"VERILOG_FILES_BLACKBOX": [
-		"dir::../../verilog/gl/user_proj_example.v"
+		"dir::../../verilog/gl/top_ew_algofoogle.v"
 	],
-	"EXTRA_LEFS": "dir::../../lef/user_proj_example.lef",
-	"EXTRA_GDS_FILES": "dir::../../gds/user_proj_example.gds",
-	"EXTRA_LIBS": "dir::../../lib/user_proj_example.lib",
+	"EXTRA_LEFS": "dir::../../lef/top_ew_algofoogle.lef",
+	"EXTRA_GDS_FILES": "dir::../../gds/top_ew_algofoogle.gds",
+	"EXTRA_LIBS": "dir::../../lib/top_ew_algofoogle.lib",
 	"EXTRA_SPEFS": [
-		"user_proj_example",
-		"dir::../../spef/multicorner/user_proj_example.min.spef",
-		"dir::../../spef/multicorner/user_proj_example.nom.spef",
-		"dir::../../spef/multicorner/user_proj_example.max.spef"
+		"top_ew_algofoogle",
+		"dir::../../spef/multicorner/top_ew_algofoogle.min.spef",
+		"dir::../../spef/multicorner/top_ew_algofoogle.nom.spef",
+		"dir::../../spef/multicorner/top_ew_algofoogle.max.spef"
 	],
-	"FP_PDN_MACRO_HOOKS": "mprj vdd vss vdd vss",
+	"FP_PDN_MACRO_HOOKS": "top_ew_algofoogle vdd vss vdd vss",
 	"QUIT_ON_SYNTH_CHECKS": 0,
 	"FP_PDN_CHECK_NODES": 0,
 	"SYNTH_ELABORATE_ONLY": 1,

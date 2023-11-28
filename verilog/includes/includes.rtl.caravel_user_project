@@ -1,5 +1,17 @@
 # Caravel user project includes
--v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	     
--v $(USER_PROJECT_VERILOG)/rtl/user_proj_example.v
-
- 
+-v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/top_ew_algofoogle.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/debug_overlay.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/fixed_point_params.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/helpers.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/lzc.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/map_overlay.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/map_rom.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/pov.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/rbzero.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/reciprocal.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/row_render.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/spi_registers.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/vga_mux.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/vga_sync.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero/src/rtl/wall_tracer.v
