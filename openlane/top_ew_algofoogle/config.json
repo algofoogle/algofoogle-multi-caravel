@@ -1,6 +1,7 @@
 {
-    "ROUTING_CORES": 6,
-    "KLAYOUT_XOR_THREADS": 6,
+    "ROUTING_CORES": 3,
+    "RUN_KLAYOUT_XOR": false,
+    "RUN_KLAYOUT_DRC": false,
 
     "PDK": "gf180mcuD",
     "STD_CELL_LIBRARY": "gf180mcu_fd_sc_mcu7t5v0",
@@ -26,11 +27,11 @@
     "DESIGN_IS_CORE": 0,
     "CLOCK_PORT": "i_clk",
     "CLOCK_NET": "top_ew_algofoogle.i_clk",
-    "CLOCK_PERIOD": "40.0",
+    "CLOCK_PERIOD": "44.0",
     "FP_SIZING": "relative",
-    "PL_BASIC_PLACEMENT": 0,
+    "FP_CORE_UTIL": 35,
     "PL_TARGET_DENSITY": 0.45,
-    "FP_CORE_UTIL": 40,
+    "PL_BASIC_PLACEMENT": 0,
     "MAX_FANOUT_CONSTRAINT": 4,
     "RT_MAX_LAYER": "Metal4",
     "VDD_NETS": [
