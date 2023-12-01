@@ -1,0 +1,2869 @@
+*SPEF "ieee 1481-1999"
+*DESIGN "user_project_wrapper"
+*DATE "11:11:11 Fri 11 11, 1111"
+*VENDOR "OpenRCX"
+*PROGRAM "Parallel Extraction"
+*VERSION "1.0"
+*DESIGN_FLOW "NAME_SCOPE LOCAL" "PIN_CAP NONE"
+*DIVIDER /
+*DELIMITER :
+*BUS_DELIMITER []
+*T_UNIT 1 NS
+*C_UNIT 1 PF
+*R_UNIT 1 OHM
+*L_UNIT 1 HENRY
+
+*NAME_MAP
+*1 io_in[0]
+*2 io_in[10]
+*3 io_in[11]
+*4 io_in[12]
+*5 io_in[13]
+*6 io_in[14]
+*7 io_in[15]
+*8 io_in[16]
+*9 io_in[17]
+*10 io_in[18]
+*11 io_in[19]
+*12 io_in[1]
+*13 io_in[20]
+*14 io_in[21]
+*15 io_in[22]
+*16 io_in[23]
+*17 io_in[24]
+*18 io_in[25]
+*19 io_in[26]
+*20 io_in[27]
+*21 io_in[28]
+*22 io_in[29]
+*23 io_in[2]
+*24 io_in[30]
+*25 io_in[31]
+*26 io_in[32]
+*27 io_in[33]
+*28 io_in[34]
+*29 io_in[35]
+*30 io_in[36]
+*31 io_in[37]
+*32 io_in[3]
+*33 io_in[4]
+*34 io_in[5]
+*35 io_in[6]
+*36 io_in[7]
+*37 io_in[8]
+*38 io_in[9]
+*39 io_oeb[0]
+*40 io_oeb[10]
+*41 io_oeb[11]
+*42 io_oeb[12]
+*43 io_oeb[13]
+*44 io_oeb[14]
+*45 io_oeb[15]
+*46 anton_io_oeb\[4\]
+*47 io_oeb[17]
+*48 io_oeb[18]
+*49 io_oeb[19]
+*50 io_oeb[1]
+*51 io_oeb[20]
+*52 io_oeb[21]
+*53 io_oeb[22]
+*54 io_oeb[23]
+*55 io_oeb[24]
+*56 io_oeb[25]
+*57 io_oeb[26]
+*58 io_oeb[27]
+*59 io_oeb[28]
+*60 io_oeb[29]
+*61 io_oeb[2]
+*62 io_oeb[30]
+*63 io_oeb[31]
+*64 io_oeb[32]
+*65 io_oeb[33]
+*66 io_oeb[34]
+*67 io_oeb[35]
+*68 io_oeb[36]
+*69 io_oeb[37]
+*70 io_oeb[3]
+*71 io_oeb[4]
+*72 io_oeb[5]
+*73 io_oeb[6]
+*74 io_oeb[7]
+*75 io_oeb[8]
+*76 io_oeb[9]
+*77 io_out[0]
+*78 io_out[10]
+*79 io_out[11]
+*80 anton_io_out\[0\]
+*81 anton_io_out\[1\]
+*82 anton_io_out\[2\]
+*83 anton_io_out\[3\]
+*84 anton_io_out\[4\]
+*85 io_out[17]
+*86 io_out[18]
+*87 io_out[19]
+*88 io_out[1]
+*89 io_out[20]
+*90 io_out[21]
+*91 io_out[22]
+*92 io_out[23]
+*93 io_out[24]
+*94 io_out[25]
+*95 io_out[26]
+*96 io_out[27]
+*97 io_out[28]
+*98 io_out[29]
+*99 io_out[2]
+*100 io_out[30]
+*101 io_out[31]
+*102 io_out[32]
+*103 io_out[33]
+*104 io_out[34]
+*105 io_out[35]
+*106 io_out[36]
+*107 io_out[37]
+*108 io_out[3]
+*109 io_out[4]
+*110 io_out[5]
+*111 io_out[6]
+*112 io_out[7]
+*113 io_out[8]
+*114 io_out[9]
+*115 la_data_in[0]
+*116 la_data_in[10]
+*117 la_data_in[11]
+*118 la_data_in[12]
+*119 la_data_in[13]
+*120 la_data_in[14]
+*121 la_data_in[15]
+*122 la_data_in[16]
+*123 la_data_in[17]
+*124 la_data_in[18]
+*125 la_data_in[19]
+*126 la_data_in[1]
+*127 la_data_in[20]
+*128 la_data_in[21]
+*129 la_data_in[22]
+*130 la_data_in[23]
+*131 la_data_in[24]
+*132 la_data_in[25]
+*133 la_data_in[26]
+*134 la_data_in[27]
+*135 la_data_in[28]
+*136 la_data_in[29]
+*137 la_data_in[2]
+*138 la_data_in[30]
+*139 la_data_in[31]
+*140 la_data_in[32]
+*141 la_data_in[33]
+*142 la_data_in[34]
+*143 la_data_in[35]
+*144 la_data_in[36]
+*145 la_data_in[37]
+*146 la_data_in[38]
+*147 la_data_in[39]
+*148 la_data_in[3]
+*149 la_data_in[40]
+*150 la_data_in[41]
+*151 la_data_in[42]
+*152 la_data_in[43]
+*153 la_data_in[44]
+*154 la_data_in[45]
+*155 la_data_in[46]
+*156 la_data_in[47]
+*157 la_data_in[48]
+*158 la_data_in[49]
+*159 la_data_in[4]
+*160 la_data_in[50]
+*161 la_data_in[51]
+*162 la_data_in[52]
+*163 la_data_in[53]
+*164 la_data_in[54]
+*165 la_data_in[55]
+*166 la_data_in[56]
+*167 la_data_in[57]
+*168 la_data_in[58]
+*169 la_data_in[59]
+*170 la_data_in[5]
+*171 la_data_in[60]
+*172 la_data_in[61]
+*173 la_data_in[62]
+*174 la_data_in[63]
+*175 la_data_in[6]
+*176 la_data_in[7]
+*177 la_data_in[8]
+*178 la_data_in[9]
+*179 la_data_out[0]
+*180 la_data_out[10]
+*181 la_data_out[11]
+*182 la_data_out[12]
+*183 la_data_out[13]
+*184 la_data_out[14]
+*185 la_data_out[15]
+*186 la_data_out[16]
+*187 la_data_out[17]
+*188 la_data_out[18]
+*189 la_data_out[19]
+*190 la_data_out[1]
+*191 la_data_out[20]
+*192 la_data_out[21]
+*193 la_data_out[22]
+*194 la_data_out[23]
+*195 la_data_out[24]
+*196 la_data_out[25]
+*197 la_data_out[26]
+*198 la_data_out[27]
+*199 la_data_out[28]
+*200 la_data_out[29]
+*201 la_data_out[2]
+*202 la_data_out[30]
+*203 la_data_out[31]
+*204 la_data_out[32]
+*205 la_data_out[33]
+*206 la_data_out[34]
+*207 la_data_out[35]
+*208 la_data_out[36]
+*209 la_data_out[37]
+*210 la_data_out[38]
+*211 la_data_out[39]
+*212 la_data_out[3]
+*213 la_data_out[40]
+*214 la_data_out[41]
+*215 la_data_out[42]
+*216 la_data_out[43]
+*217 la_data_out[44]
+*218 la_data_out[45]
+*219 la_data_out[46]
+*220 la_data_out[47]
+*221 la_data_out[48]
+*222 la_data_out[49]
+*223 la_data_out[4]
+*224 la_data_out[50]
+*225 la_data_out[51]
+*226 la_data_out[52]
+*227 la_data_out[53]
+*228 la_data_out[54]
+*229 la_data_out[55]
+*230 la_data_out[56]
+*231 la_data_out[57]
+*232 la_data_out[58]
+*233 la_data_out[59]
+*234 la_data_out[5]
+*235 la_data_out[60]
+*236 la_data_out[61]
+*237 la_data_out[62]
+*238 la_data_out[63]
+*239 la_data_out[6]
+*240 la_data_out[7]
+*241 la_data_out[8]
+*242 la_data_out[9]
+*243 la_oenb[0]
+*244 la_oenb[10]
+*245 la_oenb[11]
+*246 la_oenb[12]
+*247 la_oenb[13]
+*248 la_oenb[14]
+*249 la_oenb[15]
+*250 la_oenb[16]
+*251 la_oenb[17]
+*252 la_oenb[18]
+*253 la_oenb[19]
+*254 la_oenb[1]
+*255 la_oenb[20]
+*256 la_oenb[21]
+*257 la_oenb[22]
+*258 la_oenb[23]
+*259 la_oenb[24]
+*260 la_oenb[25]
+*261 la_oenb[26]
+*262 la_oenb[27]
+*263 la_oenb[28]
+*264 la_oenb[29]
+*265 la_oenb[2]
+*266 la_oenb[30]
+*267 la_oenb[31]
+*268 la_oenb[32]
+*269 la_oenb[33]
+*270 la_oenb[34]
+*271 la_oenb[35]
+*272 la_oenb[36]
+*273 la_oenb[37]
+*274 la_oenb[38]
+*275 la_oenb[39]
+*276 la_oenb[3]
+*277 la_oenb[40]
+*278 la_oenb[41]
+*279 la_oenb[42]
+*280 la_oenb[43]
+*281 la_oenb[44]
+*282 la_oenb[45]
+*283 la_oenb[46]
+*284 la_oenb[47]
+*285 la_oenb[48]
+*286 la_oenb[49]
+*287 la_oenb[4]
+*288 la_oenb[50]
+*289 la_oenb[51]
+*290 la_oenb[52]
+*291 la_oenb[53]
+*292 la_oenb[54]
+*293 la_oenb[55]
+*294 la_oenb[56]
+*295 la_oenb[57]
+*296 la_oenb[58]
+*297 la_oenb[59]
+*298 la_oenb[5]
+*299 la_oenb[60]
+*300 la_oenb[61]
+*301 la_oenb[62]
+*302 la_oenb[63]
+*303 la_oenb[6]
+*304 la_oenb[7]
+*305 la_oenb[8]
+*306 la_oenb[9]
+*307 user_clock2
+*308 user_irq[0]
+*309 user_irq[1]
+*310 user_irq[2]
+*313 wb_clk_i
+*314 wb_rst_i
+*315 wbs_ack_o
+*316 wbs_adr_i[0]
+*317 wbs_adr_i[10]
+*318 wbs_adr_i[11]
+*319 wbs_adr_i[12]
+*320 wbs_adr_i[13]
+*321 wbs_adr_i[14]
+*322 wbs_adr_i[15]
+*323 wbs_adr_i[16]
+*324 wbs_adr_i[17]
+*325 wbs_adr_i[18]
+*326 wbs_adr_i[19]
+*327 wbs_adr_i[1]
+*328 wbs_adr_i[20]
+*329 wbs_adr_i[21]
+*330 wbs_adr_i[22]
+*331 wbs_adr_i[23]
+*332 wbs_adr_i[24]
+*333 wbs_adr_i[25]
+*334 wbs_adr_i[26]
+*335 wbs_adr_i[27]
+*336 wbs_adr_i[28]
+*337 wbs_adr_i[29]
+*338 wbs_adr_i[2]
+*339 wbs_adr_i[30]
+*340 wbs_adr_i[31]
+*341 wbs_adr_i[3]
+*342 wbs_adr_i[4]
+*343 wbs_adr_i[5]
+*344 wbs_adr_i[6]
+*345 wbs_adr_i[7]
+*346 wbs_adr_i[8]
+*347 wbs_adr_i[9]
+*348 wbs_cyc_i
+*349 wbs_dat_i[0]
+*350 wbs_dat_i[10]
+*351 wbs_dat_i[11]
+*352 wbs_dat_i[12]
+*353 wbs_dat_i[13]
+*354 wbs_dat_i[14]
+*355 wbs_dat_i[15]
+*356 wbs_dat_i[16]
+*357 wbs_dat_i[17]
+*358 wbs_dat_i[18]
+*359 wbs_dat_i[19]
+*360 wbs_dat_i[1]
+*361 wbs_dat_i[20]
+*362 wbs_dat_i[21]
+*363 wbs_dat_i[22]
+*364 wbs_dat_i[23]
+*365 wbs_dat_i[24]
+*366 wbs_dat_i[25]
+*367 wbs_dat_i[26]
+*368 wbs_dat_i[27]
+*369 wbs_dat_i[28]
+*370 wbs_dat_i[29]
+*371 wbs_dat_i[2]
+*372 wbs_dat_i[30]
+*373 wbs_dat_i[31]
+*374 wbs_dat_i[3]
+*375 wbs_dat_i[4]
+*376 wbs_dat_i[5]
+*377 wbs_dat_i[6]
+*378 wbs_dat_i[7]
+*379 wbs_dat_i[8]
+*380 wbs_dat_i[9]
+*381 wbs_dat_o[0]
+*382 wbs_dat_o[10]
+*383 wbs_dat_o[11]
+*384 wbs_dat_o[12]
+*385 wbs_dat_o[13]
+*386 wbs_dat_o[14]
+*387 wbs_dat_o[15]
+*388 wbs_dat_o[16]
+*389 wbs_dat_o[17]
+*390 wbs_dat_o[18]
+*391 wbs_dat_o[19]
+*392 wbs_dat_o[1]
+*393 wbs_dat_o[20]
+*394 wbs_dat_o[21]
+*395 wbs_dat_o[22]
+*396 wbs_dat_o[23]
+*397 wbs_dat_o[24]
+*398 wbs_dat_o[25]
+*399 wbs_dat_o[26]
+*400 wbs_dat_o[27]
+*401 wbs_dat_o[28]
+*402 wbs_dat_o[29]
+*403 wbs_dat_o[2]
+*404 wbs_dat_o[30]
+*405 wbs_dat_o[31]
+*406 wbs_dat_o[3]
+*407 wbs_dat_o[4]
+*408 wbs_dat_o[5]
+*409 wbs_dat_o[6]
+*410 wbs_dat_o[7]
+*411 wbs_dat_o[8]
+*412 wbs_dat_o[9]
+*413 wbs_sel_i[0]
+*414 wbs_sel_i[1]
+*415 wbs_sel_i[2]
+*416 wbs_sel_i[3]
+*417 wbs_stb_i
+*418 wbs_we_i
+*419 a0s\[10\]
+*420 a0s\[11\]
+*421 a0s\[12\]
+*422 a0s\[13\]
+*423 a0s\[14\]
+*424 a0s\[15\]
+*425 a0s\[9\]
+*426 a1s\[10\]
+*427 a1s\[11\]
+*428 a1s\[12\]
+*429 a1s\[13\]
+*430 a1s\[14\]
+*431 a1s\[15\]
+*432 a1s\[1\]
+*433 a1s\[2\]
+*434 a1s\[3\]
+*435 a1s\[4\]
+*436 a1s\[5\]
+*437 a1s\[6\]
+*438 a1s\[7\]
+*439 a1s\[8\]
+*440 a1s\[9\]
+*441 anton_gpout\[4\]
+*442 anton_gpout\[5\]
+*443 anton_o_reset
+*444 top_ew_algofoogle
+
+*PORTS
+io_in[0] I
+io_in[10] I
+io_in[11] I
+io_in[12] I
+io_in[13] I
+io_in[14] I
+io_in[15] I
+io_in[16] I
+io_in[17] I
+io_in[18] I
+io_in[19] I
+io_in[1] I
+io_in[20] I
+io_in[21] I
+io_in[22] I
+io_in[23] I
+io_in[24] I
+io_in[25] I
+io_in[26] I
+io_in[27] I
+io_in[28] I
+io_in[29] I
+io_in[2] I
+io_in[30] I
+io_in[31] I
+io_in[32] I
+io_in[33] I
+io_in[34] I
+io_in[35] I
+io_in[36] I
+io_in[37] I
+io_in[3] I
+io_in[4] I
+io_in[5] I
+io_in[6] I
+io_in[7] I
+io_in[8] I
+io_in[9] I
+io_oeb[0] O
+io_oeb[10] O
+io_oeb[11] O
+io_oeb[12] O
+io_oeb[13] O
+io_oeb[14] O
+io_oeb[15] O
+io_oeb[16] O
+io_oeb[17] O
+io_oeb[18] O
+io_oeb[19] O
+io_oeb[1] O
+io_oeb[20] O
+io_oeb[21] O
+io_oeb[22] O
+io_oeb[23] O
+io_oeb[24] O
+io_oeb[25] O
+io_oeb[26] O
+io_oeb[27] O
+io_oeb[28] O
+io_oeb[29] O
+io_oeb[2] O
+io_oeb[30] O
+io_oeb[31] O
+io_oeb[32] O
+io_oeb[33] O
+io_oeb[34] O
+io_oeb[35] O
+io_oeb[36] O
+io_oeb[37] O
+io_oeb[3] O
+io_oeb[4] O
+io_oeb[5] O
+io_oeb[6] O
+io_oeb[7] O
+io_oeb[8] O
+io_oeb[9] O
+io_out[0] O
+io_out[10] O
+io_out[11] O
+io_out[12] O
+io_out[13] O
+io_out[14] O
+io_out[15] O
+io_out[16] O
+io_out[17] O
+io_out[18] O
+io_out[19] O
+io_out[1] O
+io_out[20] O
+io_out[21] O
+io_out[22] O
+io_out[23] O
+io_out[24] O
+io_out[25] O
+io_out[26] O
+io_out[27] O
+io_out[28] O
+io_out[29] O
+io_out[2] O
+io_out[30] O
+io_out[31] O
+io_out[32] O
+io_out[33] O
+io_out[34] O
+io_out[35] O
+io_out[36] O
+io_out[37] O
+io_out[3] O
+io_out[4] O
+io_out[5] O
+io_out[6] O
+io_out[7] O
+io_out[8] O
+io_out[9] O
+la_data_in[0] I
+la_data_in[10] I
+la_data_in[11] I
+la_data_in[12] I
+la_data_in[13] I
+la_data_in[14] I
+la_data_in[15] I
+la_data_in[16] I
+la_data_in[17] I
+la_data_in[18] I
+la_data_in[19] I
+la_data_in[1] I
+la_data_in[20] I
+la_data_in[21] I
+la_data_in[22] I
+la_data_in[23] I
+la_data_in[24] I
+la_data_in[25] I
+la_data_in[26] I
+la_data_in[27] I
+la_data_in[28] I
+la_data_in[29] I
+la_data_in[2] I
+la_data_in[30] I
+la_data_in[31] I
+la_data_in[32] I
+la_data_in[33] I
+la_data_in[34] I
+la_data_in[35] I
+la_data_in[36] I
+la_data_in[37] I
+la_data_in[38] I
+la_data_in[39] I
+la_data_in[3] I
+la_data_in[40] I
+la_data_in[41] I
+la_data_in[42] I
+la_data_in[43] I
+la_data_in[44] I
+la_data_in[45] I
+la_data_in[46] I
+la_data_in[47] I
+la_data_in[48] I
+la_data_in[49] I
+la_data_in[4] I
+la_data_in[50] I
+la_data_in[51] I
+la_data_in[52] I
+la_data_in[53] I
+la_data_in[54] I
+la_data_in[55] I
+la_data_in[56] I
+la_data_in[57] I
+la_data_in[58] I
+la_data_in[59] I
+la_data_in[5] I
+la_data_in[60] I
+la_data_in[61] I
+la_data_in[62] I
+la_data_in[63] I
+la_data_in[6] I
+la_data_in[7] I
+la_data_in[8] I
+la_data_in[9] I
+la_data_out[0] O
+la_data_out[10] O
+la_data_out[11] O
+la_data_out[12] O
+la_data_out[13] O
+la_data_out[14] O
+la_data_out[15] O
+la_data_out[16] O
+la_data_out[17] O
+la_data_out[18] O
+la_data_out[19] O
+la_data_out[1] O
+la_data_out[20] O
+la_data_out[21] O
+la_data_out[22] O
+la_data_out[23] O
+la_data_out[24] O
+la_data_out[25] O
+la_data_out[26] O
+la_data_out[27] O
+la_data_out[28] O
+la_data_out[29] O
+la_data_out[2] O
+la_data_out[30] O
+la_data_out[31] O
+la_data_out[32] O
+la_data_out[33] O
+la_data_out[34] O
+la_data_out[35] O
+la_data_out[36] O
+la_data_out[37] O
+la_data_out[38] O
+la_data_out[39] O
+la_data_out[3] O
+la_data_out[40] O
+la_data_out[41] O
+la_data_out[42] O
+la_data_out[43] O
+la_data_out[44] O
+la_data_out[45] O
+la_data_out[46] O
+la_data_out[47] O
+la_data_out[48] O
+la_data_out[49] O
+la_data_out[4] O
+la_data_out[50] O
+la_data_out[51] O
+la_data_out[52] O
+la_data_out[53] O
+la_data_out[54] O
+la_data_out[55] O
+la_data_out[56] O
+la_data_out[57] O
+la_data_out[58] O
+la_data_out[59] O
+la_data_out[5] O
+la_data_out[60] O
+la_data_out[61] O
+la_data_out[62] O
+la_data_out[63] O
+la_data_out[6] O
+la_data_out[7] O
+la_data_out[8] O
+la_data_out[9] O
+la_oenb[0] I
+la_oenb[10] I
+la_oenb[11] I
+la_oenb[12] I
+la_oenb[13] I
+la_oenb[14] I
+la_oenb[15] I
+la_oenb[16] I
+la_oenb[17] I
+la_oenb[18] I
+la_oenb[19] I
+la_oenb[1] I
+la_oenb[20] I
+la_oenb[21] I
+la_oenb[22] I
+la_oenb[23] I
+la_oenb[24] I
+la_oenb[25] I
+la_oenb[26] I
+la_oenb[27] I
+la_oenb[28] I
+la_oenb[29] I
+la_oenb[2] I
+la_oenb[30] I
+la_oenb[31] I
+la_oenb[32] I
+la_oenb[33] I
+la_oenb[34] I
+la_oenb[35] I
+la_oenb[36] I
+la_oenb[37] I
+la_oenb[38] I
+la_oenb[39] I
+la_oenb[3] I
+la_oenb[40] I
+la_oenb[41] I
+la_oenb[42] I
+la_oenb[43] I
+la_oenb[44] I
+la_oenb[45] I
+la_oenb[46] I
+la_oenb[47] I
+la_oenb[48] I
+la_oenb[49] I
+la_oenb[4] I
+la_oenb[50] I
+la_oenb[51] I
+la_oenb[52] I
+la_oenb[53] I
+la_oenb[54] I
+la_oenb[55] I
+la_oenb[56] I
+la_oenb[57] I
+la_oenb[58] I
+la_oenb[59] I
+la_oenb[5] I
+la_oenb[60] I
+la_oenb[61] I
+la_oenb[62] I
+la_oenb[63] I
+la_oenb[6] I
+la_oenb[7] I
+la_oenb[8] I
+la_oenb[9] I
+user_clock2 I
+user_irq[0] O
+user_irq[1] O
+user_irq[2] O
+wb_clk_i I
+wb_rst_i I
+wbs_ack_o O
+wbs_adr_i[0] I
+wbs_adr_i[10] I
+wbs_adr_i[11] I
+wbs_adr_i[12] I
+wbs_adr_i[13] I
+wbs_adr_i[14] I
+wbs_adr_i[15] I
+wbs_adr_i[16] I
+wbs_adr_i[17] I
+wbs_adr_i[18] I
+wbs_adr_i[19] I
+wbs_adr_i[1] I
+wbs_adr_i[20] I
+wbs_adr_i[21] I
+wbs_adr_i[22] I
+wbs_adr_i[23] I
+wbs_adr_i[24] I
+wbs_adr_i[25] I
+wbs_adr_i[26] I
+wbs_adr_i[27] I
+wbs_adr_i[28] I
+wbs_adr_i[29] I
+wbs_adr_i[2] I
+wbs_adr_i[30] I
+wbs_adr_i[31] I
+wbs_adr_i[3] I
+wbs_adr_i[4] I
+wbs_adr_i[5] I
+wbs_adr_i[6] I
+wbs_adr_i[7] I
+wbs_adr_i[8] I
+wbs_adr_i[9] I
+wbs_cyc_i I
+wbs_dat_i[0] I
+wbs_dat_i[10] I
+wbs_dat_i[11] I
+wbs_dat_i[12] I
+wbs_dat_i[13] I
+wbs_dat_i[14] I
+wbs_dat_i[15] I
+wbs_dat_i[16] I
+wbs_dat_i[17] I
+wbs_dat_i[18] I
+wbs_dat_i[19] I
+wbs_dat_i[1] I
+wbs_dat_i[20] I
+wbs_dat_i[21] I
+wbs_dat_i[22] I
+wbs_dat_i[23] I
+wbs_dat_i[24] I
+wbs_dat_i[25] I
+wbs_dat_i[26] I
+wbs_dat_i[27] I
+wbs_dat_i[28] I
+wbs_dat_i[29] I
+wbs_dat_i[2] I
+wbs_dat_i[30] I
+wbs_dat_i[31] I
+wbs_dat_i[3] I
+wbs_dat_i[4] I
+wbs_dat_i[5] I
+wbs_dat_i[6] I
+wbs_dat_i[7] I
+wbs_dat_i[8] I
+wbs_dat_i[9] I
+wbs_dat_o[0] O
+wbs_dat_o[10] O
+wbs_dat_o[11] O
+wbs_dat_o[12] O
+wbs_dat_o[13] O
+wbs_dat_o[14] O
+wbs_dat_o[15] O
+wbs_dat_o[16] O
+wbs_dat_o[17] O
+wbs_dat_o[18] O
+wbs_dat_o[19] O
+wbs_dat_o[1] O
+wbs_dat_o[20] O
+wbs_dat_o[21] O
+wbs_dat_o[22] O
+wbs_dat_o[23] O
+wbs_dat_o[24] O
+wbs_dat_o[25] O
+wbs_dat_o[26] O
+wbs_dat_o[27] O
+wbs_dat_o[28] O
+wbs_dat_o[29] O
+wbs_dat_o[2] O
+wbs_dat_o[30] O
+wbs_dat_o[31] O
+wbs_dat_o[3] O
+wbs_dat_o[4] O
+wbs_dat_o[5] O
+wbs_dat_o[6] O
+wbs_dat_o[7] O
+wbs_dat_o[8] O
+wbs_dat_o[9] O
+wbs_sel_i[0] I
+wbs_sel_i[1] I
+wbs_sel_i[2] I
+wbs_sel_i[3] I
+wbs_stb_i I
+wbs_we_i I
+
+*D_NET *3 0.189438
+*CONN
+*P io_in[11] I
+*I *444:i_clk I *D top_ew_algofoogle
+*CAP
+1 io_in[11] 0.00178905
+2 *444:i_clk 0.00399155
+3 *3:13 0.0704312
+4 *3:11 0.0664397
+5 *3:9 0.0224987
+6 *3:7 0.0242877
+*RES
+1 io_in[11] *3:7 16.09 
+2 *3:7 *3:9 162.716 
+3 *3:9 *3:11 4.5 
+4 *3:11 *3:13 473.252 
+5 *3:13 *444:i_clk 37.386 
+*END
+
+*D_NET *8 0.274762
+*CONN
+*P io_in[16] I
+*I *444:i_tex_in[0] I *D top_ew_algofoogle
+*CAP
+1 io_in[16] 0.053611
+2 *444:i_tex_in[0] 0.000855662
+3 *8:13 0.0185461
+4 *8:11 0.0176905
+5 *8:9 0.0538668
+6 *8:7 0.0538668
+7 *8:5 0.053611
+8 *444:i_tex_in[0] *444:i_gpout5_sel[0] 0.000129249
+9 *444:i_tex_in[0] *82:7 0.000121124
+10 *8:13 *79:9 0.000340753
+11 *8:13 *80:9 0.00741525
+12 *8:13 *116:13 0.00767652
+13 *8:13 *117:13 0.000166035
+14 *8:13 *118:13 0.000717116
+15 *8:13 *121:13 0.00563084
+16 *8:13 *131:13 0.000123094
+17 *8:13 *150:13 0.000394426
+*RES
+1 io_in[16] *8:5 367.27 
+2 *8:5 *8:7 4.5 
+3 *8:7 *8:9 382.964 
+4 *8:9 *8:11 4.5 
+5 *8:11 *8:13 144.324 
+6 *8:13 *444:i_tex_in[0] 9.554 
+*END
+
+*D_NET *25 0.116404
+*CONN
+*P io_in[31] I
+*I *444:i_tex_in[1] I *D top_ew_algofoogle
+*CAP
+1 io_in[31] 0.000737728
+2 *444:i_tex_in[1] 0.0454043
+3 *25:11 0.0454043
+4 *25:9 0.0104074
+5 *25:7 0.0111451
+6 *444:i_tex_in[1] *444:i_gpout0_sel[2] 1.15437e-05
+7 *444:i_tex_in[1] *444:i_gpout0_sel[3] 3.74664e-05
+8 *25:9 *26:11 0.000538343
+9 *25:9 *28:9 0.00271752
+*RES
+1 io_in[31] *25:7 9.858 
+2 *25:7 *25:9 80.484 
+3 *25:9 *25:11 4.5 
+4 *25:11 *444:i_tex_in[1] 319.998 
+*END
+
+*D_NET *26 0.0967045
+*CONN
+*P io_in[32] I
+*I *444:i_tex_in[2] I *D top_ew_algofoogle
+*CAP
+1 io_in[32] 0.00259964
+2 *444:i_tex_in[2] 0.0395225
+3 *26:11 0.0421222
+4 *444:i_tex_in[2] *444:i_gpout1_sel[3] 0.000221527
+5 *444:i_tex_in[2] *444:i_test_wci 0.0117003
+6 *25:9 *26:11 0.000538343
+*RES
+1 io_in[32] *26:11 28.722 
+2 *26:11 *444:i_tex_in[2] 319.086 
+*END
+
+*D_NET *28 0.121276
+*CONN
+*P io_in[34] I
+*I *444:i_tex_in[3] I *D top_ew_algofoogle
+*CAP
+1 io_in[34] 0.000717091
+2 *444:i_tex_in[3] 0.0449365
+3 *28:11 0.0449365
+4 *28:9 0.0131047
+5 *28:7 0.0138218
+6 *444:i_tex_in[3] *444:i_vec_csb 0.000635237
+7 *444:i_tex_in[3] *444:i_vec_sclk 0.000406552
+8 *25:9 *28:9 0.00271752
+*RES
+1 io_in[34] *28:7 9.706 
+2 *28:7 *28:9 98.116 
+3 *28:9 *28:11 4.5 
+4 *28:11 *444:i_tex_in[3] 320.15 
+*END
+
+*D_NET *29 0.106939
+*CONN
+*P io_in[35] I
+*I *444:i_spare_1 I *D top_ew_algofoogle
+*CAP
+1 io_in[35] 0.00153675
+2 *444:i_spare_1 0.00052189
+3 *29:13 0.0430913
+4 *29:11 0.0441061
+5 *444:i_spare_1 *444:i_spare_0 9.94187e-05
+6 *29:13 *51:9 0.0175836
+7 *29:13 *134:9 0
+*RES
+1 io_in[35] *29:11 19.602 
+2 *29:11 *29:13 322.012 
+3 *29:13 *444:i_spare_1 8.034 
+*END
+
+*D_NET *41 0.189028
+*CONN
+*P io_oeb[11] O
+*I *444:ones[0] O *D top_ew_algofoogle
+*CAP
+1 io_oeb[11] 0.0643465
+2 *444:ones[0] 0.0301674
+3 *41:7 0.0643465
+4 *41:5 0.0301674
+*RES
+1 *444:ones[0] *41:5 206.507 
+2 *41:5 *41:7 4.5 
+3 *41:7 io_oeb[11] 458.014 
+*END
+
+*D_NET *42 0.240969
+*CONN
+*P io_oeb[12] O
+*I *444:zeros[4] O *D top_ew_algofoogle
+*CAP
+1 io_oeb[12] 0.0170041
+2 *444:zeros[4] 0.000640978
+3 *42:15 0.0170041
+4 *42:13 0.077551
+5 *42:11 0.077551
+6 *42:9 0.0252886
+7 *42:7 0.0259296
+8 *42:9 *144:9 0
+*RES
+1 *444:zeros[4] *42:7 8.034 
+2 *42:7 *42:9 179.284 
+3 *42:9 *42:11 4.5 
+4 *42:11 *42:13 531.772 
+5 *42:13 *42:15 4.5 
+6 *42:15 io_oeb[12] 121.03 
+*END
+
+*D_NET *43 0.176543
+*CONN
+*P io_oeb[13] O
+*I *444:zeros[5] O *D top_ew_algofoogle
+*CAP
+1 io_oeb[13] 0.0424043
+2 *444:zeros[5] 0.0458674
+3 *43:7 0.0424043
+4 *43:5 0.0458674
+*RES
+1 *444:zeros[5] *43:5 314.123 
+2 *43:5 *43:7 4.5 
+3 *43:7 io_oeb[13] 301.15 
+*END
+
+*D_NET *44 0.179532
+*CONN
+*P io_oeb[14] O
+*I *444:zeros[6] O *D top_ew_algofoogle
+*CAP
+1 io_oeb[14] 0.0189364
+2 *444:zeros[6] 0.000799175
+3 *44:11 0.0189364
+4 *44:9 0.0525542
+5 *44:7 0.0533534
+6 io_oeb[14] *83:13 0.0349521
+*RES
+1 *444:zeros[6] *44:7 9.706 
+2 *44:7 *44:9 379.772 
+3 *44:9 *44:11 4.5 
+4 *44:11 io_oeb[14] 214.51 
+*END
+
+*D_NET *45 0.174268
+*CONN
+*P io_oeb[15] O
+*I *444:zeros[7] O *D top_ew_algofoogle
+*CAP
+1 io_oeb[15] 0.00102104
+2 *444:zeros[7] 0.0541163
+3 *45:9 0.0259261
+4 *45:7 0.024905
+5 *45:5 0.0541163
+6 *45:9 *47:15 0.014183
+*RES
+1 *444:zeros[7] *45:5 370.515 
+2 *45:5 *45:7 4.5 
+3 *45:7 *45:9 193.572 
+4 *45:9 io_oeb[15] 11.53 
+*END
+
+*D_NET *46 0.256584
+*CONN
+*P io_oeb[16] O
+*I *444:o_tex_oeb0 O *D top_ew_algofoogle
+*CAP
+1 io_oeb[16] 0.0556544
+2 *444:o_tex_oeb0 0.000145069
+3 *46:15 0.0556544
+4 *46:13 0.0448276
+5 *46:11 0.0448276
+6 *46:9 0.00736609
+7 *46:7 0.00751115
+8 *46:7 *444:i_gpout4_sel[5] 1.03877e-05
+9 *46:9 *444:i_test_uc2 0
+10 *46:9 *85:9 0.0400817
+11 *46:9 *144:13 0.000408168
+12 *46:9 *307:13 9.74134e-05
+*RES
+1 *444:o_tex_oeb0 *46:7 5.146 
+2 *46:7 *46:9 99.636 
+3 *46:9 *46:11 4.5 
+4 *46:11 *46:13 318.668 
+5 *46:13 *46:15 4.5 
+6 *46:15 io_oeb[16] 380.95 
+*END
+
+*D_NET *47 0.13145
+*CONN
+*P io_oeb[17] O
+*I *444:zeros[0] O *D top_ew_algofoogle
+*CAP
+1 io_oeb[17] 0.000999175
+2 *444:zeros[0] 5.33612e-05
+3 *47:15 0.0034012
+4 *47:9 0.0575808
+5 *47:7 0.0552321
+6 *45:9 *47:15 0.014183
+*RES
+1 *444:zeros[0] *47:7 4.842 
+2 *47:7 *47:9 377.644 
+3 *47:9 *47:15 43.124 
+4 *47:15 io_oeb[17] 6.878 
+*END
+
+*D_NET *48 0.14564
+*CONN
+*P io_oeb[18] O
+*I *444:zeros[1] O *D top_ew_algofoogle
+*CAP
+1 io_oeb[18] 0.0545733
+2 *444:zeros[1] 0.000564139
+3 *48:11 0.0545733
+4 *48:9 0.00460589
+5 *48:7 0.00517003
+6 *48:9 *49:9 0.026153
+*RES
+1 *444:zeros[1] *48:7 8.08693 
+2 *48:7 *48:9 63.308 
+3 *48:9 *48:11 4.5 
+4 *48:11 io_oeb[18] 373.958 
+*END
+
+*D_NET *49 0.18099
+*CONN
+*P io_oeb[19] O
+*I *444:zeros[2] O *D top_ew_algofoogle
+*CAP
+1 io_oeb[19] 0.0546079
+2 *444:zeros[2] 0.000529448
+3 *49:11 0.0546079
+4 *49:9 0.0160788
+5 *49:7 0.0166083
+6 *49:9 *444:i_mode[2] 0
+7 *49:9 *87:13 0.0124045
+8 *48:9 *49:9 0.026153
+*RES
+1 *444:zeros[2] *49:7 7.93493 
+2 *49:7 *49:9 160.436 
+3 *49:9 *49:11 4.5 
+4 *49:11 io_oeb[19] 374.11 
+*END
+
+*D_NET *51 0.236253
+*CONN
+*P io_oeb[20] O
+*I *444:zeros[3] O *D top_ew_algofoogle
+*CAP
+1 io_oeb[20] 0.0946019
+2 *444:zeros[3] 0.000580071
+3 *51:11 0.0946019
+4 *51:9 0.00945122
+5 *51:7 0.0100313
+6 *51:9 *444:i_la_invalid 0.00216002
+7 *51:9 *130:9 0.00724316
+8 *51:9 *134:9 0
+9 *29:13 *51:9 0.0175836
+*RES
+1 *444:zeros[3] *51:7 8.186 
+2 *51:7 *51:9 112.556 
+3 *51:9 *51:11 4.5 
+4 *51:11 io_oeb[20] 649.078 
+*END
+
+*D_NET *79 0.413625
+*CONN
+*P io_out[11] O
+*I *444:zeros[8] O *D top_ew_algofoogle
+*CAP
+1 io_out[11] 0.0685557
+2 *444:zeros[8] 0.00087671
+3 *79:11 0.0685557
+4 *79:9 0.0304223
+5 *79:7 0.031299
+6 *79:9 *80:9 0.0588874
+7 *79:9 *82:9 0.134476
+8 *79:9 *116:13 0.0043949
+9 *79:9 *118:13 0.00435667
+10 *79:9 *121:13 0.0045579
+11 *79:9 *131:13 0.00690249
+12 *8:13 *79:9 0.000340753
+*RES
+1 *444:zeros[8] *79:7 9.098 
+2 *79:7 *79:9 442.092 
+3 *79:9 *79:11 4.5 
+4 *79:11 io_out[11] 487.198 
+*END
+
+*D_NET *80 0.355918
+*CONN
+*P io_out[12] O
+*I *444:o_hsync O *D top_ew_algofoogle
+*CAP
+1 io_out[12] 0.00122247
+2 *444:o_hsync 0.000783058
+3 *80:17 0.0170617
+4 *80:15 0.0158392
+5 *80:13 0.0675947
+6 *80:11 0.0675947
+7 *80:9 0.0118232
+8 *80:7 0.0126063
+9 *80:7 *444:i_gpout5_sel[2] 0.000125026
+10 *80:7 *444:i_gpout5_sel[4] 0.000123434
+11 *80:9 *121:13 0.000942903
+12 *80:17 *81:14 0.0938992
+13 *8:13 *80:9 0.00741525
+14 *79:9 *80:9 0.0588874
+*RES
+1 *444:o_hsync *80:7 9.25 
+2 *80:7 *80:9 142.044 
+3 *80:9 *80:11 4.5 
+4 *80:11 *80:13 480.548 
+5 *80:13 *80:15 4.5 
+6 *80:15 *80:17 225.34 
+7 *80:17 io_out[12] 11.378 
+*END
+
+*D_NET *81 0.339771
+*CONN
+*P io_out[13] O
+*I *444:o_vsync O *D top_ew_algofoogle
+*CAP
+1 io_out[13] 0.00104681
+2 *444:o_vsync 0
+3 *81:14 0.0259097
+4 *81:12 0.0248629
+5 *81:10 0.0668517
+6 *81:8 0.0668517
+7 *81:6 0.0222599
+8 *81:4 0.0222599
+9 *81:6 *83:9 0.00388807
+10 *81:6 *84:11 0.00282423
+11 *81:6 *85:9 0.00270172
+12 *81:6 *86:9 0.00369066
+13 *81:6 *87:9 0.00259975
+14 *81:6 *145:13 0.000124827
+15 *80:17 *81:14 0.0938992
+*RES
+1 *444:o_vsync *81:4 4.5 
+2 *81:4 *81:6 133.38 
+3 *81:6 *81:8 4.5 
+4 *81:8 *81:10 475.684 
+5 *81:10 *81:12 4.5 
+6 *81:12 *81:14 290.548 
+7 *81:14 io_out[13] 11.53 
+*END
+
+*D_NET *82 0.3663
+*CONN
+*P io_out[14] O
+*I *444:o_tex_csb O *D top_ew_algofoogle
+*CAP
+1 io_out[14] 0.0684522
+2 *444:o_tex_csb 0.000700394
+3 *82:11 0.0684522
+4 *82:9 0.0460202
+5 *82:7 0.0467206
+6 *82:7 *444:i_debug_trace_overlay 8.16381e-05
+7 *82:7 *159:11 7.52312e-05
+8 *82:9 *118:13 0.00120073
+9 *444:i_tex_in[0] *82:7 0.000121124
+10 *79:9 *82:9 0.134476
+*RES
+1 *444:o_tex_csb *82:7 8.946 
+2 *82:7 *82:9 484.956 
+3 *82:9 *82:11 4.5 
+4 *82:11 io_out[14] 487.046 
+*END
+
+*D_NET *83 0.333387
+*CONN
+*P io_out[15] O
+*I *444:o_tex_sclk O *D top_ew_algofoogle
+*CAP
+1 io_out[15] 0.00166949
+2 *444:o_tex_sclk 0.00012992
+3 *83:13 0.0519663
+4 *83:11 0.0502968
+5 *83:9 0.0387235
+6 *83:7 0.0388534
+7 *83:9 *84:11 0.0705881
+8 *83:9 *86:9 0.0423193
+9 io_oeb[14] *83:13 0.0349521
+10 *81:6 *83:9 0.00388807
+*RES
+1 *444:o_tex_sclk *83:7 5.298 
+2 *83:7 *83:9 472.34 
+3 *83:9 *83:11 4.5 
+4 *83:11 *83:13 437.684 
+5 *83:13 io_out[15] 13.81 
+*END
+
+*D_NET *84 0.322441
+*CONN
+*P io_out[16] O
+*I *444:o_tex_out0 O *D top_ew_algofoogle
+*CAP
+1 io_out[16] 0.00239551
+2 *444:o_tex_out0 0.000185538
+3 *84:15 0.0512618
+4 *84:13 0.0488662
+5 *84:11 0.0299724
+6 *84:9 0.0301579
+7 *84:11 *85:9 0.000165165
+8 *84:11 *86:9 0.04269
+9 *84:11 *87:9 0.0377985
+10 *84:11 *145:13 0.00553541
+11 *81:6 *84:11 0.00282423
+12 *83:9 *84:11 0.0705881
+*RES
+1 *444:o_tex_out0 *84:9 5.526 
+2 *84:9 *84:11 466.412 
+3 *84:11 *84:13 4.5 
+4 *84:13 *84:15 348.156 
+5 *84:15 io_out[16] 20.65 
+*END
+
+*D_NET *85 0.345559
+*CONN
+*P io_out[17] O
+*I *444:o_gpout[0] O *D top_ew_algofoogle
+*CAP
+1 io_out[17] 0.0549397
+2 *444:o_gpout[0] 8.64741e-05
+3 *85:15 0.0549397
+4 *85:13 0.0187308
+5 *85:11 0.0187308
+6 *85:9 0.000933503
+7 *85:7 0.00101998
+8 *85:7 *444:i_gpout0_sel[5] 1.39844e-05
+9 *85:9 *87:9 0.0368885
+10 *85:9 *145:13 0.00911165
+11 *85:9 *307:13 0.00139361
+12 *85:13 *444:i_mode[2] 0
+13 *85:13 *86:13 0.0697561
+14 *85:13 *158:9 0.0360651
+15 *46:9 *85:9 0.0400817
+16 *81:6 *85:9 0.00270172
+17 *84:11 *85:9 0.000165165
+*RES
+1 *444:o_gpout[0] *85:7 4.994 
+2 *85:7 *85:9 115.292 
+3 *85:9 *85:11 4.5 
+4 *85:11 *85:13 258.628 
+5 *85:13 *85:15 4.5 
+6 *85:15 io_out[17] 376.238 
+*END
+
+*D_NET *86 0.296148
+*CONN
+*P io_out[18] O
+*I *444:o_gpout[1] O *D top_ew_algofoogle
+*CAP
+1 io_out[18] 0.0549744
+2 *444:o_gpout[1] 0.000102369
+3 *86:15 0.0549744
+4 *86:13 0.0120239
+5 *86:11 0.0120239
+6 *86:9 0.00104695
+7 *86:7 0.00114932
+8 *86:9 *145:13 0.00139691
+9 *81:6 *86:9 0.00369066
+10 *83:9 *86:9 0.0423193
+11 *84:11 *86:9 0.04269
+12 *85:13 *86:13 0.0697561
+*RES
+1 *444:o_gpout[1] *86:7 5.146 
+2 *86:7 *86:9 113.62 
+3 *86:9 *86:11 4.5 
+4 *86:11 *86:13 168.34 
+5 *86:13 *86:15 4.5 
+6 *86:15 io_out[18] 376.39 
+*END
+
+*D_NET *87 0.217857
+*CONN
+*P io_out[19] O
+*I *444:o_gpout[2] O *D top_ew_algofoogle
+*CAP
+1 io_out[19] 0.0545733
+2 *444:o_gpout[2] 7.60867e-05
+3 *87:15 0.0545733
+4 *87:13 0.00906898
+5 *87:11 0.00906898
+6 *87:9 0.00035964
+7 *87:7 0.000435727
+8 *87:7 *444:i_gpout3_sel[3] 5.00209e-06
+9 *87:7 *444:i_gpout4_sel[2] 5.00209e-06
+10 *49:9 *87:13 0.0124045
+11 *81:6 *87:9 0.00259975
+12 *84:11 *87:9 0.0377985
+13 *85:9 *87:9 0.0368885
+*RES
+1 *444:o_gpout[2] *87:7 4.842 
+2 *87:7 *87:9 93.86 
+3 *87:9 *87:11 4.5 
+4 *87:11 *87:13 78.812 
+5 *87:13 *87:15 4.5 
+6 *87:15 io_out[19] 373.958 
+*END
+
+*D_NET *89 0.142035
+*CONN
+*P io_out[20] O
+*I *444:o_gpout[3] O *D top_ew_algofoogle
+*CAP
+1 io_out[20] 0.0690673
+2 *444:o_gpout[3] 0.00189462
+3 *89:7 0.0709619
+4 *89:7 *444:i_gpout3_sel[4] 8.06357e-05
+5 *89:7 *444:i_gpout4_sel[1] 3.09247e-05
+*RES
+1 *444:o_gpout[3] *89:7 15.938 
+2 *89:7 io_out[20] 474.126 
+*END
+
+*D_NET *115 0.101382
+*CONN
+*P la_data_in[0] I
+*I *444:i_reset_lock_a I *D top_ew_algofoogle
+*CAP
+1 la_data_in[0] 0.0449502
+2 *444:i_reset_lock_a 0.00540316
+3 *115:5 0.0503533
+4 *444:i_reset_lock_a *444:i_gpout5_sel[1] 0.000334653
+5 *444:i_reset_lock_a *444:i_gpout5_sel[3] 0.000340603
+*RES
+1 la_data_in[0] *115:5 308.294 
+2 *115:5 *444:i_reset_lock_a 41.018 
+*END
+
+*D_NET *116 0.178684
+*CONN
+*P la_data_in[10] I
+*I *444:i_gpout0_sel[5] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[10] 0.0242461
+2 *444:i_gpout0_sel[5] 0.000892834
+3 *116:13 0.00237193
+4 *116:11 0.00147909
+5 *116:9 0.00345104
+6 *116:7 0.00345104
+7 *116:5 0.0242461
+8 *444:i_gpout0_sel[5] *444:i_gpout0_sel[3] 3.74664e-05
+9 *116:9 *121:9 0.0188383
+10 *116:9 *123:9 3.19219e-05
+11 *116:9 *160:9 0
+12 *116:13 *117:13 0.000244026
+13 *116:13 *121:13 0.0615856
+14 *116:13 *150:13 0.0257236
+15 *8:13 *116:13 0.00767652
+16 *79:9 *116:13 0.0043949
+17 *85:7 *444:i_gpout0_sel[5] 1.39844e-05
+*RES
+1 la_data_in[10] *116:5 163.286 
+2 *116:5 *116:7 4.5 
+3 *116:7 *116:9 45.98 
+4 *116:9 *116:11 4.5 
+5 *116:11 *116:13 152.38 
+6 *116:13 *444:i_gpout0_sel[5] 9.402 
+*END
+
+*D_NET *117 0.190699
+*CONN
+*P la_data_in[11] I
+*I *444:i_debug_vec_overlay I *D top_ew_algofoogle
+*CAP
+1 la_data_in[11] 0.0230563
+2 *444:i_debug_vec_overlay 0.00102534
+3 *117:13 0.00178298
+4 *117:11 0.000757639
+5 *117:9 0.00386565
+6 *117:7 0.00386565
+7 *117:5 0.0230563
+8 *444:i_debug_vec_overlay *444:i_gpout5_sel[0] 0.000131942
+9 *117:9 *444:i_spare_0 0.000238065
+10 *117:9 *129:9 0.0223664
+11 *117:13 *121:13 1.44832e-05
+12 *117:13 *124:13 0
+13 *117:13 *131:13 0.000456738
+14 *117:13 *150:13 0.0535528
+15 *117:13 *159:5 0.0561182
+16 *8:13 *117:13 0.000166035
+17 *116:13 *117:13 0.000244026
+*RES
+1 la_data_in[11] *117:5 156.142 
+2 *117:5 *117:7 4.5 
+3 *117:7 *117:9 54.188 
+4 *117:9 *117:11 4.5 
+5 *117:11 *117:13 142.196 
+6 *117:13 *444:i_debug_vec_overlay 9.858 
+*END
+
+*D_NET *118 0.195295
+*CONN
+*P la_data_in[12] I
+*I *444:i_reg_csb I *D top_ew_algofoogle
+*CAP
+1 la_data_in[12] 0.00153866
+2 *444:i_reg_csb 0.000587535
+3 *118:13 0.0362163
+4 *118:11 0.0356287
+5 *118:9 0.00437842
+6 *118:7 0.00591708
+7 *444:i_reg_csb *444:i_reg_sclk 0.000154226
+8 *444:i_reg_csb *444:i_test_uc2 6.66072e-05
+9 *118:9 *124:9 0.0252799
+10 *118:13 *131:13 0.0774782
+11 *118:13 *143:13 0
+12 *118:13 *159:5 0
+13 *118:13 *159:13 0.00177515
+14 *8:13 *118:13 0.000717116
+15 *79:9 *118:13 0.00435667
+16 *82:9 *118:13 0.00120073
+*RES
+1 la_data_in[12] *118:7 14.57 
+2 *118:7 *118:9 61.028 
+3 *118:9 *118:11 4.5 
+4 *118:11 *118:13 343.9 
+5 *118:13 *444:i_reg_csb 8.946 
+*END
+
+*D_NET *119 0.291166
+*CONN
+*P la_data_in[13] I
+*I *444:i_reg_sclk I *D top_ew_algofoogle
+*CAP
+1 la_data_in[13] 0.00351264
+2 *444:i_reg_sclk 0.00105505
+3 *119:13 0.00215242
+4 *119:11 0.00109737
+5 *119:9 0.0101982
+6 *119:7 0.0137108
+7 *444:i_reg_sclk *444:i_reg_mosi 0.00014629
+8 *119:13 *120:13 0.00598948
+9 *119:13 *124:13 0.131707
+10 *119:13 *136:13 0.121442
+11 *444:i_reg_csb *444:i_reg_sclk 0.000154226
+*RES
+1 la_data_in[13] *119:7 27.946 
+2 *119:7 *119:9 71.212 
+3 *119:9 *119:11 4.5 
+4 *119:11 *119:13 331.436 
+5 *119:13 *444:i_reg_sclk 11.378 
+*END
+
+*D_NET *120 0.247348
+*CONN
+*P la_data_in[14] I
+*I *444:i_reg_mosi I *D top_ew_algofoogle
+*CAP
+1 la_data_in[14] 0.0226551
+2 *444:i_reg_mosi 0.00117078
+3 *120:13 0.00210327
+4 *120:11 0.000932496
+5 *120:9 0.00606266
+6 *120:7 0.00606266
+7 *120:5 0.0226551
+8 *444:i_reg_mosi *444:i_gpout1_sel[5] 0.000153664
+9 *120:9 *131:9 0.0316174
+10 *120:13 *122:13 0.00113994
+11 *120:13 *125:13 0.0779356
+12 *120:13 *136:13 0.0687233
+13 *444:i_reg_sclk *444:i_reg_mosi 0.00014629
+14 *119:13 *120:13 0.00598948
+*RES
+1 la_data_in[14] *120:5 153.71 
+2 *120:5 *120:7 4.5 
+3 *120:7 *120:9 79.268 
+4 *120:9 *120:11 4.5 
+5 *120:11 *120:13 202.084 
+6 *120:13 *444:i_reg_mosi 11.682 
+*END
+
+*D_NET *121 0.256863
+*CONN
+*P la_data_in[15] I
+*I *444:i_gpout1_sel[0] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[15] 0.0241729
+2 *444:i_gpout1_sel[0] 0.000693598
+3 *121:13 0.00126227
+4 *121:11 0.000568671
+5 *121:9 0.00296846
+6 *121:7 0.00296846
+7 *121:5 0.0241729
+8 *444:i_gpout1_sel[0] *444:i_gpout2_sel[3] 0.000148297
+9 *444:i_gpout1_sel[0] *444:i_gpout2_sel[5] 8.11971e-05
+10 *121:9 *123:9 0.0349
+11 *121:13 *131:13 0.0733565
+12 *8:13 *121:13 0.00563084
+13 *79:9 *121:13 0.0045579
+14 *80:9 *121:13 0.000942903
+15 *116:9 *121:9 0.0188383
+16 *116:13 *121:13 0.0615856
+17 *117:13 *121:13 1.44832e-05
+*RES
+1 la_data_in[15] *121:5 163.134 
+2 *121:5 *121:7 4.5 
+3 *121:7 *121:9 84.588 
+4 *121:9 *121:11 4.5 
+5 *121:11 *121:13 181.716 
+6 *121:13 *444:i_gpout1_sel[0] 9.25 
+*END
+
+*D_NET *122 0.239779
+*CONN
+*P la_data_in[16] I
+*I *444:i_gpout1_sel[1] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[16] 0.0219415
+2 *444:i_gpout1_sel[1] 0.00124526
+3 *122:13 0.0053924
+4 *122:11 0.00414714
+5 *122:9 0.00698827
+6 *122:7 0.00698827
+7 *122:5 0.0219415
+8 *444:i_gpout1_sel[1] *444:i_gpout2_sel[4] 8.98399e-05
+9 *444:i_gpout1_sel[1] *444:i_gpout3_sel[3] 6.93e-05
+10 *122:9 *139:9 0.0371714
+11 *122:9 *153:9 0.0010505
+12 *122:13 *123:13 0.0724064
+13 *122:13 *125:13 3.00299e-05
+14 *122:13 *127:13 0
+15 *122:13 *136:13 0.000411437
+16 *122:13 *155:13 0.0587655
+17 *120:13 *122:13 0.00113994
+*RES
+1 la_data_in[16] *122:5 149.15 
+2 *122:5 *122:7 4.5 
+3 *122:7 *122:9 95.228 
+4 *122:9 *122:11 4.5 
+5 *122:11 *122:13 192.964 
+6 *122:13 *444:i_gpout1_sel[1] 12.138 
+*END
+
+*D_NET *123 0.285187
+*CONN
+*P la_data_in[17] I
+*I *444:i_gpout1_sel[2] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[17] 0.0241254
+2 *444:i_gpout1_sel[2] 0.00103557
+3 *123:13 0.00255629
+4 *123:11 0.00152072
+5 *123:9 0.00161566
+6 *123:7 0.00161566
+7 *123:5 0.0241254
+8 *444:i_gpout1_sel[2] *444:i_gpout1_sel[4] 0.000253007
+9 *123:9 *125:9 0.0423884
+10 *123:13 *125:13 0.0786129
+11 *123:13 *127:13 0
+12 *116:9 *123:9 3.19219e-05
+13 *121:9 *123:9 0.0349
+14 *122:13 *123:13 0.0724064
+*RES
+1 la_data_in[17] *123:5 162.982 
+2 *123:5 *123:7 4.5 
+3 *123:7 *123:9 102.828 
+4 *123:9 *123:11 4.5 
+5 *123:11 *123:13 195.548 
+6 *123:13 *444:i_gpout1_sel[2] 11.986 
+*END
+
+*D_NET *124 0.267719
+*CONN
+*P la_data_in[18] I
+*I *444:i_gpout1_sel[3] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[18] 0.00150397
+2 *444:i_gpout1_sel[3] 0.000873033
+3 *124:13 0.0267667
+4 *124:11 0.0258937
+5 *124:9 0.00372685
+6 *124:7 0.00523082
+7 *444:i_gpout1_sel[3] *444:i_gpout2_sel[0] 0.000221527
+8 *124:9 *135:9 0.0454103
+9 *124:13 *136:13 0.00088297
+10 *124:13 *159:5 0
+11 *444:i_tex_in[2] *444:i_gpout1_sel[3] 0.000221527
+12 *117:13 *124:13 0
+13 *118:9 *124:9 0.0252799
+14 *119:13 *124:13 0.131707
+*RES
+1 la_data_in[18] *124:7 14.418 
+2 *124:7 *124:9 109.82 
+3 *124:9 *124:11 4.5 
+4 *124:11 *124:13 339.492 
+5 *124:13 *444:i_gpout1_sel[3] 11.226 
+*END
+
+*D_NET *125 0.300886
+*CONN
+*P la_data_in[19] I
+*I *444:i_gpout1_sel[4] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[19] 0.0240779
+2 *444:i_gpout1_sel[4] 0.000892177
+3 *125:13 0.00127064
+4 *125:11 0.00037846
+5 *125:9 0.00186171
+6 *125:7 0.00186171
+7 *125:5 0.0240779
+8 *444:i_gpout1_sel[4] *444:i_gpout1_sel[5] 0.000253007
+9 *125:9 *132:9 0.0469929
+10 *444:i_gpout1_sel[2] *444:i_gpout1_sel[4] 0.000253007
+11 *120:13 *125:13 0.0779356
+12 *122:13 *125:13 3.00299e-05
+13 *123:9 *125:9 0.0423884
+14 *123:13 *125:13 0.0786129
+*RES
+1 la_data_in[19] *125:5 162.83 
+2 *125:5 *125:7 4.5 
+3 *125:7 *125:9 118.18 
+4 *125:9 *125:11 4.5 
+5 *125:11 *125:13 194.788 
+6 *125:13 *444:i_gpout1_sel[4] 11.834 
+*END
+
+*D_NET *126 0.097979
+*CONN
+*P la_data_in[1] I
+*I *444:i_reset_lock_b I *D top_ew_algofoogle
+*CAP
+1 la_data_in[1] 0.044283
+2 *444:i_reset_lock_b 0.00457052
+3 *126:5 0.0488535
+4 *444:i_reset_lock_b *444:i_gpout5_sel[2] 0.00027191
+*RES
+1 la_data_in[1] *126:5 303.734 
+2 *126:5 *444:i_reset_lock_b 33.266 
+*END
+
+*D_NET *127 0.225118
+*CONN
+*P la_data_in[20] I
+*I *444:i_gpout1_sel[5] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[20] 0.00249009
+2 *444:i_gpout1_sel[5] 0.00129821
+3 *127:13 0.0273234
+4 *127:11 0.0260252
+5 *127:9 0.0181163
+6 *127:7 0.0206064
+7 *127:13 *128:13 0.00493989
+8 *127:13 *135:13 0.123912
+9 *127:13 *155:13 0
+10 *444:i_gpout1_sel[4] *444:i_gpout1_sel[5] 0.000253007
+11 *444:i_reg_mosi *444:i_gpout1_sel[5] 0.000153664
+12 *122:13 *127:13 0
+13 *123:13 *127:13 0
+*RES
+1 la_data_in[20] *127:7 21.106 
+2 *127:7 *127:9 127.604 
+3 *127:9 *127:11 4.5 
+4 *127:11 *127:13 340.1 
+5 *127:13 *444:i_gpout1_sel[5] 13.506 
+*END
+
+*D_NET *128 0.278227
+*CONN
+*P la_data_in[21] I
+*I *444:i_gpout2_sel[0] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[21] 0.0215275
+2 *444:i_gpout2_sel[0] 0.00144498
+3 *128:13 0.0026996
+4 *128:11 0.00125462
+5 *128:9 0.00985625
+6 *128:7 0.00985625
+7 *128:5 0.0215275
+8 *444:i_gpout2_sel[0] *444:i_gpout2_sel[1] 0.000185669
+9 *128:9 *151:9 0.056065
+10 *128:13 *129:13 0.077416
+11 *128:13 *135:13 0.0712203
+12 *128:13 *138:13 1.2018e-05
+13 *444:i_gpout1_sel[3] *444:i_gpout2_sel[0] 0.000221527
+14 *127:13 *128:13 0.00493989
+*RES
+1 la_data_in[21] *128:5 146.718 
+2 *128:5 *128:7 4.5 
+3 *128:7 *128:9 135.66 
+4 *128:9 *128:11 4.5 
+5 *128:11 *128:13 201.78 
+6 *128:13 *444:i_gpout2_sel[0] 13.81 
+*END
+
+*D_NET *129 0.298886
+*CONN
+*P la_data_in[22] I
+*I *444:i_gpout2_sel[1] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[22] 0.0229575
+2 *444:i_gpout2_sel[1] 0.00144073
+3 *129:13 0.00173471
+4 *129:11 0.000293979
+5 *129:9 0.00665326
+6 *129:7 0.00665326
+7 *129:5 0.0229575
+8 *444:i_gpout2_sel[1] *444:i_gpout2_sel[2] 0.000305803
+9 *129:9 *138:9 0.0593225
+10 *129:13 *130:13 0.0761484
+11 *129:13 *138:13 0.000450449
+12 *444:i_gpout2_sel[0] *444:i_gpout2_sel[1] 0.000185669
+13 *117:9 *129:9 0.0223664
+14 *128:13 *129:13 0.077416
+*RES
+1 la_data_in[22] *129:5 155.99 
+2 *129:5 *129:7 4.5 
+3 *129:7 *129:9 143.564 
+4 *129:9 *129:11 4.5 
+5 *129:11 *129:13 191.596 
+6 *129:13 *444:i_gpout2_sel[1] 13.962 
+*END
+
+*D_NET *130 0.284625
+*CONN
+*P la_data_in[23] I
+*I *444:i_gpout2_sel[2] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[23] 0.0233112
+2 *444:i_gpout2_sel[2] 0.00137369
+3 *130:13 0.00282607
+4 *130:11 0.00145238
+5 *130:9 0.00788844
+6 *130:7 0.00788844
+7 *130:5 0.0233112
+8 *444:i_gpout2_sel[2] *444:i_gpout2_sel[3] 0.000148297
+9 *130:9 *444:i_la_invalid 0.00381657
+10 *130:9 *133:9 0.0597431
+11 *130:13 *138:13 0.069168
+12 *444:i_gpout2_sel[1] *444:i_gpout2_sel[2] 0.000305803
+13 *51:9 *130:9 0.00724316
+14 *129:13 *130:13 0.0761484
+*RES
+1 la_data_in[23] *130:5 158.27 
+2 *130:5 *130:7 4.5 
+3 *130:7 *130:9 151.468 
+4 *130:9 *130:11 4.5 
+5 *130:11 *130:13 188.404 
+6 *130:13 *444:i_gpout2_sel[2] 14.114 
+*END
+
+*D_NET *131 0.313323
+*CONN
+*P la_data_in[24] I
+*I *444:i_gpout2_sel[3] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[24] 0.0225692
+2 *444:i_gpout2_sel[3] 0.00061601
+3 *131:13 0.00146281
+4 *131:11 0.000846796
+5 *131:9 0.00599821
+6 *131:7 0.00599821
+7 *131:5 0.0225692
+8 *131:9 *140:9 0.0629557
+9 *131:13 *159:5 7.64548e-05
+10 *444:i_gpout1_sel[0] *444:i_gpout2_sel[3] 0.000148297
+11 *444:i_gpout2_sel[2] *444:i_gpout2_sel[3] 0.000148297
+12 *8:13 *131:13 0.000123094
+13 *79:9 *131:13 0.00690249
+14 *117:13 *131:13 0.000456738
+15 *118:13 *131:13 0.0774782
+16 *120:9 *131:9 0.0316174
+17 *121:13 *131:13 0.0733565
+*RES
+1 la_data_in[24] *131:5 153.558 
+2 *131:5 *131:7 4.5 
+3 *131:7 *131:9 154.204 
+4 *131:9 *131:11 4.5 
+5 *131:11 *131:13 192.204 
+6 *131:13 *444:i_gpout2_sel[3] 9.098 
+*END
+
+*D_NET *132 0.309823
+*CONN
+*P la_data_in[25] I
+*I *444:i_gpout2_sel[4] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[25] 0.0239791
+2 *444:i_gpout2_sel[4] 0.000421354
+3 *132:13 0.00126422
+4 *132:11 0.000842862
+5 *132:9 0.00386784
+6 *132:7 0.00386784
+7 *132:5 0.0239791
+8 *444:i_gpout2_sel[4] *444:i_gpout2_sel[5] 8.11971e-05
+9 *132:9 *142:9 0.0654153
+10 *132:13 *133:13 0.00159343
+11 *132:13 *134:13 0.000468771
+12 *132:13 *140:13 0.0694143
+13 *132:13 *143:13 0.00127722
+14 *132:13 *149:13 0.0658415
+15 *132:13 *159:13 0.000425897
+16 *444:i_gpout1_sel[1] *444:i_gpout2_sel[4] 8.98399e-05
+17 *125:9 *132:9 0.0469929
+*RES
+1 la_data_in[25] *132:5 162.678 
+2 *132:5 *132:7 4.5 
+3 *132:7 *132:9 160.284 
+4 *132:9 *132:11 4.5 
+5 *132:11 *132:13 180.348 
+6 *132:13 *444:i_gpout2_sel[4] 7.426 
+*END
+
+*D_NET *133 0.326582
+*CONN
+*P la_data_in[26] I
+*I *444:i_gpout2_sel[5] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[26] 0.0232637
+2 *444:i_gpout2_sel[5] 0.000370246
+3 *133:13 0.00104816
+4 *133:11 0.000677916
+5 *133:9 0.00219305
+6 *133:7 0.00219305
+7 *133:5 0.0232637
+8 *133:9 *144:9 0.0688364
+9 *133:13 *444:i_test_uc2 0.000338106
+10 *133:13 *139:13 0.00193531
+11 *133:13 *140:13 0.0711954
+12 *133:13 *141:13 0.0697368
+13 *133:13 *159:13 3.0847e-05
+14 *444:i_gpout1_sel[0] *444:i_gpout2_sel[5] 8.11971e-05
+15 *444:i_gpout2_sel[4] *444:i_gpout2_sel[5] 8.11971e-05
+16 *130:9 *133:9 0.0597431
+17 *132:13 *133:13 0.00159343
+*RES
+1 la_data_in[26] *133:5 158.118 
+2 *133:5 *133:7 4.5 
+3 *133:7 *133:9 167.732 
+4 *133:9 *133:11 4.5 
+5 *133:11 *133:13 185.82 
+6 *133:13 *444:i_gpout2_sel[5] 7.122 
+*END
+
+*D_NET *134 0.2191
+*CONN
+*P la_data_in[27] I
+*I *444:i_debug_trace_overlay I *D top_ew_algofoogle
+*CAP
+1 la_data_in[27] 0.0235875
+2 *444:i_debug_trace_overlay 0.000587081
+3 *134:13 0.000785602
+4 *134:11 0.000198522
+5 *134:9 0.0277988
+6 *134:7 0.0277988
+7 *134:5 0.0235875
+8 *444:i_debug_trace_overlay *444:i_debug_map_overlay 1.90216e-05
+9 *134:9 *176:11 0.00708932
+10 *134:13 *140:13 0.00031659
+11 *134:13 *143:13 0.0544088
+12 *134:13 *149:13 0.0523718
+13 *29:13 *134:9 0
+14 *51:9 *134:9 0
+15 *82:7 *444:i_debug_trace_overlay 8.16381e-05
+16 *132:13 *134:13 0.000468771
+*RES
+1 la_data_in[27] *134:5 160.246 
+2 *134:5 *134:7 4.5 
+3 *134:7 *134:9 176.092 
+4 *134:9 *134:11 4.5 
+5 *134:11 *134:13 134.444 
+6 *134:13 *444:i_debug_trace_overlay 7.73 
+*END
+
+*D_NET *135 0.307028
+*CONN
+*P la_data_in[28] I
+*I *444:i_gpout3_sel[0] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[28] 0.00146928
+2 *444:i_gpout3_sel[0] 0.00177212
+3 *135:13 0.0124854
+4 *135:11 0.0107133
+5 *135:9 0.0192263
+6 *135:7 0.0206956
+7 *444:i_gpout3_sel[0] *444:i_gpout3_sel[1] 0.000123384
+8 *124:9 *135:9 0.0454103
+9 *127:13 *135:13 0.123912
+10 *128:13 *135:13 0.0712203
+*RES
+1 la_data_in[28] *135:7 14.266 
+2 *135:7 *135:9 189.772 
+3 *135:9 *135:11 4.5 
+4 *135:11 *135:13 313.196 
+5 *135:13 *444:i_gpout3_sel[0] 13.658 
+*END
+
+*D_NET *136 0.275271
+*CONN
+*P la_data_in[29] I
+*I *444:i_gpout3_sel[1] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[29] 0.00280532
+2 *444:i_gpout3_sel[1] 0.00126797
+3 *136:13 0.0112512
+4 *136:11 0.00998323
+5 *136:9 0.0277874
+6 *136:7 0.0305927
+7 *444:i_gpout3_sel[0] *444:i_gpout3_sel[1] 0.000123384
+8 *119:13 *136:13 0.121442
+9 *120:13 *136:13 0.0687233
+10 *122:13 *136:13 0.000411437
+11 *124:13 *136:13 0.00088297
+*RES
+1 la_data_in[29] *136:7 23.386 
+2 *136:7 *136:9 195.396 
+3 *136:9 *136:11 4.5 
+4 *136:11 *136:13 304.988 
+5 *136:13 *444:i_gpout3_sel[1] 11.53 
+*END
+
+*D_NET *137 0.10031
+*CONN
+*P la_data_in[2] I
+*I *444:i_vec_csb I *D top_ew_algofoogle
+*CAP
+1 la_data_in[2] 0.00136448
+2 *444:i_vec_csb 0.00278774
+3 *137:13 0.0484587
+4 *137:11 0.0470355
+5 *444:i_vec_csb *444:i_gpout0_sel[4] 2.82319e-05
+6 *137:11 *243:11 0
+7 *444:i_tex_in[3] *444:i_vec_csb 0.000635237
+*RES
+1 la_data_in[2] *137:11 16.866 
+2 *137:11 *137:13 313.044 
+3 *137:13 *444:i_vec_csb 23.69 
+*END
+
+*D_NET *138 0.332845
+*CONN
+*P la_data_in[30] I
+*I *444:i_gpout3_sel[2] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[30] 0.0228844
+2 *444:i_gpout3_sel[2] 0.00157708
+3 *138:13 0.00425326
+4 *138:11 0.00267617
+5 *138:9 0.00571617
+6 *138:7 0.00571617
+7 *138:5 0.0228844
+8 *444:i_gpout3_sel[2] *444:i_gpout4_sel[3] 0.000282781
+9 *444:i_gpout3_sel[2] *444:i_gpout4_sel[5] 7.95127e-05
+10 *138:9 *145:9 0.0812704
+11 *138:13 *147:13 0
+12 *138:13 *152:13 0.0565519
+13 *128:13 *138:13 1.2018e-05
+14 *129:9 *138:9 0.0593225
+15 *129:13 *138:13 0.000450449
+16 *130:13 *138:13 0.069168
+*RES
+1 la_data_in[30] *138:5 155.838 
+2 *138:5 *138:7 4.5 
+3 *138:7 *138:9 205.884 
+4 *138:9 *138:11 4.5 
+5 *138:11 *138:13 173.508 
+6 *138:13 *444:i_gpout3_sel[2] 14.266 
+*END
+
+*D_NET *139 0.292569
+*CONN
+*P la_data_in[31] I
+*I *444:i_gpout3_sel[3] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[31] 0.0218427
+2 *444:i_gpout3_sel[3] 0.000370038
+3 *139:13 0.0115651
+4 *139:11 0.011195
+5 *139:9 0.00865004
+6 *139:7 0.00865004
+7 *139:5 0.0218427
+8 *139:9 *153:9 0.0852788
+9 *139:13 *444:i_test_uc2 0.00530733
+10 *139:13 *141:13 0.0733552
+11 *139:13 *144:13 0
+12 *139:13 *177:13 0.00533065
+13 *444:i_gpout1_sel[1] *444:i_gpout3_sel[3] 6.93e-05
+14 *87:7 *444:i_gpout3_sel[3] 5.00209e-06
+15 *122:9 *139:9 0.0371714
+16 *133:13 *139:13 0.00193531
+*RES
+1 la_data_in[31] *139:5 148.998 
+2 *139:5 *139:7 4.5 
+3 *139:7 *139:9 206.188 
+4 *139:9 *139:11 4.5 
+5 *139:11 *139:13 192.204 
+6 *139:13 *444:i_gpout3_sel[3] 6.818 
+*END
+
+*D_NET *140 0.292348
+*CONN
+*P la_data_in[32] I
+*I *444:i_gpout3_sel[4] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[32] 0.022496
+2 *444:i_gpout3_sel[4] 0.000456903
+3 *140:13 0.00123681
+4 *140:11 0.00077991
+5 *140:9 0.0197449
+6 *140:7 0.0197449
+7 *140:5 0.022496
+8 *140:13 *141:13 0.000871979
+9 *140:13 *143:13 0.000558339
+10 *89:7 *444:i_gpout3_sel[4] 8.06357e-05
+11 *131:9 *140:9 0.0629557
+12 *132:13 *140:13 0.0694143
+13 *133:13 *140:13 0.0711954
+14 *134:13 *140:13 0.00031659
+*RES
+1 la_data_in[32] *140:5 153.406 
+2 *140:5 *140:7 4.5 
+3 *140:7 *140:9 214.396 
+4 *140:9 *140:11 4.5 
+5 *140:11 *140:13 181.412 
+6 *140:13 *444:i_gpout3_sel[4] 7.274 
+*END
+
+*D_NET *141 0.260237
+*CONN
+*P la_data_in[33] I
+*I *444:i_gpout3_sel[5] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[33] 0.0211263
+2 *444:i_gpout3_sel[5] 0.000427931
+3 *141:13 0.00178675
+4 *141:11 0.00135882
+5 *141:9 0.0294871
+6 *141:7 0.0294871
+7 *141:5 0.0211263
+8 *444:i_gpout3_sel[5] *444:i_gpout4_sel[3] 6.87415e-05
+9 *444:i_gpout3_sel[5] *444:i_gpout4_sel[4] 4.05269e-05
+10 *141:9 *177:11 0.011078
+11 *141:13 *143:13 0.000285083
+12 *141:13 *177:13 0
+13 *141:13 *178:13 0
+14 *133:13 *141:13 0.0697368
+15 *139:13 *141:13 0.0733552
+16 *140:13 *141:13 0.000871979
+*RES
+1 la_data_in[33] *141:5 144.286 
+2 *141:5 *141:7 4.5 
+3 *141:7 *141:9 221.844 
+4 *141:9 *141:11 4.5 
+5 *141:11 *141:13 186.884 
+6 *141:13 *444:i_gpout3_sel[5] 6.97 
+*END
+
+*D_NET *142 0.262
+*CONN
+*P la_data_in[34] I
+*I *444:i_debug_map_overlay I *D top_ew_algofoogle
+*CAP
+1 la_data_in[34] 0.0238577
+2 *444:i_debug_map_overlay 0.000151428
+3 *142:15 0.000302239
+4 *142:13 0.000204826
+5 *142:9 0.0212294
+6 *142:7 0.0211754
+7 *142:5 0.0238577
+8 *142:15 *160:13 0.0522101
+9 *142:15 *176:13 0.000418957
+10 *142:15 *307:13 0.0531581
+11 *444:i_debug_trace_overlay *444:i_debug_map_overlay 1.90216e-05
+12 *132:9 *142:9 0.0654153
+*RES
+1 la_data_in[34] *142:5 162.526 
+2 *142:5 *142:7 4.5 
+3 *142:7 *142:9 227.924 
+4 *142:9 *142:13 4.728 
+5 *142:13 *142:15 131.404 
+6 *142:15 *444:i_debug_map_overlay 5.298 
+*END
+
+*D_NET *143 0.217173
+*CONN
+*P la_data_in[35] I
+*I *444:i_gpout4_sel[0] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[35] 0.0207855
+2 *444:i_gpout4_sel[0] 0.000588899
+3 *143:13 0.0137763
+4 *143:11 0.0131874
+5 *143:9 0.0338131
+6 *143:7 0.0338131
+7 *143:5 0.0207855
+8 *444:i_gpout4_sel[0] *444:i_gpout4_sel[2] 5.00209e-06
+9 *143:13 *149:13 0.00641861
+10 *143:13 *159:13 0.0174704
+11 *118:13 *143:13 0
+12 *132:13 *143:13 0.00127722
+13 *134:13 *143:13 0.0544088
+14 *140:13 *143:13 0.000558339
+15 *141:13 *143:13 0.000285083
+*RES
+1 la_data_in[35] *143:5 142.006 
+2 *143:5 *143:7 4.5 
+3 *143:7 *143:9 238.26 
+4 *143:9 *143:11 4.5 
+5 *143:11 *143:13 196.46 
+6 *143:13 *444:i_gpout4_sel[0] 7.882 
+*END
+
+*D_NET *144 0.29567
+*CONN
+*P la_data_in[36] I
+*I *444:i_gpout4_sel[1] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[36] 0.0231393
+2 *444:i_gpout4_sel[1] 0.000217156
+3 *144:13 0.00219955
+4 *144:11 0.00198239
+5 *144:9 0.0229038
+6 *144:7 0.0229038
+7 *144:5 0.0231393
+8 *444:i_gpout4_sel[1] *444:i_gpout4_sel[4] 3.09247e-05
+9 *144:9 *444:i_spare_0 0
+10 *144:13 *444:i_test_uc2 0.000141634
+11 *144:13 *177:13 0.0632264
+12 *144:13 *178:13 0.0646901
+13 *144:13 *307:13 0.00181989
+14 *42:9 *144:9 0
+15 *46:9 *144:13 0.000408168
+16 *89:7 *444:i_gpout4_sel[1] 3.09247e-05
+17 *133:9 *144:9 0.0688364
+18 *139:13 *144:13 0
+*RES
+1 la_data_in[36] *144:5 157.966 
+2 *144:5 *144:7 4.5 
+3 *144:7 *144:9 243.884 
+4 *144:9 *144:11 4.5 
+5 *144:11 *144:13 175.028 
+6 *144:13 *444:i_gpout4_sel[1] 5.754 
+*END
+
+*D_NET *145 0.275182
+*CONN
+*P la_data_in[37] I
+*I *444:i_gpout4_sel[2] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[37] 0.0227984
+2 *444:i_gpout4_sel[2] 7.60867e-05
+3 *145:13 0.0105964
+4 *145:11 0.0105203
+5 *145:9 0.021749
+6 *145:7 0.021749
+7 *145:5 0.0227984
+8 *145:13 *444:i_la_invalid 0.000749961
+9 *145:13 *170:13 0.00450077
+10 *145:13 *176:13 0.0615329
+11 *145:13 *307:13 0.000661525
+12 *444:i_gpout4_sel[0] *444:i_gpout4_sel[2] 5.00209e-06
+13 *81:6 *145:13 0.000124827
+14 *84:11 *145:13 0.00553541
+15 *85:9 *145:13 0.00911165
+16 *86:9 *145:13 0.00139691
+17 *87:7 *444:i_gpout4_sel[2] 5.00209e-06
+18 *138:9 *145:9 0.0812704
+*RES
+1 la_data_in[37] *145:5 155.686 
+2 *145:5 *145:7 4.5 
+3 *145:7 *145:9 250.724 
+4 *145:9 *145:11 4.5 
+5 *145:11 *145:13 183.692 
+6 *145:13 *444:i_gpout4_sel[2] 4.842 
+*END
+
+*D_NET *146 0.26391
+*CONN
+*P la_data_in[38] I
+*I *444:i_gpout4_sel[3] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[38] 0.0204447
+2 *444:i_gpout4_sel[3] 0.00184405
+3 *146:13 0.00430347
+4 *146:11 0.00245941
+5 *146:9 0.0382522
+6 *146:7 0.0382522
+7 *146:5 0.0204447
+8 *146:13 *147:13 0.00457074
+9 *146:13 *151:13 0.0651146
+10 *146:13 *153:13 0.000342422
+11 *146:13 *154:13 0.0675295
+12 *444:i_gpout3_sel[2] *444:i_gpout4_sel[3] 0.000282781
+13 *444:i_gpout3_sel[5] *444:i_gpout4_sel[3] 6.87415e-05
+*RES
+1 la_data_in[38] *146:5 139.726 
+2 *146:5 *146:7 4.5 
+3 *146:7 *146:9 269.724 
+4 *146:9 *146:11 4.5 
+5 *146:11 *146:13 190.532 
+6 *146:13 *444:i_gpout4_sel[3] 16.09 
+*END
+
+*D_NET *147 0.335525
+*CONN
+*P la_data_in[39] I
+*I *444:i_gpout4_sel[4] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[39] 0.00138572
+2 *444:i_gpout4_sel[4] 0.0019328
+3 *147:13 0.0261926
+4 *147:11 0.0242598
+5 *147:9 0.0200281
+6 *147:7 0.0214138
+7 *147:9 *154:9 0.114644
+8 *147:13 *152:13 0
+9 *147:13 *154:13 0.121026
+10 *444:i_gpout3_sel[5] *444:i_gpout4_sel[4] 4.05269e-05
+11 *444:i_gpout4_sel[1] *444:i_gpout4_sel[4] 3.09247e-05
+12 *138:13 *147:13 0
+13 *146:13 *147:13 0.00457074
+*RES
+1 la_data_in[39] *147:7 12.138 
+2 *147:7 *147:9 277.172 
+3 *147:9 *147:11 4.5 
+4 *147:11 *147:13 324.444 
+5 *147:13 *444:i_gpout4_sel[4] 15.786 
+*END
+
+*D_NET *148 0.118723
+*CONN
+*P la_data_in[3] I
+*I *444:i_vec_sclk I *D top_ew_algofoogle
+*CAP
+1 la_data_in[3] 0.0285867
+2 *444:i_vec_sclk 0.00208273
+3 *148:5 0.0306695
+4 *148:5 *151:13 0
+5 *148:5 *153:13 0
+6 *148:5 *175:13 0.0569774
+7 *444:i_tex_in[3] *444:i_vec_sclk 0.000406552
+*RES
+1 la_data_in[3] *148:5 321.062 
+2 *148:5 *444:i_vec_sclk 17.762 
+*END
+
+*D_NET *149 0.329897
+*CONN
+*P la_data_in[40] I
+*I *444:i_gpout4_sel[5] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[40] 0.0242604
+2 *444:i_gpout4_sel[5] 0.000488437
+3 *149:13 0.00109019
+4 *149:11 0.000601756
+5 *149:9 0.0198704
+6 *149:7 0.0198704
+7 *149:5 0.0242604
+8 *444:i_gpout4_sel[5] *444:i_test_uc2 0.000165235
+9 *149:9 *150:9 0.114568
+10 *444:i_gpout3_sel[2] *444:i_gpout4_sel[5] 7.95127e-05
+11 *46:7 *444:i_gpout4_sel[5] 1.03877e-05
+12 *132:13 *149:13 0.0658415
+13 *134:13 *149:13 0.0523718
+14 *143:13 *149:13 0.00641861
+*RES
+1 la_data_in[40] *149:5 165.414 
+2 *149:5 *149:7 4.5 
+3 *149:7 *149:9 276.716 
+4 *149:9 *149:11 4.5 
+5 *149:11 *149:13 163.02 
+6 *149:13 *444:i_gpout4_sel[5] 7.578 
+*END
+
+*D_NET *150 0.368895
+*CONN
+*P la_data_in[41] I
+*I *444:i_gpout5_sel[0] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[41] 0.0242257
+2 *444:i_gpout5_sel[0] 0.000884761
+3 *150:13 0.00220148
+4 *150:11 0.00131671
+5 *150:9 0.00145379
+6 *150:7 0.00145379
+7 *150:5 0.0242257
+8 *150:9 *152:9 0.118633
+9 *444:i_debug_vec_overlay *444:i_gpout5_sel[0] 0.000131942
+10 *444:i_tex_in[0] *444:i_gpout5_sel[0] 0.000129249
+11 *8:13 *150:13 0.000394426
+12 *116:13 *150:13 0.0257236
+13 *117:13 *150:13 0.0535528
+14 *149:9 *150:9 0.114568
+*RES
+1 la_data_in[41] *150:5 165.262 
+2 *150:5 *150:7 4.5 
+3 *150:7 *150:9 286.596 
+4 *150:9 *150:11 4.5 
+5 *150:11 *150:13 132.164 
+6 *150:13 *444:i_gpout5_sel[0] 9.706 
+*END
+
+*D_NET *151 0.299734
+*CONN
+*P la_data_in[42] I
+*I *444:i_gpout5_sel[1] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[42] 0.0214159
+2 *444:i_gpout5_sel[1] 0.00199967
+3 *151:13 0.00223824
+4 *151:11 0.000238568
+5 *151:9 0.0332564
+6 *151:7 0.0332564
+7 *151:5 0.0214159
+8 *444:i_gpout5_sel[1] *444:i_gpout5_sel[4] 0.000194099
+9 *151:13 *153:13 0.0642046
+10 *444:i_reset_lock_a *444:i_gpout5_sel[1] 0.000334653
+11 *128:9 *151:9 0.056065
+12 *146:13 *151:13 0.0651146
+13 *148:5 *151:13 0
+*RES
+1 la_data_in[42] *151:5 146.566 
+2 *151:5 *151:7 4.5 
+3 *151:7 *151:9 300.884 
+4 *151:9 *151:11 4.5 
+5 *151:11 *151:13 160.892 
+6 *151:13 *444:i_gpout5_sel[1] 16.242 
+*END
+
+*D_NET *152 0.378648
+*CONN
+*P la_data_in[43] I
+*I *444:i_gpout5_sel[2] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[43] 0.0241782
+2 *444:i_gpout5_sel[2] 0.00164881
+3 *152:13 0.0118394
+4 *152:11 0.0101906
+5 *152:9 0.00246811
+6 *152:7 0.00246811
+7 *152:5 0.0241782
+8 *152:9 *155:9 0.126094
+9 *444:i_reset_lock_b *444:i_gpout5_sel[2] 0.00027191
+10 *80:7 *444:i_gpout5_sel[2] 0.000125026
+11 *138:13 *152:13 0.0565519
+12 *147:13 *152:13 0
+13 *150:9 *152:9 0.118633
+*RES
+1 la_data_in[43] *152:5 165.11 
+2 *152:5 *152:7 4.5 
+3 *152:7 *152:9 306.812 
+4 *152:9 *152:11 4.5 
+5 *152:11 *152:13 139.612 
+6 *152:13 *444:i_gpout5_sel[2] 14.418 
+*END
+
+*D_NET *153 0.282624
+*CONN
+*P la_data_in[44] I
+*I *444:i_gpout5_sel[3] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[44] 0.021744
+2 *444:i_gpout5_sel[3] 0.0018799
+3 *153:13 0.013667
+4 *153:11 0.0117871
+5 *153:9 0.0301877
+6 *153:7 0.0301877
+7 *153:5 0.021744
+8 *444:i_gpout5_sel[3] *444:i_gpout5_sel[5] 0.000209309
+9 *444:i_reset_lock_a *444:i_gpout5_sel[3] 0.000340603
+10 *122:9 *153:9 0.0010505
+11 *139:9 *153:9 0.0852788
+12 *146:13 *153:13 0.000342422
+13 *148:5 *153:13 0
+14 *151:13 *153:13 0.0642046
+*RES
+1 la_data_in[44] *153:5 148.846 
+2 *153:5 *153:7 4.5 
+3 *153:7 *153:9 316.54 
+4 *153:9 *153:11 4.5 
+5 *153:11 *153:13 160.436 
+6 *153:13 *444:i_gpout5_sel[3] 16.394 
+*END
+
+*D_NET *154 0.383401
+*CONN
+*P la_data_in[45] I
+*I *444:i_gpout5_sel[4] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[45] 0.00135103
+2 *444:i_gpout5_sel[4] 0.00211909
+3 *154:13 0.0118853
+4 *154:11 0.00976624
+5 *154:9 0.0267055
+6 *154:7 0.0280565
+7 *444:i_gpout5_sel[1] *444:i_gpout5_sel[4] 0.000194099
+8 *80:7 *444:i_gpout5_sel[4] 0.000123434
+9 *146:13 *154:13 0.0675295
+10 *147:9 *154:9 0.114644
+11 *147:13 *154:13 0.121026
+*RES
+1 la_data_in[45] *154:7 11.986 
+2 *154:7 *154:9 323.836 
+3 *154:9 *154:11 4.5 
+4 *154:11 *154:13 299.06 
+5 *154:13 *444:i_gpout5_sel[4] 15.938 
+*END
+
+*D_NET *155 0.396538
+*CONN
+*P la_data_in[46] I
+*I *444:i_gpout5_sel[5] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[46] 0.0241179
+2 *444:i_gpout5_sel[5] 0.00135814
+3 *155:13 0.0120244
+4 *155:11 0.0106663
+5 *155:9 0.00313653
+6 *155:7 0.00313653
+7 *155:5 0.0241179
+8 *155:9 *160:9 0.132911
+9 *444:i_gpout5_sel[3] *444:i_gpout5_sel[5] 0.000209309
+10 *122:13 *155:13 0.0587655
+11 *127:13 *155:13 0
+12 *152:9 *155:9 0.126094
+*RES
+1 la_data_in[46] *155:5 164.958 
+2 *155:5 *155:7 4.5 
+3 *155:7 *155:9 327.94 
+4 *155:9 *155:11 4.5 
+5 *155:11 *155:13 145.236 
+6 *155:13 *444:i_gpout5_sel[5] 12.29 
+*END
+
+*D_NET *156 0.121703
+*CONN
+*P la_data_in[47] I
+*I *444:i_mode[0] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[47] 0.00310772
+2 *444:i_mode[0] 0.0188233
+3 *156:11 0.0188233
+4 *156:9 0.0367023
+5 *156:7 0.03981
+6 *444:i_mode[0] *444:i_mode[1] 0.00443618
+*RES
+1 la_data_in[47] *156:7 25.666 
+2 *156:7 *156:9 259.54 
+3 *156:9 *156:11 4.5 
+4 *156:11 *444:i_mode[0] 141.398 
+*END
+
+*D_NET *157 0.123551
+*CONN
+*P la_data_in[48] I
+*I *444:i_mode[1] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[48] 0.00376379
+2 *444:i_mode[1] 0.0181625
+3 *157:11 0.0181625
+4 *157:9 0.037631
+5 *157:7 0.0413948
+6 *444:i_mode[0] *444:i_mode[1] 0.00443618
+*RES
+1 la_data_in[48] *157:7 30.226 
+2 *157:7 *157:9 266.38 
+3 *157:9 *157:11 4.5 
+4 *157:11 *444:i_mode[1] 136.838 
+*END
+
+*D_NET *158 0.201264
+*CONN
+*P la_data_in[49] I
+*I *444:i_mode[2] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[49] 0.0629236
+2 *444:i_mode[2] 0.00146493
+3 *158:9 0.0196758
+4 *158:7 0.0182108
+5 *158:5 0.0629236
+6 *49:9 *444:i_mode[2] 0
+7 *85:13 *444:i_mode[2] 0
+8 *85:13 *158:9 0.0360651
+*RES
+1 la_data_in[49] *158:5 431.566 
+2 *158:5 *158:7 4.5 
+3 *158:7 *158:9 172.292 
+4 *158:9 *444:i_mode[2] 23.3189 
+*END
+
+*D_NET *159 0.153081
+*CONN
+*P la_data_in[4] I
+*I *444:i_vec_mosi I *D top_ew_algofoogle
+*CAP
+1 la_data_in[4] 0.0330954
+2 *444:i_vec_mosi 0.000484456
+3 *159:13 0.00501143
+4 *159:11 0.004883
+5 *159:5 0.0334514
+6 *444:i_vec_mosi *444:i_test_uc2 6.66072e-05
+7 *444:i_vec_mosi *444:i_test_wci 0.00011688
+8 *159:13 *444:i_test_uc2 0
+9 *82:7 *159:11 7.52312e-05
+10 *117:13 *159:5 0.0561182
+11 *118:13 *159:5 0
+12 *118:13 *159:13 0.00177515
+13 *124:13 *159:5 0
+14 *131:13 *159:5 7.64548e-05
+15 *132:13 *159:13 0.000425897
+16 *133:13 *159:13 3.0847e-05
+17 *143:13 *159:13 0.0174704
+*RES
+1 la_data_in[4] *159:5 294.766 
+2 *159:5 *159:11 11.052 
+3 *159:11 *159:13 57.38 
+4 *159:13 *444:i_vec_mosi 8.034 
+*END
+
+*D_NET *160 0.344342
+*CONN
+*P la_data_in[50] I
+*I *444:i_reg_outs_enb I *D top_ew_algofoogle
+*CAP
+1 la_data_in[50] 0.0240576
+2 *444:i_reg_outs_enb 0.000126033
+3 *160:13 0.000323643
+4 *160:11 0.00019761
+5 *160:9 0.027266
+6 *160:7 0.027266
+7 *160:5 0.0240576
+8 *160:13 *176:13 0.054729
+9 *160:13 *307:13 0.00119695
+10 *116:9 *160:9 0
+11 *142:15 *160:13 0.0522101
+12 *155:9 *160:9 0.132911
+*RES
+1 la_data_in[50] *160:5 164.806 
+2 *160:5 *160:7 4.5 
+3 *160:7 *160:9 351.804 
+4 *160:9 *160:11 4.5 
+5 *160:11 *160:13 135.356 
+6 *160:13 *444:i_reg_outs_enb 5.146 
+*END
+
+*D_NET *161 0.150021
+*CONN
+*P la_data_in[51] I
+*I *444:i_spare_0 I *D top_ew_algofoogle
+*CAP
+1 la_data_in[51] 0.00509504
+2 *444:i_spare_0 0.000832971
+3 *161:13 0.0188569
+4 *161:11 0.0180239
+5 *161:9 0.0503764
+6 *161:7 0.0554715
+7 *444:i_spare_0 *170:13 0.00102719
+8 *444:i_spare_1 *444:i_spare_0 9.94187e-05
+9 *117:9 *444:i_spare_0 0.000238065
+10 *144:9 *444:i_spare_0 0
+*RES
+1 la_data_in[51] *161:7 39.346 
+2 *161:7 *161:9 355.3 
+3 *161:9 *161:11 4.5 
+4 *161:11 *161:13 122.132 
+5 *161:13 *444:i_spare_0 17.474 
+*END
+
+*D_NET *170 0.0896822
+*CONN
+*P la_data_in[5] I
+*I *444:i_gpout0_sel[0] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[5] 0.000267921
+2 *444:i_gpout0_sel[0] 9.88157e-05
+3 *170:13 0.0416423
+4 *170:11 0.0418114
+5 *170:13 *444:i_la_invalid 0.000333907
+6 *170:13 *307:13 0
+7 *444:i_spare_0 *170:13 0.00102719
+8 *145:13 *170:13 0.00450077
+*RES
+1 la_data_in[5] *170:11 2.242 
+2 *170:11 *170:13 298.604 
+3 *170:13 *444:i_gpout0_sel[0] 5.146 
+*END
+
+*D_NET *175 0.123159
+*CONN
+*P la_data_in[6] I
+*I *444:i_gpout0_sel[1] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[6] 0.00658067
+2 *444:i_gpout0_sel[1] 0.00236155
+3 *175:13 0.0265044
+4 *175:11 0.0241428
+5 *175:9 0.00658067
+6 *444:i_gpout0_sel[1] *444:i_gpout0_sel[2] 1.15437e-05
+7 *148:5 *175:13 0.0569774
+*RES
+1 la_data_in[6] *175:9 49.302 
+2 *175:9 *175:11 4.5 
+3 *175:11 *175:13 290.852 
+4 *175:13 *444:i_gpout0_sel[1] 18.066 
+*END
+
+*D_NET *176 0.178039
+*CONN
+*P la_data_in[7] I
+*I *444:i_gpout0_sel[2] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[7] 0.0237888
+2 *444:i_gpout0_sel[2] 8.71922e-05
+3 *176:13 0.000738423
+4 *176:11 0.00231394
+5 *176:5 0.0254515
+6 *176:13 *307:13 0.00186546
+7 *444:i_gpout0_sel[1] *444:i_gpout0_sel[2] 1.15437e-05
+8 *444:i_tex_in[1] *444:i_gpout0_sel[2] 1.15437e-05
+9 *134:9 *176:11 0.00708932
+10 *142:15 *176:13 0.000418957
+11 *145:13 *176:13 0.0615329
+12 *160:13 *176:13 0.054729
+*RES
+1 la_data_in[7] *176:5 160.398 
+2 *176:5 *176:11 27.316 
+3 *176:11 *176:13 152.532 
+4 *176:13 *444:i_gpout0_sel[2] 4.994 
+*END
+
+*D_NET *177 0.150331
+*CONN
+*P la_data_in[8] I
+*I *444:i_gpout0_sel[3] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[8] 0.0212251
+2 *444:i_gpout0_sel[3] 0.000228262
+3 *177:13 0.0107824
+4 *177:11 0.012589
+5 *177:5 0.0232599
+6 *177:13 *178:13 0.00253672
+7 *444:i_gpout0_sel[5] *444:i_gpout0_sel[3] 3.74664e-05
+8 *444:i_tex_in[1] *444:i_gpout0_sel[3] 3.74664e-05
+9 *139:13 *177:13 0.00533065
+10 *141:9 *177:11 0.011078
+11 *141:13 *177:13 0
+12 *144:13 *177:13 0.0632264
+*RES
+1 la_data_in[8] *177:5 144.438 
+2 *177:5 *177:11 35.98 
+3 *177:11 *177:13 170.316 
+4 *177:13 *444:i_gpout0_sel[3] 5.906 
+*END
+
+*D_NET *178 0.192928
+*CONN
+*P la_data_in[9] I
+*I *444:i_gpout0_sel[4] I *D top_ew_algofoogle
+*CAP
+1 la_data_in[9] 0.0201679
+2 *444:i_gpout0_sel[4] 0.000198742
+3 *178:13 0.00128361
+4 *178:11 0.00604131
+5 *178:5 0.0251243
+6 *178:13 *307:13 0.072857
+7 *444:i_vec_csb *444:i_gpout0_sel[4] 2.82319e-05
+8 *141:13 *178:13 0
+9 *144:13 *178:13 0.0646901
+10 *177:13 *178:13 0.00253672
+*RES
+1 la_data_in[9] *178:5 137.446 
+2 *178:5 *178:11 43.428 
+3 *178:11 *178:13 180.956 
+4 *178:13 *444:i_gpout0_sel[4] 5.602 
+*END
+
+*D_NET *243 0.0604648
+*CONN
+*P la_oenb[0] I
+*I *444:i_la_invalid I *D top_ew_algofoogle
+*CAP
+1 la_oenb[0] 0.00326459
+2 *444:i_la_invalid 0.00143343
+3 *243:13 0.0234376
+4 *243:11 0.0252687
+5 *51:9 *444:i_la_invalid 0.00216002
+6 *130:9 *444:i_la_invalid 0.00381657
+7 *137:11 *243:11 0
+8 *145:13 *444:i_la_invalid 0.000749961
+9 *170:13 *444:i_la_invalid 0.000333907
+*RES
+1 la_oenb[0] *243:11 30.698 
+2 *243:11 *243:13 151.012 
+3 *243:13 *444:i_la_invalid 30.09 
+*END
+
+*D_NET *307 0.351334
+*CONN
+*P user_clock2 I
+*I *444:i_test_uc2 I *D top_ew_algofoogle
+*CAP
+1 user_clock2 0.000768292
+2 *444:i_test_uc2 0.00320025
+3 *307:13 0.0256058
+4 *307:11 0.0224055
+5 *307:9 0.0797253
+6 *307:7 0.0804936
+7 *444:i_gpout4_sel[5] *444:i_test_uc2 0.000165235
+8 *444:i_reg_csb *444:i_test_uc2 6.66072e-05
+9 *444:i_vec_mosi *444:i_test_uc2 6.66072e-05
+10 *46:9 *444:i_test_uc2 0
+11 *46:9 *307:13 9.74134e-05
+12 *85:9 *307:13 0.00139361
+13 *133:13 *444:i_test_uc2 0.000338106
+14 *139:13 *444:i_test_uc2 0.00530733
+15 *142:15 *307:13 0.0531581
+16 *144:13 *444:i_test_uc2 0.000141634
+17 *144:13 *307:13 0.00181989
+18 *145:13 *307:13 0.000661525
+19 *159:13 *444:i_test_uc2 0
+20 *160:13 *307:13 0.00119695
+21 *170:13 *307:13 0
+22 *176:13 *307:13 0.00186546
+23 *178:13 *307:13 0.072857
+*RES
+1 user_clock2 *307:7 9.706 
+2 *307:7 *307:9 460.636 
+3 *307:9 *307:11 4.5 
+4 *307:11 *307:13 322.772 
+5 *307:13 *444:i_test_uc2 42.114 
+*END
+
+*D_NET *313 0.190623
+*CONN
+*P wb_clk_i I
+*I *444:i_test_wci I *D top_ew_algofoogle
+*CAP
+1 wb_clk_i 0.051205
+2 *444:i_test_wci 0.0381981
+3 *313:7 0.0381981
+4 *313:5 0.051205
+5 *444:i_tex_in[2] *444:i_test_wci 0.0117003
+6 *444:i_vec_mosi *444:i_test_wci 0.00011688
+*RES
+1 wb_clk_i *313:5 351.158 
+2 *313:5 *313:7 4.5 
+3 *313:7 *444:i_test_wci 310.422 
+*END
