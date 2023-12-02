@@ -15,8 +15,14 @@ The idea is that if general updates are required to `gf180-base`, they should be
 You should find that the information above does not deviate per branch, but the information below intentionally does.
 
 
-# Specific project for branch `gf180-base`: Common base project
+# Specific project for branch `gf180-rbz-fsm`: raybox-zero FSM version
 
-You are on the branch that defines the 'clean base' project that is common to all other project branches.
+You are on the branch `gf180-rbz-fsm`.
 
-This branch has no `gds/`, `lef/`, etc. because that is the domain of a real project which branches from this base.
+**This design implements a simple hardware ray caster**
+
+It instantiates a version of [raybox-zero] that uses and extra reciprocal module FSM to try and get better timing for GF180. According to OpenLane, the macro hardens successfully with a target of 22.72MHz (44ns period), which is slow for VGA but still good enough for my monitor to sync.
+
+**NOTE:** At the time of writing, the top macro name is `top_ew_algofoogle` but I plan on changing this to probably just `raybox_zero_fsm`.
+
+[raybox-zero]: https://github.com/algofoogle/raybox-zero/tree/gf180

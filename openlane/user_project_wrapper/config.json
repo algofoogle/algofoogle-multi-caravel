@@ -6,23 +6,23 @@
 		"dir::../../verilog/rtl/defines.v",
 		"dir::../../verilog/rtl/user_project_wrapper.v"
 	],
-	"CLOCK_PORT": "REPLACEME_clock_port",
-	"CLOCK_NET": "REPLACEME_project_macro_name.REPLACEME_clock_net",
-	"CLOCK_PERIOD": 25,
+	"CLOCK_PORT": "io_in[11]",
+	"CLOCK_NET": "top_ew_algofoogle.i_clk",
+	"CLOCK_PERIOD": 44,
 	"MACRO_PLACEMENT_CFG": "dir::macro.cfg",
 	"VERILOG_FILES_BLACKBOX": [
-		"dir::../../verilog/gl/REPLACEME_project_macro_name.v"
+		"dir::../../verilog/gl/top_ew_algofoogle.v"
 	],
-	"EXTRA_LEFS": "dir::../../lef/REPLACEME_project_macro_name.lef",
-	"EXTRA_GDS_FILES": "dir::../../gds/REPLACEME_project_macro_name.gds",
-	"EXTRA_LIBS": "dir::../../lib/REPLACEME_project_macro_name.lib",
+	"EXTRA_LEFS": "dir::../../lef/top_ew_algofoogle.lef",
+	"EXTRA_GDS_FILES": "dir::../../gds/top_ew_algofoogle.gds",
+	"EXTRA_LIBS": "dir::../../lib/top_ew_algofoogle.lib",
 	"EXTRA_SPEFS": [
-		"REPLACEME_project_macro_name",
-		"dir::../../spef/multicorner/REPLACEME_project_macro_name.min.spef",
-		"dir::../../spef/multicorner/REPLACEME_project_macro_name.nom.spef",
-		"dir::../../spef/multicorner/REPLACEME_project_macro_name.max.spef"
+		"top_ew_algofoogle",
+		"dir::../../spef/multicorner/top_ew_algofoogle.min.spef",
+		"dir::../../spef/multicorner/top_ew_algofoogle.nom.spef",
+		"dir::../../spef/multicorner/top_ew_algofoogle.max.spef"
 	],
-	"FP_PDN_MACRO_HOOKS": "REPLACEME_project_macro_name vdd vss vdd vss",
+	"FP_PDN_MACRO_HOOKS": "top_ew_algofoogle vdd vss vdd vss",
 	"QUIT_ON_SYNTH_CHECKS": 0,
 	"FP_PDN_CHECK_NODES": 0,
 	"SYNTH_ELABORATE_ONLY": 1,

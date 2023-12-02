@@ -1,0 +1,46 @@
+{
+    "ROUTING_CORES": 3,
+    "RUN_KLAYOUT_XOR": false,
+    "RUN_KLAYOUT_DRC": false,
+
+    "PDK": "gf180mcuD",
+    "STD_CELL_LIBRARY": "gf180mcu_fd_sc_mcu7t5v0",
+    "DESIGN_NAME": "top_ew_algofoogle",
+    "VERILOG_FILES": [
+        "dir::../../verilog/rtl/defines.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/top_ew_algofoogle.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/debug_overlay.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/fixed_point_params.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/helpers.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/lzc.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/map_overlay.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/map_rom.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/pov.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/rbzero.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/reciprocal.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/row_render.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/spi_registers.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/vga_mux.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/vga_sync.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/wall_tracer.v"
+    ],
+    "DESIGN_IS_CORE": 0,
+    "CLOCK_PORT": "i_clk",
+    "CLOCK_NET": "top_ew_algofoogle.i_clk",
+    "CLOCK_PERIOD": "44.0",
+    "FP_SIZING": "relative",
+    "FP_CORE_UTIL": 35,
+    "PL_TARGET_DENSITY": 0.45,
+    "PL_BASIC_PLACEMENT": 0,
+    "MAX_FANOUT_CONSTRAINT": 4,
+    "RT_MAX_LAYER": "Metal4",
+    "VDD_NETS": [
+        "vdd"
+    ],
+    "GND_NETS": [
+        "vss"
+    ],
+    "RUN_HEURISTIC_DIODE_INSERTION": 1,
+    "RUN_CVC": 1,
+    "QUIT_ON_LINTER_ERRORS": 0
+}

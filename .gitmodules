@@ -1,0 +1,4 @@
+[submodule "verilog/rtl/raybox-zero-fsm"]
+	path = verilog/rtl/raybox-zero-fsm
+	url = git@github.com:algofoogle/raybox-zero
+	branch = gf180
