@@ -9,10 +9,10 @@
     "PL_RESIZER_HOLD_MAX_BUFFER_PERCENT": 80,
     "GLB_RESIZER_HOLD_MAX_BUFFER_PERCENT": 80,
 
-    "DESIGN_NAME": "top_ew_algofoogle",
+    "DESIGN_NAME": "top_raybox_zero_fsm",
     "VERILOG_FILES": [
         "dir::../../verilog/rtl/defines.v",
-        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/top_ew_algofoogle.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/top_raybox_zero_fsm.v",
         "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/debug_overlay.v",
         "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/fixed_point_params.v",
         "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/helpers.v",
@@ -29,12 +29,12 @@
         "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/wall_tracer.v"
     ],
     "CLOCK_PORT": "i_clk",
-    "CLOCK_NET": "top_ew_algofoogle.i_clk",
+    "CLOCK_NET": "top_raybox_zero_fsm.i_clk",
     "CLOCK_PERIOD": "44.0",
     "FP_SIZING": "relative",
     "FP_CORE_UTIL": 34,
     "PL_TARGET_DENSITY": 0.45,
-    "BASE_SDC_FILE": "dir::base_top_ew_algofoogle.sdc",
+    "BASE_SDC_FILE": "dir::base_top_raybox_zero_fsm.sdc",
 
     "//": "Common stuff for GFMPW-1...",
     "PDK": "gf180mcuD",

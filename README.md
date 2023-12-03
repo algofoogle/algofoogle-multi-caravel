@@ -55,6 +55,6 @@ You are on the branch `gf180-rbz-fsm`.
 
 It instantiates a version of [raybox-zero] that uses and extra reciprocal module FSM to try and get better timing for GF180. According to OpenLane, the macro hardens successfully with a target of 22.72MHz (44ns period), which is slow for VGA but still good enough for my monitor to sync.
 
-**NOTE:** At the time of writing, the top macro name is `top_ew_algofoogle` but I plan on changing this to probably just `raybox_zero_fsm`.
+**NOTE:** The top macro was formerly `top_ew_algofoogle` but is now `top_raybox_zero_fsm`.
 
 [raybox-zero]: https://github.com/algofoogle/raybox-zero/tree/gf180

@@ -102,7 +102,7 @@ jobs:
 
       - name: Harden using Openlane
         run: |
-          make top_ew_algofoogle
+          make top_raybox_zero_fsm
           make user_project_wrapper
 
       - name: run precheck

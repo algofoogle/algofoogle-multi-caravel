@@ -8,30 +8,30 @@
 	],
 	"CLOCK_PORT": "wb_clk_i",
 	"CLOCK_NET": [
-		"top_ew_algofoogle.i_clk"
+		"top_raybox_zero_fsm.i_clk"
 	],
 	"CLOCK_PERIOD": 25,
 	"MACRO_PLACEMENT_CFG": "dir::macro.cfg",
 	"VERILOG_FILES_BLACKBOX": [
-		"dir::../../verilog/gl/top_ew_algofoogle.v"
+		"dir::../../verilog/gl/top_raybox_zero_fsm.v"
 	],
 	"EXTRA_LEFS": [
-		"dir::../../lef/top_ew_algofoogle.lef"
+		"dir::../../lef/top_raybox_zero_fsm.lef"
 	],
 	"EXTRA_GDS_FILES": [
-		"dir::../../gds/top_ew_algofoogle.gds"
+		"dir::../../gds/top_raybox_zero_fsm.gds"
 	],
 	"EXTRA_LIBS": [
-		"dir::../../lib/top_ew_algofoogle.lib"
+		"dir::../../lib/top_raybox_zero_fsm.lib"
 	],
 	"EXTRA_SPEFS": [
-		"top_ew_algofoogle",
-		"dir::../../spef/multicorner/top_ew_algofoogle.min.spef",
-		"dir::../../spef/multicorner/top_ew_algofoogle.nom.spef",
-		"dir::../../spef/multicorner/top_ew_algofoogle.max.spef"
+		"top_raybox_zero_fsm",
+		"dir::../../spef/multicorner/top_raybox_zero_fsm.min.spef",
+		"dir::../../spef/multicorner/top_raybox_zero_fsm.nom.spef",
+		"dir::../../spef/multicorner/top_raybox_zero_fsm.max.spef"
 	],
 	"FP_PDN_MACRO_HOOKS": [
-		"top_ew_algofoogle vdd vss vdd vss"
+		"top_raybox_zero_fsm vdd vss vdd vss"
 	],
 	"QUIT_ON_SYNTH_CHECKS": 0,
 	"FP_PDN_CHECK_NODES": 0,
