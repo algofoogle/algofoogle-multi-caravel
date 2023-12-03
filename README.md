@@ -10,6 +10,38 @@ For more info, see: [0181 &sect; 'What I did'](https://github.com/algofoogle/jou
 
 The idea is that if general updates are required to `gf180-base`, they should be easy enough to merge to each of the project branches, to keep everything consistent.
 
+## Hardening
+
+Say you want to harden one of the `gf180-*` project branches... let's use `gf180-rbz-fsm` as an example. Here's a very high-level overview, assuming you already have at least *something* of a working OpenLane environment (or at least the prerequisites installed; see [the original efabless guide](https://github.com/efabless/caravel_user_project/blob/gfmpw-1c/docs/source/index.rst) for more info, but note that the PDK version in that doco might be outdated):
+
+> NOTE: Zero to ASIC VM also redirects certain other things (`MGMT_AREA_ROOT`, `DESIGNS`, `CARAVEL_ROOT`, etc. to subdirectories of `~/asic_tools/caravel_user_project`). Check your `~/.bashrc` for details. I've been trying to make this a bit more flexible (see [Tip 2312A](https://github.com/algofoogle/journal/blob/master/tips/2312A.md) point 5) but note that I've not completed this work yet.
+
+1.  Switch to the branch and set it up for the first time:
+    ```bash
+    git checkout gf180-rbz-fsm
+    mkdir -p dependencies
+    # Changing OPENLANE_ROOT & PDK_ROOT optional if using Zero to ASIC VM:
+      export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
+      export PDK_ROOT=$(pwd)/dependencies/pdks
+    # Required:
+    export PDK=gf180mcuD
+    # This will download and install caravel, the PDK, required OpenLane version, etc.
+    make setup
+    ```
+2.  Each time you want to harden:
+    ```bash
+    # Optional, as above:
+      export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
+      export PDK_ROOT=$(pwd)/dependencies/pdks
+    # Required:
+    export PDK=gf180mcuD
+
+    # MAIN HARDENING STEP:
+    make top_ew_algofoogle
+    ```
+
+## Finalisation
+
 **NOTE:** It is expected that each *individual* hardened project branch will be copied into one consolidated caravel_user_project when it is considered stable.
 
 You should find that the information above does not deviate per branch, but the information below intentionally does.

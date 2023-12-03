@@ -7,22 +7,32 @@
 		"dir::../../verilog/rtl/user_project_wrapper.v"
 	],
 	"CLOCK_PORT": "wb_clk_i",
-	"CLOCK_NET": "top_ew_algofoogle.i_clk",
+	"CLOCK_NET": [
+		"top_ew_algofoogle.i_clk"
+	],
 	"CLOCK_PERIOD": 25,
 	"MACRO_PLACEMENT_CFG": "dir::macro.cfg",
 	"VERILOG_FILES_BLACKBOX": [
 		"dir::../../verilog/gl/top_ew_algofoogle.v"
 	],
-	"EXTRA_LEFS": "dir::../../lef/top_ew_algofoogle.lef",
-	"EXTRA_GDS_FILES": "dir::../../gds/top_ew_algofoogle.gds",
-	"EXTRA_LIBS": "dir::../../lib/top_ew_algofoogle.lib",
+	"EXTRA_LEFS": [
+		"dir::../../lef/top_ew_algofoogle.lef"
+	],
+	"EXTRA_GDS_FILES": [
+		"dir::../../gds/top_ew_algofoogle.gds"
+	],
+	"EXTRA_LIBS": [
+		"dir::../../lib/top_ew_algofoogle.lib"
+	],
 	"EXTRA_SPEFS": [
 		"top_ew_algofoogle",
 		"dir::../../spef/multicorner/top_ew_algofoogle.min.spef",
 		"dir::../../spef/multicorner/top_ew_algofoogle.nom.spef",
 		"dir::../../spef/multicorner/top_ew_algofoogle.max.spef"
 	],
-	"FP_PDN_MACRO_HOOKS": "top_ew_algofoogle vdd vss vdd vss",
+	"FP_PDN_MACRO_HOOKS": [
+		"top_ew_algofoogle vdd vss vdd vss"
+	],
 	"QUIT_ON_SYNTH_CHECKS": 0,
 	"FP_PDN_CHECK_NODES": 0,
 	"SYNTH_ELABORATE_ONLY": 1,
@@ -67,12 +77,8 @@
 	"FP_PDN_HWIDTH": 3.1,
 	"FP_PDN_VSPACING": "expr::5 * $FP_PDN_CORE_RING_VWIDTH",
 	"FP_PDN_HSPACING": 26.9,
-	"VDD_NETS": [
-		"vdd"
-	],
-	"GND_NETS": [
-		"vss"
-	],
+	"VDD_NETS": ["vdd"],
+	"GND_NETS": ["vss"],
 	"SYNTH_USE_PG_PINS_DEFINES": "USE_POWER_PINS",
 	"RUN_LINTER": 0,
 	"FP_DEF_TEMPLATE": "dir::fixed_dont_change/user_project_wrapper.def",
