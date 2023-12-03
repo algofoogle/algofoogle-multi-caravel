@@ -3,8 +3,12 @@
     "RUN_KLAYOUT_XOR": false,
     "RUN_KLAYOUT_DRC": false,
 
-    "PDK": "gf180mcuD",
-    "STD_CELL_LIBRARY": "gf180mcu_fd_sc_mcu7t5v0",
+    "//": "Over-fix hold slack, to be safer...",
+    "PL_RESIZER_HOLD_SLACK_MARGIN": 0.4,
+    "GLB_RESIZER_HOLD_SLACK_MARGIN": 0.2,
+    "PL_RESIZER_HOLD_MAX_BUFFER_PERCENT": 80,
+    "GLB_RESIZER_HOLD_MAX_BUFFER_PERCENT": 80,
+
     "DESIGN_NAME": "top_ew_algofoogle",
     "VERILOG_FILES": [
         "dir::../../verilog/rtl/defines.v",
@@ -24,23 +28,23 @@
         "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/vga_sync.v",
         "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/wall_tracer.v"
     ],
-    "DESIGN_IS_CORE": 0,
     "CLOCK_PORT": "i_clk",
     "CLOCK_NET": "top_ew_algofoogle.i_clk",
     "CLOCK_PERIOD": "44.0",
     "FP_SIZING": "relative",
-    "FP_CORE_UTIL": 35,
+    "FP_CORE_UTIL": 34,
     "PL_TARGET_DENSITY": 0.45,
+    "BASE_SDC_FILE": "dir::base_top_ew_algofoogle.sdc",
+
+    "//": "Common stuff for GFMPW-1...",
+    "PDK": "gf180mcuD",
+    "STD_CELL_LIBRARY": "gf180mcu_fd_sc_mcu7t5v0",
+    "DESIGN_IS_CORE": 0,
     "PL_BASIC_PLACEMENT": 0,
     "MAX_FANOUT_CONSTRAINT": 4,
     "RT_MAX_LAYER": "Metal4",
-    "VDD_NETS": [
-        "vdd"
-    ],
-    "GND_NETS": [
-        "vss"
-    ],
-    "BASE_SDC_FILE": "dir::base_top_ew_algofoogle.sdc",
+    "VDD_NETS": ["vdd"],
+    "GND_NETS": ["vss"],
     "RUN_HEURISTIC_DIODE_INSERTION": 1,
     "RUN_CVC": 1,
     "QUIT_ON_LINTER_ERRORS": 0
