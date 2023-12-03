@@ -102,7 +102,7 @@ jobs:
 
       - name: Harden using Openlane
         run: |
-          make REPLACEME_project_macro_name
+          make top_ew_algofoogle
           make user_project_wrapper
 
       - name: run precheck

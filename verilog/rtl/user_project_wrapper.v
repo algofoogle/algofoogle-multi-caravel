@@ -76,7 +76,8 @@ module user_project_wrapper (
     wire [3:0] shared_io_in = {io_in[35], io_in[34], /* skip 33 per EW */ io_in[32], io_in[31]};
 
     // Anton's assigned pads are IO[20:12] plus IO[11] (to be used as Anton's clock source).
-    wire anton_clock_in = io_in[11]; //!!!NOTE!!!: If this becomes unavailable for some reason, put user_clock2 here instead.
+    // wire anton_clock_in = io_in[11];
+    wire anton_clock_in = wb_clk_i;
     assign io_oeb[11] = a1s[0]; // 1: Input.
     assign io_out[11] = a0s[8]; // Irrelevant.
     // These allow easy renumbering of those pads, if necessary.

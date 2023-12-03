@@ -6,9 +6,9 @@
 		"dir::../../verilog/rtl/defines.v",
 		"dir::../../verilog/rtl/user_project_wrapper.v"
 	],
-	"CLOCK_PORT": "io_in[11]",
+	"CLOCK_PORT": "wb_clk_i",
 	"CLOCK_NET": "top_ew_algofoogle.i_clk",
-	"CLOCK_PERIOD": 44,
+	"CLOCK_PERIOD": 25,
 	"MACRO_PLACEMENT_CFG": "dir::macro.cfg",
 	"VERILOG_FILES_BLACKBOX": [
 		"dir::../../verilog/gl/top_ew_algofoogle.v"

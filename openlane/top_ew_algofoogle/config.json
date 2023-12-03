@@ -1,5 +1,5 @@
 {
-    "ROUTING_CORES": 3,
+    "ROUTING_CORES": 7,
     "RUN_KLAYOUT_XOR": false,
     "RUN_KLAYOUT_DRC": false,
 
@@ -40,6 +40,7 @@
     "GND_NETS": [
         "vss"
     ],
+    "BASE_SDC_FILE": "dir::base_top_ew_algofoogle.sdc",
     "RUN_HEURISTIC_DIODE_INSERTION": 1,
     "RUN_CVC": 1,
     "QUIT_ON_LINTER_ERRORS": 0
