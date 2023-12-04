@@ -72,7 +72,7 @@ module user_project_wrapper (
     // This snippet comes from here:
     // https://github.com/algofoogle/raybox-zero/blob/gf180/src/rtl/gfmpw1_snippets/GFMPW1_SNIPPET_top_raybox_zero_fsm.v
 
-    wire rbz_fsm_clock_in = wb_clk_i;
+    wire rbz_fsm_clock_in = user_clock2; //wb_clk_i;
     wire rbz_fsm_reset = wb_rst_i;
     wire rbz_fsm_reset_alt = rbz_fsm_la_in[0]; // Reset by SoC reset OR LA.
     wire [12:0] rbz_fsm_la_in = la_data_in[12:0]; // Can be reassigned, if desired.

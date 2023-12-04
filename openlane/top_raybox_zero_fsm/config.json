@@ -33,7 +33,7 @@
     "CLOCK_NET": "top_raybox_zero_fsm.i_clk",
     "CLOCK_PERIOD": "40.0",
     "FP_SIZING": "relative",
-    "FP_CORE_UTIL": 30,
+    "FP_CORE_UTIL": 29,
     "PL_TARGET_DENSITY": 0.40,
     "BASE_SDC_FILE": "dir::base_top_raybox_zero_fsm.sdc",
     

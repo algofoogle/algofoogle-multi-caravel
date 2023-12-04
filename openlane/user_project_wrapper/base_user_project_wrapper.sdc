@@ -140,5 +140,8 @@ if { $::env(IO_SYNC) } {
 	set_output_delay -min [expr $out_ext_delay + 3.9]  -clock [get_clocks {clk}] [get_ports {io_out[*]}]
 }
 
+# set_disable_timing  [get_ports {la_data_in[*]}]
+
+
 # Output loads
 set_load 0.19 [all_outputs]

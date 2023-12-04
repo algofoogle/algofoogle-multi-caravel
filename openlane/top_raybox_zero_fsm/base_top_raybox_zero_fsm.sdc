@@ -66,16 +66,17 @@ set_input_delay [expr $::env(CLOCK_PERIOD) * 0.5 + 2] -clock [get_clocks {clk}] 
 # These ports are inputs from LA pins...
 # These directives will hopefully relax timing on data coming into our design from LAs (inc. the one used for reset).
 set_multicycle_path -setup 2 -through [get_ports {i_reset_alt}]
-set_multicycle_path -hold 2  -through [get_ports {i_reset_alt}]
+set_multicycle_path -hold 1  -through [get_ports {i_reset_alt}]
 set_multicycle_path -setup 2 -through [get_ports {i_gpout0_sel[*]}]
-set_multicycle_path -hold 2  -through [get_ports {i_gpout0_sel[*]}]
+set_multicycle_path -hold 1  -through [get_ports {i_gpout0_sel[*]}]
 set_multicycle_path -setup 2 -through [get_ports {i_gpout1_sel[*]}]
-set_multicycle_path -hold 2  -through [get_ports {i_gpout1_sel[*]}]
+set_multicycle_path -hold 1  -through [get_ports {i_gpout1_sel[*]}]
 set_multicycle_path -setup 2 -through [get_ports {i_gpout2_sel[*]}]
-set_multicycle_path -hold 2  -through [get_ports {i_gpout2_sel[*]}]
+set_multicycle_path -hold 1  -through [get_ports {i_gpout2_sel[*]}]
 # These probably have no effect in this design, because top_raybox_zero_fsm has no ports with these names:
 set_multicycle_path -setup 2 -through [get_ports {la_data_in[*]}]
-set_multicycle_path -hold 2  -through [get_ports {la_data_in[*]}]
+set_multicycle_path -hold 1  -through [get_ports {la_data_in[*]}]
+
 
 #------------------------------------------#
 # Retrieved Constraints
@@ -86,18 +87,18 @@ set usr_clk_max_latency 4.57
 set usr_clk_min_latency 4.11
 set clk_max_latency 5.57
 set clk_min_latency 4.65
-set_clock_latency -source -max $clk_max_latency [get_clocks {clk}]
-set_clock_latency -source -min $clk_min_latency [get_clocks {clk}]
-puts "\[INFO\]: Setting clock latency range: $clk_min_latency : $clk_max_latency"
+set_clock_latency -source -max $usr_clk_max_latency [get_clocks {clk}]
+set_clock_latency -source -min $usr_clk_min_latency [get_clocks {clk}]
+puts "\[INFO\]: Setting clock latency range: $usr_clk_min_latency : $usr_clk_max_latency"
 
 # Clock input Transition
 set usr_clk_tran 0.13
 set clk_tran 0.61
-set_input_transition $clk_tran [get_ports $clk_input]
-puts "\[INFO\]: Setting clock transition: $clk_tran"
+set_input_transition $usr_clk_tran [get_ports $clk_input]
+puts "\[INFO\]: Setting clock transition: $usr_clk_tran"
 
 # Input delays
-set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {la_data_in[*]}]
+# set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {la_data_in[*]}]
 # Anton's actual port names:
 set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {i_gpout0_sel[*]}]
 set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {i_gpout1_sel[*]}]
@@ -110,7 +111,7 @@ set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {i_reset_alt}]
 # set_input_delay -max 4.13 -clock [get_clocks {clk}] [get_ports {wbs_stb_i}]
 # set_input_delay -max 4.61 -clock [get_clocks {clk}] [get_ports {wbs_dat_i[*]}]
 # set_input_delay -max 4.74 -clock [get_clocks {clk}] [get_ports {wbs_cyc_i}]
-set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {la_data_in[*]}]
+# set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {la_data_in[*]}]
 # Anton's actual port names:
 set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {i_gpout0_sel[*]}]
 set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {i_gpout1_sel[*]}]
@@ -139,8 +140,8 @@ if { $::env(IO_SYNC) } {
 # set_input_transition -max 0.84  [get_ports {wbs_dat_i[*]}]
 # set_input_transition -max 0.92  [get_ports {wbs_adr_i[*]}]
 # set_input_transition -max 0.97  [get_ports {la_oenb[*]}]
-set_input_transition -max 0.38  [get_ports {io_in[*]}]
-set_input_transition -max 0.86  [get_ports {la_data_in[*]}]
+# set_input_transition -max 0.38  [get_ports {io_in[*]}]
+# set_input_transition -max 0.86  [get_ports {la_data_in[*]}]
 # Anton's actual port names:
 # IO-based:
 set_input_transition -max 0.38  [get_ports {i_tex_in[*]}]
@@ -168,8 +169,8 @@ set_input_transition -max 0.86  [get_ports {i_reset_alt}]
 # set_input_transition -min 0.07  [get_ports {wbs_dat_i[*]}]
 # set_input_transition -min 0.07  [get_ports {wbs_adr_i[*]}]
 # set_input_transition -min 0.06  [get_ports {la_oenb[*]}]
-set_input_transition -min 0.05  [get_ports {io_in[*]}]
-set_input_transition -min 0.07  [get_ports {la_data_in[*]}]
+# set_input_transition -min 0.05  [get_ports {io_in[*]}]
+# set_input_transition -min 0.07  [get_ports {la_data_in[*]}]
 # Anton's actual port names:
 # IO-based:
 set_input_transition -min 0.05  [get_ports {i_tex_in[*]}]
@@ -189,6 +190,12 @@ set_input_transition -min 0.07  [get_ports {i_gpout0_sel[*]}]
 set_input_transition -min 0.07  [get_ports {i_gpout1_sel[*]}]
 set_input_transition -min 0.07  [get_ports {i_gpout2_sel[*]}]
 set_input_transition -min 0.07  [get_ports {i_reset_alt}]
+
+# set_disable_timing  [get_ports {i_reset_alt}]
+# set_disable_timing  [get_ports {i_gpout0_sel[*]}]
+# set_disable_timing  [get_ports {i_gpout1_sel[*]}]
+# set_disable_timing  [get_ports {i_gpout2_sel[*]}]
+# set_disable_timing  [get_ports {la_data_in[*]}]
 
 
 # Output delays
