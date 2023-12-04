@@ -66,16 +66,16 @@ set_input_delay [expr $::env(CLOCK_PERIOD) * 0.5 + 2] -clock [get_clocks {clk}] 
 # These ports are inputs from LA pins...
 # These directives will hopefully relax timing on data coming into our design from LAs (inc. the one used for reset).
 set_multicycle_path -setup 2 -through [get_ports {i_reset_alt}]
-set_multicycle_path -hold 2  -through [get_ports {i_reset_alt}]
+set_multicycle_path -hold 1  -through [get_ports {i_reset_alt}]
 set_multicycle_path -setup 2 -through [get_ports {i_gpout0_sel[*]}]
-set_multicycle_path -hold 2  -through [get_ports {i_gpout0_sel[*]}]
+set_multicycle_path -hold 1  -through [get_ports {i_gpout0_sel[*]}]
 set_multicycle_path -setup 2 -through [get_ports {i_gpout1_sel[*]}]
-set_multicycle_path -hold 2  -through [get_ports {i_gpout1_sel[*]}]
+set_multicycle_path -hold 1  -through [get_ports {i_gpout1_sel[*]}]
 set_multicycle_path -setup 2 -through [get_ports {i_gpout2_sel[*]}]
-set_multicycle_path -hold 2  -through [get_ports {i_gpout2_sel[*]}]
+set_multicycle_path -hold 1  -through [get_ports {i_gpout2_sel[*]}]
 # These probably have no effect in this design, because top_raybox_zero_fsm has no ports with these names:
 set_multicycle_path -setup 2 -through [get_ports {la_data_in[*]}]
-set_multicycle_path -hold 2  -through [get_ports {la_data_in[*]}]
+set_multicycle_path -hold 1  -through [get_ports {la_data_in[*]}]
 
 #------------------------------------------#
 # Retrieved Constraints

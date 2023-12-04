@@ -31,10 +31,10 @@
     ],
     "CLOCK_PORT": "i_clk",
     "CLOCK_NET": "top_raybox_zero_fsm.i_clk",
-    "CLOCK_PERIOD": "40.0",
+    "CLOCK_PERIOD": "39",
     "FP_SIZING": "relative",
-    "FP_CORE_UTIL": 30,
-    "PL_TARGET_DENSITY": 0.40,
+    "FP_CORE_UTIL": 49,
+    "PL_TARGET_DENSITY": 0.55,
     "BASE_SDC_FILE": "dir::base_top_raybox_zero_fsm.sdc",
     
     "//": "Common stuff for GFMPW-1...",
