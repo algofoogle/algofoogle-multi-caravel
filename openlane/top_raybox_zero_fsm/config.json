@@ -31,7 +31,7 @@
     ],
     "CLOCK_PORT": "i_clk",
     "CLOCK_NET": "top_raybox_zero_fsm.i_clk",
-    "CLOCK_PERIOD": "44.0",
+    "CLOCK_PERIOD": "40.0",
     "FP_SIZING": "relative",
     "FP_CORE_UTIL": 30,
     "PL_TARGET_DENSITY": 0.40,
