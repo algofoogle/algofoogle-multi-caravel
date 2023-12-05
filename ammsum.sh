@@ -55,9 +55,9 @@ for step in DESIGN UPW; do
             echo "Latest design run:  >>>  $drunid  <<<  ($drun)"
         fi
         echo
-        design_antenna_report=$drun/reports/signoff/46-antenna_violators.rpt
-        design_checks_report=$drun/reports/signoff/37-sta-rcx_nom/multi_corner_sta.checks.rpt
-        design_holds_report=$drun/reports/signoff/37-sta-rcx_nom/multi_corner_sta.min.rpt
+        design_antenna_report=$drun/reports/signoff/*-antenna_violators.rpt
+        design_checks_report=$drun/reports/signoff/*-sta-rcx_nom/multi_corner_sta.checks.rpt
+        design_holds_report=$drun/reports/signoff/*-sta-rcx_nom/multi_corner_sta.min.rpt
         dgds=$drun/results/final/gds/$design_name.gds
         ;;
     UPW)
@@ -80,9 +80,9 @@ for step in DESIGN UPW; do
             echo "Latest UPW run:  >>>  $drunid  <<<  ($drun)"
         fi
         echo
-        design_antenna_report=$drun/reports/signoff/30-antenna_violators.rpt
-        design_checks_report=$drun/reports/signoff/20-sta-rcx_nom/multi_corner_sta.checks.rpt
-        design_holds_report=$drun/reports/signoff/20-sta-rcx_nom/multi_corner_sta.min.rpt
+        design_antenna_report=$drun/reports/signoff/*-antenna_violators.rpt
+        design_checks_report=$drun/reports/signoff/*-sta-rcx_nom/multi_corner_sta.checks.rpt
+        design_holds_report=$drun/reports/signoff/*-sta-rcx_nom/multi_corner_sta.min.rpt
         dgds=$drun/results/final/gds/$design_name.gds
         if [ -z "$2" ]; then
             if [ "$design_metrics_date" -ge "$upw_metrics_date" ]; then
