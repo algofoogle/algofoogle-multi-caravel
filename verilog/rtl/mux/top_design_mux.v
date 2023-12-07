@@ -31,11 +31,14 @@ module top_design_mux (
     input [5:0]     trzf_o_rgb,
     input           trzf_o_tex_csb,
     input           trzf_o_tex_sclk,
-    input [2:0]     trzf_o_gpout,
     input           trzf_o_tex_out0,
-    // OEB line for 1 of the IO pads:
-    input           trzf_o_tex_oeb0
+    input           trzf_o_tex_oeb0, // OEB line for 1 of the IO pads.
+    input [2:0]     trzf_o_gpout,
+    // Inputs repeated/buffered from IO pads to the design:
+    output [37:0]   trzf_io_in
 );
+
+    assign trzf_io_in = io_in; // Repeat/buffer IO inputs, to pass them on to the design(s)
 
     //NOTE: No reset on this, so it can persist across full system resets:
     reg [3:0] selected_design;

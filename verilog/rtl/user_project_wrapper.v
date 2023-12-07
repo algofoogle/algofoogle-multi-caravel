@@ -81,7 +81,7 @@ module user_project_wrapper (
         .wb_clk_i       (wb_clk_i),
         .wb_rst_i       (wb_rst_i),
 
-        // .io_in          (io_in),
+        .io_in          (io_in),
         .io_out         (io_out),
         .io_oeb         (io_oeb),
 
@@ -97,7 +97,8 @@ module user_project_wrapper (
         .trzf_o_tex_sclk(trzf_o_tex_sclk),
         .trzf_o_gpout   (trzf_o_gpout),
         .trzf_o_tex_out0(trzf_o_tex_out0),
-        .trzf_o_tex_oeb0(trzf_o_tex_oeb0)
+        .trzf_o_tex_oeb0(trzf_o_tex_oeb0),
+        .trzf_io_in     (trzf_io_in) // The mux repeats/buffers these from the IO inputs into our design.
     );
 
     //// END: INSTANTIATION OF ANTON'S top_design_mux -------------------
@@ -115,8 +116,7 @@ module user_project_wrapper (
     wire        trzf_o_tex_out0;
     wire        trzf_o_tex_oeb0;
 
-    //NOTE: Make sure the following is fine when connected directly to io_in:
-    wire [37:0] trzf_io_in = io_in;
+    wire [37:0] trzf_io_in; // The mux repeats/buffers these from the IO inputs into our design.
 
     wire [12:0] trzf_la_in      = la_data_in[17:5]; // Can be reassigned, if desired.
     wire        trzf_clock_in   = wb_clk_i;
