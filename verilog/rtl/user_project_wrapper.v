@@ -22,8 +22,10 @@
  * This wrapper enumerates all of the pins available to the
  * user for the user project.
  *
- * Our main top design macro (top_raybox_zero_fsm) is
- * instantiated in this UPW.
+ * Instantiated in this UPW you will find:
+ *  -   The mux (top_design_mux) that connects each of the designs
+ *      with IO pads.
+ *  -   Our main top design macro (top_raybox_zero_fsm).
  *
  *-------------------------------------------------------------
  */
@@ -63,31 +65,63 @@ module user_project_wrapper (
     output [2:0] user_irq
 );
 
-/*--------------------------------------*/
-/* User project is instantiated  here   */
-/*--------------------------------------*/
+/*-------------------------------------*/
+/* User projects are instantiated here */
+/*-------------------------------------*/
 
-    //// BEGIN: INSTANTIATION OF ANTON'S DESIGN (top_raybox_zero_fsm) (GFMPW1_SNIPPET_top_raybox_zero_fsm) ---------------------
+    //NOTE: LA pins [4:0] and [63:60] are used by the mux.
 
-    // This snippet comes from here:
-    // https://github.com/algofoogle/raybox-zero/blob/gf180/src/rtl/gfmpw1_snippets/GFMPW1_SNIPPET_top_raybox_zero_fsm.v
+    //// BEGIN: INSTANTIATION OF ANTON'S top_design_mux -------------------
 
-    wire rbz_fsm_clock_in = wb_clk_i;
-    wire rbz_fsm_reset = wb_rst_i;
-    wire rbz_fsm_reset_alt = rbz_fsm_la_in[0]; // Reset by SoC reset OR LA.
-    wire [12:0] rbz_fsm_la_in = la_data_in[12:0]; // Can be reassigned, if desired.
-    wire [12:0] a0s;
-    wire [23:0] a1s;
-    // assign io_out[34:19] = a0s[15:0]; // Irrelevant.
-    // assign io_out[7:0] = a0s[15:8];  // Irrelevant.
+    top_design_mux top_design_mux(
+    `ifdef USE_POWER_PINS
+        .vdd(vdd),        // User area 1 1.8V power
+        .vss(vss),        // User area 1 digital ground
+    `endif
+        .wb_clk_i       (wb_clk_i),
+        .wb_rst_i       (wb_rst_i),
 
-    wire rbz_fsm_tex_oeb0;
-    assign io_oeb[37:35]    = a0s[2:0];         // OUT
-    assign io_oeb[34:19]    = a1s[15:0];        // IN
-    assign io_oeb[18]       = rbz_fsm_tex_oeb0; // 18 is bidir (tex_io0)
-    assign io_oeb[17:8]     = a0s[12:3];        // OUT
-    assign io_oeb[7:0]      = a1s[23:16];       // IN (or otherwise unused i.e. under SoC control)
-    // io_oeb = 0001111111111111111*000000000011111111 where *=tex_io0 dir.
+        // .io_in          (io_in),
+        .io_out         (io_out),
+        .io_oeb         (io_oeb),
+
+        .sel_id         (la_data_in[3:0]),
+        .sel_clk        (la_data_in[4]),
+        .debug          (la_data_in[63:60]),
+
+        // top_raybox_zero_fsm:
+        .trzf_o_hsync   (trzf_o_hsync),
+        .trzf_o_vsync   (trzf_o_vsync),
+        .trzf_o_rgb     (trzf_o_rgb),
+        .trzf_o_tex_csb (trzf_o_tex_csb),
+        .trzf_o_tex_sclk(trzf_o_tex_sclk),
+        .trzf_o_gpout   (trzf_o_gpout),
+        .trzf_o_tex_out0(trzf_o_tex_out0),
+        .trzf_o_tex_oeb0(trzf_o_tex_oeb0)
+    );
+
+    //// END: INSTANTIATION OF ANTON'S top_design_mux -------------------
+
+
+
+    //// BEGIN: INSTANTIATION OF ANTON'S top_raybox_zero_fsm -------------------
+
+    wire        trzf_o_hsync;
+    wire        trzf_o_vsync;
+    wire [5:0]  trzf_o_rgb;
+    wire        trzf_o_tex_csb;
+    wire        trzf_o_tex_sclk;
+    wire [2:0]  trzf_o_gpout;
+    wire        trzf_o_tex_out0;
+    wire        trzf_o_tex_oeb0;
+
+    //NOTE: Make sure the following is fine when connected directly to io_in:
+    wire [37:0] trzf_io_in = io_in;
+
+    wire [12:0] trzf_la_in      = la_data_in[17:5]; // Can be reassigned, if desired.
+    wire        trzf_clock_in   = wb_clk_i;
+    wire        trzf_reset      = wb_rst_i;         // Reset by SoC...
+    wire        trzf_reset_alt  = trzf_la_in[0];    // ...OR by LA.
 
     top_raybox_zero_fsm top_raybox_zero_fsm(
     `ifdef USE_POWER_PINS
@@ -95,44 +129,46 @@ module user_project_wrapper (
         .vss(vss),        // User area 1 digital ground
     `endif
 
-        .i_clk                  (rbz_fsm_clock_in),
-        .i_reset                (rbz_fsm_reset),
-        .i_reset_alt            (rbz_fsm_reset_alt),
+        .i_clk                  (trzf_clock_in),
+        .i_reset                (trzf_reset),
+        .i_reset_alt            (trzf_reset_alt),
 
-        .zeros                  (a0s),  // A source of 13 constant '0' signals.
-        .ones                   (a1s),  // A source of 24 constant '1' signals.
+        // No longer needed (mux takes care of OEBs now):
+        // .zeros                  (a0s),  // A source of 13 constant '0' signals.
+        // .ones                   (a1s),  // A source of 24 constant '1' signals.
 
-        .o_hsync                (io_out[8]),
-        .o_vsync                (io_out[9]),
-        .o_rgb                  (io_out[15:10]),
+        .o_hsync                (trzf_o_hsync),
+        .o_vsync                (trzf_o_vsync),
+        .o_rgb                  (trzf_o_rgb),
 
-        .o_tex_csb              (io_out[16]),
-        .o_tex_sclk             (io_out[17]),
-        .o_tex_oeb0             (rbz_fsm_tex_oeb0), // My only bidirectional pad.
-        .o_tex_out0             (io_out[18]),
-        .i_tex_in               (io_in[21:18]),
+        .o_tex_csb              (trzf_o_tex_csb),
+        .o_tex_sclk             (trzf_o_tex_sclk),
+        .o_tex_oeb0             (trzf_o_tex_oeb0), // My only bidirectional pad.
+        .o_tex_out0             (trzf_o_tex_out0),
+        .i_tex_in               (trzf_io_in[21:18]),
 
-        .i_vec_csb              (io_in[22]),
-        .i_vec_sclk             (io_in[23]),
-        .i_vec_mosi             (io_in[24]),
+        .i_vec_csb              (trzf_io_in[22]),
+        .i_vec_sclk             (trzf_io_in[23]),
+        .i_vec_mosi             (trzf_io_in[24]),
 
-        .i_reg_csb              (io_in[25]),
-        .i_reg_sclk             (io_in[26]),
-        .i_reg_mosi             (io_in[27]),
+        .i_reg_csb              (trzf_io_in[25]),
+        .i_reg_sclk             (trzf_io_in[26]),
+        .i_reg_mosi             (trzf_io_in[27]),
 
-        .i_debug_vec_overlay    (io_in[28]),
-        .i_debug_map_overlay    (io_in[29]),
-        .i_debug_trace_overlay  (io_in[30]),
-        .i_reg_outs_enb         (io_in[31]),
-        .i_mode                 (io_in[34:32]),
+        .i_debug_vec_overlay    (trzf_io_in[28]),
+        .i_debug_map_overlay    (trzf_io_in[29]),
+        .i_debug_trace_overlay  (trzf_io_in[30]),
+        .i_reg_outs_enb         (trzf_io_in[31]),
+        .i_mode                 (trzf_io_in[34:32]),
 
-        .o_gpout                (io_out[37:35]),
-        .i_gpout0_sel           (rbz_fsm_la_in[4:1]),
-        .i_gpout1_sel           (rbz_fsm_la_in[8:5]),
-        .i_gpout2_sel           (rbz_fsm_la_in[12:9])
+        .o_gpout                (trzf_o_gpout),
+        .i_gpout0_sel           (trzf_la_in[4:1]),
+        .i_gpout1_sel           (trzf_la_in[8:5]),
+        .i_gpout2_sel           (trzf_la_in[12:9])
     );
 
-    //// END: INSTANTIATION OF ANTON'S DESIGN (top_raybox_zero_fsm) (GFMPW1_SNIPPET_top_raybox_zero_fsm) ---------------------
+    //// END: INSTANTIATION OF ANTON'S top_raybox_zero_fsm -------------------
+
 
 endmodule	// user_project_wrapper
 
