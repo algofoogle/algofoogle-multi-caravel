@@ -9,7 +9,8 @@
 	"CLOCK_PORT": "wb_clk_i",
 	"CLOCK_NET": [
 		"top_design_mux.wb_clk_i",
-		"top_raybox_zero_fsm.i_clk"
+		"top_raybox_zero_fsm.i_clk",
+		"top_raybox_zero_fsm2.i_clk"
 	],
 	"CLOCK_PERIOD": 40,
 	"MACRO_PLACEMENT_CFG": "dir::macro.cfg",

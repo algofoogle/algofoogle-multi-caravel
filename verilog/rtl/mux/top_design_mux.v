@@ -112,7 +112,7 @@ module top_design_mux (
                 };
             end
 
-            // *** Other people's designs would slot in here, from ID 1 onwards... ***
+            // *** Other people's designs would slot in here, from ID 2 onwards... ***
 
             // fixed test pattern:
             15: begin
