@@ -26,6 +26,7 @@ module top_design_mux (
 
     // --- top_raybox_zero_fsm interface ---
     // Outputs to be mapped to IO pads:
+    output [12:0]   trzf_la_in,
     input           trzf_o_hsync,
     input           trzf_o_vsync,
     input [5:0]     trzf_o_rgb,
@@ -34,11 +35,30 @@ module top_design_mux (
     input           trzf_o_tex_out0,
     input           trzf_o_tex_oeb0, // OEB line for 1 of the IO pads.
     input [2:0]     trzf_o_gpout,
-    // Inputs repeated/buffered from IO pads to the design:
-    output [37:0]   trzf_io_in
+    output [37:0]   trzf_io_in,  // Inputs repeated/buffered from IO pads to the design:
+
+    // --- SECOND top_raybox_zero_fsm interface ---
+    // Outputs to be mapped to IO pads:
+    output [12:0]   trzf2_la_in,
+    input           trzf2_o_hsync,
+    input           trzf2_o_vsync,
+    input [5:0]     trzf2_o_rgb,
+    input           trzf2_o_tex_csb,
+    input           trzf2_o_tex_sclk,
+    input           trzf2_o_tex_out0,
+    input           trzf2_o_tex_oeb0, // OEB line for 1 of the IO pads.
+    input [2:0]     trzf2_o_gpout,
+    output [37:0]   trzf2_io_in,  // Inputs repeated/buffered from IO pads to the design:
+
+    // Additional LA pins used by trzf:
+    input  [12:0]   la_extra_in
+
 );
 
     assign trzf_io_in = io_in; // Repeat/buffer IO inputs, to pass them on to the design(s)
+    assign trzf_la_in = la_extra_in;
+    assign trzf2_io_in = io_in; // Repeat/buffer IO inputs, to pass them on to the design(s)
+    assign trzf2_la_in = la_extra_in;
 
     //NOTE: No reset on this, so it can persist across full system resets:
     reg [3:0] selected_design;
@@ -65,6 +85,29 @@ module top_design_mux (
                     trzf_o_rgb,         //  6 IO[15:10] dedicated   OUTPUT
                     trzf_o_vsync,       //  1 IO[9]     dedicated   OUTPUT
                     trzf_o_hsync,       //  1 IO[8]     dedicated   OUTPUT
+                    8'hFF               //  8 IO[7:0]   (unused)    inputs
+                };
+            end
+
+            // top_raybox_zero_fsm2:
+            1: begin
+                // io_oeb = 0001111111111111111*000000000011111111 where *=tex_io0 dir.
+                io_oeb = {
+                    3'h0,
+                    16'hFFFF,
+                    trzf2_o_tex_oeb0,
+                    10'h000,
+                    8'hFF
+                };
+                io_out = {
+                    trzf2_o_gpout,      //  3 IO[37:35] dedicated   OUTPUTS
+                    16'hFFFF,           // 16 IO[34:19] dedicated   inputs
+                    trzf2_o_tex_out0,   //  1 IO[18]                BIDIR
+                    trzf2_o_tex_sclk,   //  1 IO[17]    dedicated   OUTPUT
+                    trzf2_o_tex_csb,    //  1 IO[16]    dedicated   OUTPUT
+                    trzf2_o_rgb,        //  6 IO[15:10] dedicated   OUTPUT
+                    trzf2_o_vsync,      //  1 IO[9]     dedicated   OUTPUT
+                    trzf2_o_hsync,      //  1 IO[8]     dedicated   OUTPUT
                     8'hFF               //  8 IO[7:0]   (unused)    inputs
                 };
             end

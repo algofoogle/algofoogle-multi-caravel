@@ -87,18 +87,32 @@ module user_project_wrapper (
 
         .sel_id         (la_data_in[3:0]),
         .sel_clk        (la_data_in[4]),
-        .debug          (la_data_in[63:60]),
+        .debug          (la_data_in[8:5]),
+        .la_extra_in    (la_data_in[21:9]),
 
         // top_raybox_zero_fsm:
+        .trzf_la_in     (trzf_la_in),
         .trzf_o_hsync   (trzf_o_hsync),
         .trzf_o_vsync   (trzf_o_vsync),
         .trzf_o_rgb     (trzf_o_rgb),
         .trzf_o_tex_csb (trzf_o_tex_csb),
         .trzf_o_tex_sclk(trzf_o_tex_sclk),
-        .trzf_o_gpout   (trzf_o_gpout),
         .trzf_o_tex_out0(trzf_o_tex_out0),
         .trzf_o_tex_oeb0(trzf_o_tex_oeb0),
-        .trzf_io_in     (trzf_io_in) // The mux repeats/buffers these from the IO inputs into our design.
+        .trzf_o_gpout   (trzf_o_gpout),
+        .trzf_io_in     (trzf_io_in), // The mux repeats/buffers these from the IO inputs into our design.
+
+        // SECOND top_raybox_zero_fsm:
+        .trzf2_la_in     (trzf2_la_in),
+        .trzf2_o_hsync   (trzf2_o_hsync),
+        .trzf2_o_vsync   (trzf2_o_vsync),
+        .trzf2_o_rgb     (trzf2_o_rgb),
+        .trzf2_o_tex_csb (trzf2_o_tex_csb),
+        .trzf2_o_tex_sclk(trzf2_o_tex_sclk),
+        .trzf2_o_tex_out0(trzf2_o_tex_out0),
+        .trzf2_o_tex_oeb0(trzf2_o_tex_oeb0),
+        .trzf2_o_gpout   (trzf2_o_gpout),
+        .trzf2_io_in     (trzf2_io_in) // The mux repeats/buffers these from the IO inputs into our design.
     );
 
     //// END: INSTANTIATION OF ANTON'S top_design_mux -------------------
@@ -115,10 +129,9 @@ module user_project_wrapper (
     wire [2:0]  trzf_o_gpout;
     wire        trzf_o_tex_out0;
     wire        trzf_o_tex_oeb0;
-
+    wire [12:0] trzf_la_in; //      = la_data_in[17:5]; // Can be reassigned, if desired.
     wire [37:0] trzf_io_in; // The mux repeats/buffers these from the IO inputs into our design.
 
-    wire [12:0] trzf_la_in      = la_data_in[17:5]; // Can be reassigned, if desired.
     wire        trzf_clock_in   = wb_clk_i;
     wire        trzf_reset      = wb_rst_i;         // Reset by SoC...
     wire        trzf_reset_alt  = trzf_la_in[0];    // ...OR by LA.
@@ -168,6 +181,70 @@ module user_project_wrapper (
     );
 
     //// END: INSTANTIATION OF ANTON'S top_raybox_zero_fsm -------------------
+
+
+    //// BEGIN: SECOND INSTANTIATION OF ANTON'S top_raybox_zero_fsm -------------------
+
+    wire        trzf2_o_hsync;
+    wire        trzf2_o_vsync;
+    wire [5:0]  trzf2_o_rgb;
+    wire        trzf2_o_tex_csb;
+    wire        trzf2_o_tex_sclk;
+    wire [2:0]  trzf2_o_gpout;
+    wire        trzf2_o_tex_out0;
+    wire        trzf2_o_tex_oeb0;
+    wire [12:0] trzf2_la_in; //      = la_data_in[17:5]; // Can be reassigned, if desired.
+    wire [37:0] trzf2_io_in; // The mux repeats/buffers these from the IO inputs into our design.
+
+    wire        trzf2_clock_in   = wb_clk_i;
+    wire        trzf2_reset      = wb_rst_i;         // Reset by SoC...
+    wire        trzf2_reset_alt  = trzf2_la_in[0];    // ...OR by LA.
+
+    top_raybox_zero_fsm top_raybox_zero_fsm2(
+    `ifdef USE_POWER_PINS
+        .vdd(vdd),        // User area 1 1.8V power
+        .vss(vss),        // User area 1 digital ground
+    `endif
+
+        .i_clk                  (trzf2_clock_in),
+        .i_reset                (trzf2_reset),
+        .i_reset_alt            (trzf2_reset_alt),
+
+        // No longer needed (mux takes care of OEBs now):
+        // .zeros                  (a0s),  // A source of 13 constant '0' signals.
+        // .ones                   (a1s),  // A source of 24 constant '1' signals.
+
+        .o_hsync                (trzf2_o_hsync),
+        .o_vsync                (trzf2_o_vsync),
+        .o_rgb                  (trzf2_o_rgb),
+
+        .o_tex_csb              (trzf2_o_tex_csb),
+        .o_tex_sclk             (trzf2_o_tex_sclk),
+        .o_tex_oeb0             (trzf2_o_tex_oeb0), // My only bidirectional pad.
+        .o_tex_out0             (trzf2_o_tex_out0),
+        .i_tex_in               (trzf2_io_in[21:18]),
+
+        .i_vec_csb              (trzf2_io_in[22]),
+        .i_vec_sclk             (trzf2_io_in[23]),
+        .i_vec_mosi             (trzf2_io_in[24]),
+
+        .i_reg_csb              (trzf2_io_in[25]),
+        .i_reg_sclk             (trzf2_io_in[26]),
+        .i_reg_mosi             (trzf2_io_in[27]),
+
+        .i_debug_vec_overlay    (trzf2_io_in[28]),
+        .i_debug_map_overlay    (trzf2_io_in[29]),
+        .i_debug_trace_overlay  (trzf2_io_in[30]),
+        .i_reg_outs_enb         (trzf2_io_in[31]),
+        .i_mode                 (trzf2_io_in[34:32]),
+
+        .o_gpout                (trzf2_o_gpout),
+        .i_gpout0_sel           (trzf2_la_in[4:1]),
+        .i_gpout1_sel           (trzf2_la_in[8:5]),
+        .i_gpout2_sel           (trzf2_la_in[12:9])
+    );
+
+    //// END: SECOND INSTANTIATION OF ANTON'S top_raybox_zero_fsm -------------------
 
 
 endmodule	// user_project_wrapper
