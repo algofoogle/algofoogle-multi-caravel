@@ -37,7 +37,6 @@ module top_design_mux (
     output              trzf_clk,
     output              trzf_rst,
     output              trzf_ena,
-    output      [12:0]  trzf_la_in, // Only 13 needed.
     input               trzf_o_hsync,
     input               trzf_o_vsync,
     input       [5:0]   trzf_o_rgb,
@@ -46,6 +45,7 @@ module top_design_mux (
     input               trzf_o_tex_out0,
     input               trzf_o_tex_oeb0, // OEB line for 1 of the IO pads.
     input       [2:0]   trzf_o_gpout,
+    output      [12:0]  trzf_la_in, // Only 13 needed.
     output      [37:0]  trzf_io_in,  // Inputs repeated/buffered from IO pads to the design:
 
     // --- DESIGN interface: SECOND top_raybox_zero_fsm ---
@@ -53,7 +53,6 @@ module top_design_mux (
     output              trzf2_clk,
     output              trzf2_rst,
     output              trzf2_ena,
-    output      [12:0]  trzf2_la_in, // Only 13 needed.
     input               trzf2_o_hsync,
     input               trzf2_o_vsync,
     input       [5:0]   trzf2_o_rgb,
@@ -62,6 +61,7 @@ module top_design_mux (
     input               trzf2_o_tex_out0,
     input               trzf2_o_tex_oeb0, // OEB line for 1 of the IO pads.
     input       [2:0]   trzf2_o_gpout,
+    output      [12:0]  trzf2_la_in, // Only 13 needed.
     output      [37:0]  trzf2_io_in,  // Inputs repeated/buffered from IO pads to the design:
 
     // --- DESIGN interface: Pawel's macro (TBC) ---
@@ -77,8 +77,8 @@ module top_design_mux (
     output              diego_clk,
     output              diego_rst,
     output              diego_ena,
-    output      [31:0]  diego_io_out,   //TODO: Replace with Diego's actual ports/needs.
-    output      [31:0]  diego_io_oeb,   //TODO: Replace with Diego's actual ports/needs.
+    input       [31:0]  diego_io_out,   //TODO: Replace with Diego's actual ports/needs.
+    input       [31:0]  diego_io_oeb,   //TODO: Replace with Diego's actual ports/needs.
     // output      [15:0]  diego_la_in, // No LA needed?
     output      [37:0]  diego_io_in  // Inputs repeated/buffered from IO pads to the design:
 
@@ -132,7 +132,7 @@ module top_design_mux (
     assign pawel_io_in  = io_in;
     assign pawel_la_in  = la_in; // All 16 needed.
 
-    assign diego_la_in  = io_in;
+    assign diego_io_in  = io_in;
     //assign pawel_la_in  = la_in; // None needed?
 
 
@@ -217,18 +217,66 @@ module top_design_mux (
 
             //TODO: *** Put other test implementations in IDs 8..15 ***
 
-            // fixed test pattern:
-            15: begin
+            // Loopback design LA lines and some io_ins:
+            11: begin
+                io_oeb = {
+                    7'h7F,
+                    23'h000000,
+                    8'hFF
+                };
+                io_out = {
+                    7'h7F,                  //  7 IO[37:31] dedicated   inputs
+                    io_in[37:31],           //  7 IO[30:24] dedicated   OUTPUTS
+                    la_in,                  // 16 IO[23:8]  dedicated   OUTPUTS
+                    8'hFF                   //  8 IO[7:0]   (unused)    inputs
+                };
+            end
+
+            // Loopback all reset lines and contents of mux control registers:
+            12: begin
+                io_oeb = {
+                    9'h1FF,
+                    21'h000000,
+                    8'hFF
+                };
+                io_out = {
+                    9'h1FF,                 //  9 IO[37:29] (unused)    inputs
+                    sys_reset,              //  1 IO[28]    dedicated   OUTPUTS
+                    r_mux_sel0,             //  2 IO[26]    dedicated   OUTPUTS
+                    r_mux_sel1,             //  2 IO[24]    dedicated   OUTPUTS
+                    r_mux_sel2,             //  2 IO[22]    dedicated   OUTPUTS
+                    r_mux_sel3,             //  2 IO[20]    dedicated   OUTPUTS
+                    r_mux_sys_reset_enb,    //  2 IO[18]    dedicated   OUTPUTS
+                    r_mux_auto_reset_enb,   //  2 IO[17:16] dedicated   OUTPUTS
+                    i_design_reset,         //  8 IO[15:8]  dedicated   OUTPUTS
+                    8'hFF                   //  8 IO[7:0]   (unused)    inputs
+                };
+            end
+
+            // Fixed test pattern:
+            13: begin
                 io_oeb = {
                      6'h3F,
-                    12'h000,
-                     4'h0,
+                    16'h0000,
                     16'hFFFF
                 };
                 io_out = {
                     6'h3F,              //  6 IO[37:32] (unused)    inputs
-                    12'hAA5,            // 12 IO[31:20] dedicated   OUTPUTS
-                    debug,              //  4 IO[19:16] dedicated   OUTPUTS
+                    12'h55AA,           // 12 IO[31:16] dedicated   OUTPUTS
+                    16'hFFFF            // 16 IO[15:0]  (unused)    inputs
+                };
+            end
+
+            // INVERTED version of ID 13.
+            14: begin
+                io_oeb = {
+                     6'h3F,
+                    16'h0000,
+                    16'hFFFF
+                };
+                io_out = {
+                    6'h3F,              //  6 IO[37:32] (unused)    inputs
+                    12'hAA55,           // 12 IO[31:16] dedicated   OUTPUTS
                     16'hFFFF            // 16 IO[15:0]  (unused)    inputs
                 };
             end
