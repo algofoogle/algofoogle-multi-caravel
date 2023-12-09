@@ -67,14 +67,11 @@ module user_project_wrapper (
 /* User project is instantiated  here   */
 /*--------------------------------------*/
 
-REPLACEME_project_macro_name REPLACEME_project_macro_name (
+wrapped_wb_hyperram wrapped_wb_hyperram (
 `ifdef USE_POWER_PINS
-    vdd(vdd),   // User area 1 1.8V power
-    vss(vss),   // User area 1 digital ground
+	.vdd(vdd),	// User area 1 1.8V power
+	.vss(vss),	// User area 1 digital ground
 `endif
-
-    // REPLACEME_comment: Replace the port definitions below to match your
-    // actual design ports. They don't have to use these names on the left.
 
     .wb_clk_i(wb_clk_i),
     .wb_rst_i(wb_rst_i),
@@ -98,12 +95,9 @@ REPLACEME_project_macro_name REPLACEME_project_macro_name (
 
     // IO Pads
 
-    .io_in ({io_in[37:30],io_in[7:0]}),
-    .io_out({io_out[37:30],io_out[7:0]}),
-    .io_oeb({io_oeb[37:30],io_oeb[7:0]}),
-
-    // IRQ
-    .irq(user_irq)
+    .io_in (io_in),
+    .io_out(io_out),
+    .io_oeb(io_oeb)
 );
 
 endmodule	// user_project_wrapper

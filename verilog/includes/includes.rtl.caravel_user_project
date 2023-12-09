@@ -1,4 +1,4 @@
 # Caravel user project includes
--v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v
--v $(USER_PROJECT_VERILOG)/rtl/REPLACEME_project_macro_name.v
--v $(USER_PROJECT_VERILOG)/rtl/REPLACEME_all_other_rtl_source_files.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	     
+-v $(USER_PROJECT_VERILOG)/rtl/wrapped_wb_hyperram.v	     
+ 
