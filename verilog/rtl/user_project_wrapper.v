@@ -87,17 +87,13 @@ wrapped_wb_hyperram wrapped_wb_hyperram (
     .wbs_ack_o(wbs_ack_o),
     .wbs_dat_o(wbs_dat_o),
 
-    // Logic Analyzer
-
-    .la_data_in(la_data_in),
-    .la_data_out(la_data_out),
-    .la_oenb (la_oenb),
-
     // IO Pads
+    .io_in (io_in[20:12]),
+    .io_out(io_out[20:12]),
+    .io_oeb(io_oeb[20:12]),
 
-    .io_in (io_in),
-    .io_out(io_out),
-    .io_oeb(io_oeb)
+    // Additional
+    .rst_i(la_data_out[0])
 );
 
 endmodule	// user_project_wrapper
