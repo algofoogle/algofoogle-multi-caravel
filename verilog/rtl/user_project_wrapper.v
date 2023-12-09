@@ -158,7 +158,7 @@ module user_project_wrapper (
     wire [12:0] trzf_la_in; // The mux repeats/buffers these from the LA...
     wire [37:0] trzf_io_in; // ...and IO inputs into our design.
 
-    wire        trzf_reset_alt = trzf_la_in[0]; //SMELL: Get rid of this.
+    //SMELL: trzf_la_in[0] is currently unused. Renumber?
 
     top_raybox_zero_fsm top_raybox_zero_fsm(
     `ifdef USE_POWER_PINS
@@ -219,7 +219,7 @@ module user_project_wrapper (
     wire [12:0] trzf2_la_in; // The mux repeats/buffers these from the LA...
     wire [37:0] trzf2_io_in; // ...and IO inputs into our design.
 
-    wire        trzf2_reset_alt = trzf_la_in[0]; //SMELL: Get rid of this.
+    //SMELL: trzf2_la_in[0] is currently unused. Renumber?
 
     top_raybox_zero_fsm top_raybox_zero_fsm2(
     `ifdef USE_POWER_PINS
