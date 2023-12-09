@@ -25,7 +25,12 @@
  * Instantiated in this UPW you will find:
  *  -   The mux (top_design_mux) that connects each of the designs
  *      with IO pads.
- *  -   Our main top design macro (top_raybox_zero_fsm).
+ *  -   Our main top design macros:
+ *      -   top_raybox_zero_fsm
+ *      -   top_raybox_zero_fsm (2nd instance)
+ *      -   Pawel's macro (TBC)
+ *      -   Diego's macro (TBC)
+ *      -   Anton's 3rd, 4th, and 5th macros (TBC)
  *
  *-------------------------------------------------------------
  */
@@ -65,62 +70,83 @@ module user_project_wrapper (
     output [2:0] user_irq
 );
 
-/*-------------------------------------*/
-/* User projects are instantiated here */
-/*-------------------------------------*/
+    //NOTE: LA pins [63:49] are used by the mux.
+    //NOTE: LA pins [23:8] are muxed between some designs.
+    wire [15:0] design_la_in = la_data_in[23:8]; // Can be remapped if desired.
 
-    //NOTE: LA pins [4:0] and [63:60] are used by the mux.
 
-    //// BEGIN: INSTANTIATION OF ANTON'S top_design_mux -------------------
+/*----------------------------------------------*/
+/* MUX for sharing IOs/LAs is instantiated here */
+/*----------------------------------------------*/
+
+    //// BEGIN: INSTANTIATION OF top_design_mux -------------------
 
     top_design_mux top_design_mux(
     `ifdef USE_POWER_PINS
         .vdd(vdd),        // User area 1 1.8V power
         .vss(vss),        // User area 1 digital ground
     `endif
-        .wb_clk_i       (wb_clk_i),
-        .wb_rst_i       (wb_rst_i),
+        .wb_clk_i               (wb_clk_i),
+        .wb_rst_i               (wb_rst_i),
 
-        .io_in          (io_in),
-        .io_out         (io_out),
-        .io_oeb         (io_oeb),
+        .io_in                  (io_in),
+        .io_out                 (io_out),
+        .io_oeb                 (io_oeb),
+        .la_in                  (design_la_in),
 
-        .sel_id         (la_data_in[3:0]),
-        .sel_clk        (la_data_in[4]),
-        .debug          (la_data_in[8:5]),
-        .la_extra_in    (la_data_in[21:9]),
+        //NOTE: Mapping of LAs to mux control signals is described here:
+        // https://github.com/algofoogle/journal/blob/master/0187-2023-12-09.md#summary-of-la-to-mux-control-mapping
+        .i_mux_sel              (la_data_in[52:49]),
+        .i_mux_sys_reset_enb    (la_data_in[53]),
+        .i_mux_auto_reset_enb   (la_data_in[54]),
+        .i_design_reset         (la_data_in[62:55]),
+        .mux_conf_clk           (la_data_in[63]),
 
         // top_raybox_zero_fsm:
-        .trzf_la_in     (trzf_la_in),
-        .trzf_o_hsync   (trzf_o_hsync),
-        .trzf_o_vsync   (trzf_o_vsync),
-        .trzf_o_rgb     (trzf_o_rgb),
-        .trzf_o_tex_csb (trzf_o_tex_csb),
-        .trzf_o_tex_sclk(trzf_o_tex_sclk),
-        .trzf_o_tex_out0(trzf_o_tex_out0),
-        .trzf_o_tex_oeb0(trzf_o_tex_oeb0),
-        .trzf_o_gpout   (trzf_o_gpout),
-        .trzf_io_in     (trzf_io_in), // The mux repeats/buffers these from the IO inputs into our design.
+        .trzf_clk               (trzf_clk),
+        .trzf_rst               (trzf_rst),
+        .trzf_ena               (trzf_ena),
+        .trzf_la_in             (trzf_la_in),
+        .trzf_o_hsync           (trzf_o_hsync),
+        .trzf_o_vsync           (trzf_o_vsync),
+        .trzf_o_rgb             (trzf_o_rgb),
+        .trzf_o_tex_csb         (trzf_o_tex_csb),
+        .trzf_o_tex_sclk        (trzf_o_tex_sclk),
+        .trzf_o_tex_out0        (trzf_o_tex_out0),
+        .trzf_o_tex_oeb0        (trzf_o_tex_oeb0),
+        .trzf_o_gpout           (trzf_o_gpout),
+        .trzf_io_in             (trzf_io_in), // The mux repeats/buffers these from the IO inputs into our design.
 
         // SECOND top_raybox_zero_fsm:
-        .trzf2_la_in     (trzf2_la_in),
-        .trzf2_o_hsync   (trzf2_o_hsync),
-        .trzf2_o_vsync   (trzf2_o_vsync),
-        .trzf2_o_rgb     (trzf2_o_rgb),
-        .trzf2_o_tex_csb (trzf2_o_tex_csb),
-        .trzf2_o_tex_sclk(trzf2_o_tex_sclk),
-        .trzf2_o_tex_out0(trzf2_o_tex_out0),
-        .trzf2_o_tex_oeb0(trzf2_o_tex_oeb0),
-        .trzf2_o_gpout   (trzf2_o_gpout),
-        .trzf2_io_in     (trzf2_io_in) // The mux repeats/buffers these from the IO inputs into our design.
+        .trzf2_clk              (trzf2_clk),
+        .trzf2_rst              (trzf2_rst),
+        .trzf2_ena              (trzf2_ena),
+        .trzf2_la_in            (trzf2_la_in),
+        .trzf2_o_hsync          (trzf2_o_hsync),
+        .trzf2_o_vsync          (trzf2_o_vsync),
+        .trzf2_o_rgb            (trzf2_o_rgb),
+        .trzf2_o_tex_csb        (trzf2_o_tex_csb),
+        .trzf2_o_tex_sclk       (trzf2_o_tex_sclk),
+        .trzf2_o_tex_out0       (trzf2_o_tex_out0),
+        .trzf2_o_tex_oeb0       (trzf2_o_tex_oeb0),
+        .trzf2_o_gpout          (trzf2_o_gpout),
+        .trzf2_io_in            (trzf2_io_in) // The mux repeats/buffers these from the IO inputs into our design.
+
+        //TODO: PUT IN INTERFACES FOR PAWEL AND DIEGO'S DESIGNS!
     );
 
-    //// END: INSTANTIATION OF ANTON'S top_design_mux -------------------
+    //// END: INSTANTIATION OF top_design_mux -------------------
 
 
+/*--------------------------------------*/
+/* User projects are instantiated below */
+/*--------------------------------------*/
 
     //// BEGIN: INSTANTIATION OF ANTON'S top_raybox_zero_fsm -------------------
 
+    wire        trzf_clk;
+    wire        trzf_rst;
+    wire        trzf_ena;   // Unused.
     wire        trzf_o_hsync;
     wire        trzf_o_vsync;
     wire [5:0]  trzf_o_rgb;
@@ -129,26 +155,20 @@ module user_project_wrapper (
     wire [2:0]  trzf_o_gpout;
     wire        trzf_o_tex_out0;
     wire        trzf_o_tex_oeb0;
-    wire [12:0] trzf_la_in; //      = la_data_in[17:5]; // Can be reassigned, if desired.
-    wire [37:0] trzf_io_in; // The mux repeats/buffers these from the IO inputs into our design.
+    wire [12:0] trzf_la_in; // The mux repeats/buffers these from the LA...
+    wire [37:0] trzf_io_in; // ...and IO inputs into our design.
 
-    wire        trzf_clock_in   = wb_clk_i;
-    wire        trzf_reset      = wb_rst_i;         // Reset by SoC...
-    wire        trzf_reset_alt  = trzf_la_in[0];    // ...OR by LA.
+    wire        trzf_reset_alt = trzf_la_in[0]; //SMELL: Get rid of this.
 
     top_raybox_zero_fsm top_raybox_zero_fsm(
     `ifdef USE_POWER_PINS
-        .vdd(vdd),        // User area 1 1.8V power
-        .vss(vss),        // User area 1 digital ground
+        .vdd(vdd),
+        .vss(vss),
     `endif
 
-        .i_clk                  (trzf_clock_in),
-        .i_reset                (trzf_reset),
+        .i_clk                  (trzf_clk),
+        .i_reset                (trzf_rst),
         .i_reset_alt            (trzf_reset_alt),
-
-        // No longer needed (mux takes care of OEBs now):
-        // .zeros                  (a0s),  // A source of 13 constant '0' signals.
-        // .ones                   (a1s),  // A source of 24 constant '1' signals.
 
         .o_hsync                (trzf_o_hsync),
         .o_vsync                (trzf_o_vsync),
@@ -175,9 +195,9 @@ module user_project_wrapper (
         .i_mode                 (trzf_io_in[34:32]),
 
         .o_gpout                (trzf_o_gpout),
-        .i_gpout0_sel           (trzf_la_in[4:1]),
-        .i_gpout1_sel           (trzf_la_in[8:5]),
-        .i_gpout2_sel           (trzf_la_in[12:9])
+        .i_gpout0_sel           (trzf_la_in[4:1]),  //TODO: Renumber?
+        .i_gpout1_sel           (trzf_la_in[8:5]),  //TODO: Renumber?
+        .i_gpout2_sel           (trzf_la_in[12:9])  //TODO: Renumber?
     );
 
     //// END: INSTANTIATION OF ANTON'S top_raybox_zero_fsm -------------------
@@ -185,6 +205,9 @@ module user_project_wrapper (
 
     //// BEGIN: SECOND INSTANTIATION OF ANTON'S top_raybox_zero_fsm -------------------
 
+    wire        trzf2_clk;
+    wire        trzf2_rst;
+    wire        trzf2_ena;   // Unused.
     wire        trzf2_o_hsync;
     wire        trzf2_o_vsync;
     wire [5:0]  trzf2_o_rgb;
@@ -193,26 +216,20 @@ module user_project_wrapper (
     wire [2:0]  trzf2_o_gpout;
     wire        trzf2_o_tex_out0;
     wire        trzf2_o_tex_oeb0;
-    wire [12:0] trzf2_la_in; //      = la_data_in[17:5]; // Can be reassigned, if desired.
-    wire [37:0] trzf2_io_in; // The mux repeats/buffers these from the IO inputs into our design.
+    wire [12:0] trzf2_la_in; // The mux repeats/buffers these from the LA...
+    wire [37:0] trzf2_io_in; // ...and IO inputs into our design.
 
-    wire        trzf2_clock_in   = wb_clk_i;
-    wire        trzf2_reset      = wb_rst_i;         // Reset by SoC...
-    wire        trzf2_reset_alt  = trzf2_la_in[0];    // ...OR by LA.
+    wire        trzf2_reset_alt = trzf_la_in[0]; //SMELL: Get rid of this.
 
     top_raybox_zero_fsm top_raybox_zero_fsm2(
     `ifdef USE_POWER_PINS
-        .vdd(vdd),        // User area 1 1.8V power
-        .vss(vss),        // User area 1 digital ground
+        .vdd(vdd),
+        .vss(vss),
     `endif
 
         .i_clk                  (trzf2_clock_in),
         .i_reset                (trzf2_reset),
         .i_reset_alt            (trzf2_reset_alt),
-
-        // No longer needed (mux takes care of OEBs now):
-        // .zeros                  (a0s),  // A source of 13 constant '0' signals.
-        // .ones                   (a1s),  // A source of 24 constant '1' signals.
 
         .o_hsync                (trzf2_o_hsync),
         .o_vsync                (trzf2_o_vsync),
@@ -239,9 +256,9 @@ module user_project_wrapper (
         .i_mode                 (trzf2_io_in[34:32]),
 
         .o_gpout                (trzf2_o_gpout),
-        .i_gpout0_sel           (trzf2_la_in[4:1]),
-        .i_gpout1_sel           (trzf2_la_in[8:5]),
-        .i_gpout2_sel           (trzf2_la_in[12:9])
+        .i_gpout0_sel           (trzf2_la_in[4:1]),  //TODO: Renumber?
+        .i_gpout1_sel           (trzf2_la_in[8:5]),  //TODO: Renumber?
+        .i_gpout2_sel           (trzf2_la_in[12:9])  //TODO: Renumber?
     );
 
     //// END: SECOND INSTANTIATION OF ANTON'S top_raybox_zero_fsm -------------------
