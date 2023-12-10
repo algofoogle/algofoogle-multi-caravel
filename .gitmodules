@@ -1,3 +1,0 @@
-[submodule "verilog/rtl/wb_hyperram"]
-	path = verilog/rtl/wb_hyperram
-	url = https://github.com/embelon/wb_hyperram.git
