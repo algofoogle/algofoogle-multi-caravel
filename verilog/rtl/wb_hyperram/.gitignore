@@ -1,0 +1,14 @@
+picosoc/*.asc
+picosoc/*.elf
+picosoc/*.bin
+picosoc/*.hex
+picosoc/upduino*.lds
+picosoc/*.json
+picosoc/*.rpt
+*vcd
+*log
+*bin
+__pycache__
+sim_build
+results.xml
+runs
