@@ -1,0 +1,35 @@
+{
+    "ROUTING_CORES": 7,
+    "DESIGN_NAME": "user_proj_cpu",
+    "VERILOG_FILES": [
+        "dir::../../verilog/rtl/defines.v",
+        "dir::../../verilog/rtl/user_proj_cpu/user_proj_cpu.v",
+        "dir::../../verilog/rtl/user_proj_cpu/cpuy.v",
+        "dir::../../verilog/rtl/user_proj_cpu/alu.v",
+        "dir::../../verilog/rtl/user_proj_cpu/stack.v",
+        "dir::../../verilog/rtl/user_proj_cpu/timer.v",
+        "dir::../../verilog/rtl/user_proj_cpu/ucode.v"
+    ],
+    "CLOCK_PERIOD": 25,
+    "CLOCK_PORT": "wb_clk_i",
+    "CLOCK_NET": "cpuy.clk",
+    "FP_SIZING": "relative",
+    "FP_CORE_UTIL": 30,
+    "PL_TARGET_DENSITY": 0.35,
+    "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
+
+    "//": "Common GF180 stuff...",
+    "PDK": "gf180mcuD",
+    "STD_CELL_LIBRARY": "gf180mcu_fd_sc_mcu7t5v0",
+    "DESIGN_IS_CORE": 0,
+    "PL_BASIC_PLACEMENT": 0,
+    "MAX_FANOUT_CONSTRAINT": 4,
+    "RT_MAX_LAYER": "Metal4",
+    "VDD_NETS": [ "vdd" ],
+    "GND_NETS": [ "vss" ],
+    "IO_SYNC": 0,
+    "BASE_SDC_FILE": "dir::base_user_proj_cpu.sdc",
+    "RUN_HEURISTIC_DIODE_INSERTION": 1,
+    "RUN_CVC": 1,
+    "QUIT_ON_LINTER_ERRORS": 0
+}

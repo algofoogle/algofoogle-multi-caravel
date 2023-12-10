@@ -131,7 +131,15 @@ module user_project_wrapper (
         .trzf2_o_tex_out0       (trzf2_o_tex_out0),
         .trzf2_o_tex_oeb0       (trzf2_o_tex_oeb0),
         .trzf2_o_gpout          (trzf2_o_gpout),
-        .trzf2_io_in            (trzf2_io_in) // The mux repeats/buffers these from the IO inputs into our design.
+        .trzf2_io_in            (trzf2_io_in), // The mux repeats/buffers these from the IO inputs into our design.
+
+        // Diego's user_proj_cpu:
+        .diego_clk              (diego_clk),
+        // .diego_rst              (diego_rst), // Not required: Diego's using io_in[6] as reset.
+        // .diego_ena              (diego_ena), // Unused.
+        .diego_io_out           (diego_io_out),
+        .diego_io_oeb           (diego_io_oeb),
+        .diego_io_in            (diego_io_in)
 
         //TODO: PUT IN INTERFACES FOR PAWEL AND DIEGO'S DESIGNS!
     );
@@ -261,6 +269,27 @@ module user_project_wrapper (
     );
 
     //// END: SECOND INSTANTIATION OF ANTON'S top_raybox_zero_fsm -------------------
+
+
+    //// BEGIN: INSTANTIATION OF DEIGO'S user_proj_cpu -------------------
+
+    wire        diego_clk;
+    wire [31:0] diego_io_out;
+    wire [31:0] diego_io_oeb;
+    wire [31:0] diego_io_in;
+
+    user_proj_cpu user_proj_cpu(
+    `ifdef USE_POWER_PINS
+        .vdd(vdd),
+        .vss(vss),
+    `endif
+        .wb_clk_i               (diego_clk),
+        .io_out                 (diego_io_out),
+        .io_oeb                 (diego_io_oeb),
+        .io_in                  (diego_io_in)
+    );
+
+    //// END: INSTANTIATION OF DEIGO'S user_proj_cpu -------------------
 
 
 endmodule	// user_project_wrapper

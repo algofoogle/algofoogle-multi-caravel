@@ -1,8 +1,8 @@
-CARAVEL_ROOT: /usr/caravel_user_project/caravel
-MCW_ROOT: /usr/caravel_user_project/mgmt_core_wrapper
-PDK: sky130A
-PDK_ROOT: /usr/pdk
-USER_PROJECT_ROOT: /usr/caravel_user_project
+CARAVEL_ROOT: /home/zerotoasic/anton/algofoogle-multi-caravel/caravel
+MCW_ROOT: /home/zerotoasic/anton/algofoogle-multi-caravel/mgmt_core_wrapper
+PDK: gf180mcuD
+PDK_ROOT: /home/zerotoasic/asic_tools/pdk
+USER_PROJECT_ROOT: /home/zerotoasic/anton/algofoogle-multi-caravel
 caravan: false
 clk: 25
 emailto:
