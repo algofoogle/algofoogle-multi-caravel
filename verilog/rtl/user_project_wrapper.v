@@ -69,8 +69,8 @@ module user_project_wrapper (
 
 REPLACEME_project_macro_name REPLACEME_project_macro_name (
 `ifdef USE_POWER_PINS
-    vdd(vdd),   // User area 1 1.8V power
-    vss(vss),   // User area 1 digital ground
+    .vdd(vdd),
+    .vss(vss),
 `endif
 
     // REPLACEME_comment: Replace the port definitions below to match your
