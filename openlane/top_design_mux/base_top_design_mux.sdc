@@ -58,6 +58,8 @@ set_input_delay [expr $::env(CLOCK_PERIOD) * 0.5 + 2] -clock [get_clocks {clk}] 
 # set_multicycle_path -hold 1  -through [get_ports {wbs_cyc_i}]
 # set_multicycle_path -setup 2 -through [get_ports {wbs_stb_i}]
 # set_multicycle_path -hold 1  -through [get_ports {wbs_stb_i}]
+# set_multicycle_path -setup 2 -through [get_ports {i_design_reset[0]}]
+# set_multicycle_path -hold 1  -through [get_ports {i_design_reset[0]}]
 
 #------------------------------------------#
 # Retrieved Constraints
