@@ -96,6 +96,7 @@ module user_project_wrapper (
 
         //NOTE: Mapping of LAs to mux control signals is described here:
         // https://github.com/algofoogle/journal/blob/master/0187-2023-12-09.md#summary-of-la-to-mux-control-mapping
+        .i_mux_io5_reset_enb    (la_data_in[48]),
         .i_mux_sel              (la_data_in[52:49]),
         .i_mux_sys_reset_enb    (la_data_in[53]),
         .i_mux_auto_reset_enb   (la_data_in[54]),

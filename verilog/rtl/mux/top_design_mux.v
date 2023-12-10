@@ -23,8 +23,8 @@ module top_design_mux (
     input               mux_conf_clk,
     input       [3:0]   i_mux_sel,
     input               i_mux_sys_reset_enb,
-    input               i_mux_auto_reset_enb,
     input               i_mux_io5_reset_enb,
+    input               i_mux_auto_reset_enb,
     input       [7:0]   i_design_reset,
 
     // === NOTE: For the following design interfaces, outputs from the design ===
@@ -245,8 +245,10 @@ module top_design_mux (
                     8'hFF
                 };
                 io_out = {
-                    9'h1FF,                 //  9 IO[37:29] (unused)    inputs
-                    sys_reset,              //  1 IO[28]    dedicated   OUTPUTS
+                    6'h3F,                  //  8 IO[37:32] (unused)    inputs
+                    r_mux_io5_reset_enb,    //  2 IO[31:30] dedicated   OUTPUTS
+                    io5_reset,              //  1 IO[29]    dedicated   OUTPUT
+                    sys_reset,              //  1 IO[28]    dedicated   OUTPUT
                     r_mux_sel0,             //  2 IO[26]    dedicated   OUTPUTS
                     r_mux_sel1,             //  2 IO[24]    dedicated   OUTPUTS
                     r_mux_sel2,             //  2 IO[22]    dedicated   OUTPUTS
