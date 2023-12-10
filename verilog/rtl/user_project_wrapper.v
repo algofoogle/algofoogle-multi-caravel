@@ -292,6 +292,29 @@ module user_project_wrapper (
     //// END: INSTANTIATION OF DEIGO'S user_proj_cpu -------------------
 
 
+    //// BEGIN: INSTANTIATION OF PAWEL'S wrapped_wb_hyperram -------------------
+
+    wrapped_wb_hyperram wrapped_wb_hyperram (
+    `ifdef USE_POWER_PINS
+        .vdd(vdd),
+        .vss(vss),
+    `endif
+
+        .wb_clk_i               (wb_clk_i),     // Connect directly to Wishbone clock (bypass mux)
+        .wb_rst_i               (wb_rst_i),     // Connect directly to Wishbone reset (bypass mux)
+
+        // IO Pads
+        .io_in                  (io_in[20:12]),
+        .io_out                 (io_out[20:12]),
+        .io_oeb                 (io_oeb[20:12]),
+
+        // Additional
+        .rst_i                  (pawel_mux_rst)
+    );
+
+    //// END: INSTANTIATION OF PAWEL'S wrapped_wb_hyperram -------------------
+
+
 endmodule	// user_project_wrapper
 
 `default_nettype wire
