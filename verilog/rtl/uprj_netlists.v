@@ -23,8 +23,12 @@
     // Assume default net type to be wire because GL netlists don't have the wire definitions
     `default_nettype wire
     `include "gl/user_project_wrapper.v"
-    `include "gl/user_proj_example.v"
+    `include "gl/top_raybox_zero_fsm.v"
+    `include "gl/wrapped_wb_hyperram.v"
+    `include "gl/user_proj_cpu.v"
 `else
     `include "user_project_wrapper.v"
-    `include "user_proj_example.v"
+    `include "gl/top_raybox_zero_fsm.v"
+    `include "wrapped_wb_hyperram.v"
+    `include "gl/user_proj_cpu.v"
 `endif

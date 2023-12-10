@@ -1,17 +1,20 @@
 {
 	"PDK": "gf180mcuD",
 	"STD_CELL_LIBRARY": "gf180mcu_fd_sc_mcu7t5v0",
-	"DESIGN_NAME": "user_proj_example",
+	"DESIGN_NAME": "wrapped_wb_hyperram",
 	"VERILOG_FILES": [
 		"dir::../../verilog/rtl/defines.v",
-		"dir::../../verilog/rtl/user_proj_example.v"
+		"dir::../../verilog/rtl/wb_hyperram/src/register_rw.v",
+		"dir::../../verilog/rtl/wb_hyperram/src/hyperram.sv",
+		"dir::../../verilog/rtl/wb_hyperram/src/wb_hyperram.sv",
+		"dir::../../verilog/rtl/wrapped_wb_hyperram.v"
 	],
 	"DESIGN_IS_CORE": 0,
 	"CLOCK_PORT": "wb_clk_i",
-	"CLOCK_NET": "counter.clk",
-	"CLOCK_PERIOD": "24.0",
+	"CLOCK_NET": "wb_hyperram.wb_clk_i",
+	"CLOCK_PERIOD": "32.0",
 	"FP_SIZING": "absolute",
-	"DIE_AREA": "0 0 2800 1760",
+	"DIE_AREA": "0 0 800 300",
 	"FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
 	"PL_BASIC_PLACEMENT": 0,
 	"PL_TARGET_DENSITY": 0.45,
@@ -24,7 +27,7 @@
 	"GND_NETS": [
 		"vss"
 	],
-    "BASE_SDC_FILE": "dir::base_user_proj_example.sdc",
+    "BASE_SDC_FILE": "dir::wrapped_wb_hyperram.sdc",
 	"RUN_HEURISTIC_DIODE_INSERTION": 1,
 	"RUN_CVC": 1,
 	"QUIT_ON_LINTER_ERRORS": 0

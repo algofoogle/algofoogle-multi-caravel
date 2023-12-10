@@ -133,13 +133,20 @@ module user_project_wrapper (
         .trzf2_o_gpout          (trzf2_o_gpout),
         .trzf2_io_in            (trzf2_io_in), // The mux repeats/buffers these from the IO inputs into our design.
 
+        .pawel_clk              (pawel_clk),
+        .pawel_rst              (pawel_mux_rst),
+        .pawel_io_out           (pawel_io_out),
+        .pawel_io_oeb           (pawel_io_oeb),
+        .pawel_la_in            (pawel_la_in),
+        .pawel_io_in            (pawel_io_in_all38),
+
         // Diego's user_proj_cpu:
         .diego_clk              (diego_clk),
         // .diego_rst              (diego_rst), // Not required: Diego's using io_in[6] as reset.
         // .diego_ena              (diego_ena), // Unused.
         .diego_io_out           (diego_io_out),
         .diego_io_oeb           (diego_io_oeb),
-        .diego_io_in            (diego_io_in)
+        .diego_io_in            (diego_io_in_all38)
 
         //TODO: PUT IN INTERFACES FOR PAWEL AND DIEGO'S DESIGNS!
     );
@@ -235,8 +242,8 @@ module user_project_wrapper (
         .vss(vss),
     `endif
 
-        .i_clk                  (trzf2_clock_in),
-        .i_reset                (trzf2_reset),
+        .i_clk                  (trzf2_clk),
+        .i_reset                (trzf2_rst),
 
         .o_hsync                (trzf2_o_hsync),
         .o_vsync                (trzf2_o_vsync),
@@ -276,7 +283,7 @@ module user_project_wrapper (
     wire        diego_clk;
     wire [31:0] diego_io_out;
     wire [31:0] diego_io_oeb;
-    wire [31:0] diego_io_in;
+    wire [37:0] diego_io_in_all38;
 
     user_proj_cpu user_proj_cpu(
     `ifdef USE_POWER_PINS
@@ -284,12 +291,54 @@ module user_project_wrapper (
         .vss(vss),
     `endif
         .wb_clk_i               (diego_clk),
+        .io_in                  (diego_io_in_all38[37:6]) // Mux gives all 38; we use upper 32.
         .io_out                 (diego_io_out),
         .io_oeb                 (diego_io_oeb),
-        .io_in                  (diego_io_in)
     );
 
     //// END: INSTANTIATION OF DEIGO'S user_proj_cpu -------------------
+
+
+    //// BEGIN: INSTANTIATION OF PAWEL'S wrapped_wb_hyperram -------------------
+
+
+    // wrapped_wb_hyperram uses wb_rst_i directly, but this is an alternate reset to respect the mux:
+    wire        pawel_clk;      // Unused.
+    wire        pawel_mux_rst;
+    wire [12:0] pawel_io_out;
+    wire [12:0] pawel_io_oeb;
+    wire [37:0] pawel_io_in_all38;
+    wire [15:0] pawel_la_in;    // Unused.
+
+    wrapped_wb_hyperram wrapped_wb_hyperram (
+    `ifdef USE_POWER_PINS
+        .vdd(vdd),
+        .vss(vss),
+    `endif
+
+        .wb_clk_i               (wb_clk_i),     // Connect directly to Wishbone clock (bypass mux)
+        .wb_rst_i               (wb_rst_i),     // Connect directly to Wishbone reset (bypass mux)
+
+        // MGMT SoC Wishbone Slave
+        .wbs_cyc_i              (wbs_cyc_i),
+        .wbs_stb_i              (wbs_stb_i),
+        .wbs_we_i               (wbs_we_i),
+        .wbs_sel_i              (wbs_sel_i),
+        .wbs_adr_i              (wbs_adr_i),
+        .wbs_dat_i              (wbs_dat_i),
+        .wbs_ack_o              (wbs_ack_o),
+        .wbs_dat_o              (wbs_dat_o),
+
+        // IO Pads
+        .io_in                  (pawel_io_in_all38[37:25]), // Mux gives all 38; we use upper 13.
+        .io_out                 (pawel_io_out),
+        .io_oeb                 (pawel_io_oeb),
+
+        // Additional
+        .rst_i                  (pawel_mux_rst)
+    );
+
+    //// END: INSTANTIATION OF PAWEL'S wrapped_wb_hyperram -------------------
 
 
 endmodule	// user_project_wrapper

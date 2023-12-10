@@ -2,3 +2,6 @@
 	path = verilog/rtl/raybox-zero-fsm
 	url = git@github.com:algofoogle/raybox-zero
 	branch = gf180
+[submodule "verilog/rtl/wb_hyperram"]
+	path = verilog/rtl/wb_hyperram
+	url = https://github.com/embelon/wb_hyperram.git

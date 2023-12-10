@@ -36,6 +36,9 @@
 -v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/vga_sync.v
 -v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/wall_tracer.v
 
+# Pawel's wrapped_wb_hyperram:
+-v $(USER_PROJECT_VERILOG)/rtl/wrapped_wb_hyperram.v
+
 # Diego's user_proj_cpu:
 -v $(USER_PROJECT_VERILOG)/rtl/user_proj_cpu/user_proj_cpu.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_proj_cpu/cpuy.v

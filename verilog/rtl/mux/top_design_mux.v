@@ -66,17 +66,17 @@ module top_design_mux (
     output      [37:0]  trzf2_io_in,  // Inputs repeated/buffered from IO pads to the design:
 
     // --- DESIGN interface: Pawel's macro (TBC) ---
-    output              pawel_clk,
-    output              pawel_rst,
+    output              pawel_clk,      // Unused; design uses wb_clk_i directly.
+    output              pawel_rst,      // Unused; design uses wb_rst_i directly.
     output              pawel_ena,
     input       [12:0]  pawel_io_out,   //TODO: Replace with Pawel's actual ports/needs.
     input       [12:0]  pawel_io_oeb,   //TODO: Replace with Pawel's actual ports/needs.
-    output      [15:0]  pawel_la_in,
+    output      [15:0]  pawel_la_in,    //NOTE: Unused now, but I'll keep them for now to avoid reshaping the mux macro.
     output      [37:0]  pawel_io_in,  // Inputs repeated/buffered from IO pads to the design:
 
     // --- DESIGN interface: Diego's macro (TBC) ---
     output              diego_clk,
-    output              diego_rst,
+    output              diego_rst,      // Unused; design has its own external reset.
     output              diego_ena,
     input       [31:0]  diego_io_out,   //TODO: Replace with Diego's actual ports/needs.
     input       [31:0]  diego_io_oeb,   //TODO: Replace with Diego's actual ports/needs.
@@ -192,8 +192,7 @@ module top_design_mux (
 
             // Pawel's design:
             2: begin
-                //TODO: DEFINE THIS CORRECTLY FOR PAWEL'S DESIGN!
-                // io_oeb = ?
+                // io_oeb = ?????????????1111111111111111111111111
                 io_oeb = {
                     pawel_io_oeb,
                     25'h1FF_FFFF
@@ -206,8 +205,7 @@ module top_design_mux (
 
             // Diego's design:
             3: begin
-                //TODO: DEFINE THIS CORRECTLY FOR DIEGO'S DESIGN!
-                // io_oeb = ?
+                // io_oeb = ????????????????????????????????111111
                 io_oeb = {
                     diego_io_oeb,
                     6'h3F
