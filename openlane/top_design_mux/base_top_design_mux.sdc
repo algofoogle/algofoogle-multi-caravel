@@ -79,10 +79,19 @@ set_input_transition $clk_tran [get_ports $clk_input]
 puts "\[INFO\]: Setting clock transition: $clk_tran"
 
 # Input delays
-set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {sel_id[*]}]
-set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {sel_id[*]}]
-set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {debug[*]}]
-set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {debug[*]}]
+# These are all LA inputs to the mux:
+set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {la_in[*]}]
+set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {la_in[*]}]
+set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {i_design_reset[*]}]
+set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {i_design_reset[*]}]
+set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {i_mux_sel[*]}]
+set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {i_mux_sel[*]}]
+set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {i_mux_sys_reset_enb}]
+set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {i_mux_sys_reset_enb}]
+set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {i_mux_auto_reset_enb}]
+set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {i_mux_auto_reset_enb}]
+set_input_delay -max 1.87 -clock [get_clocks {clk}] [get_ports {mux_conf_clk}]
+set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {mux_conf_clk}]
 # set_input_delay -max 1.89 -clock [get_clocks {clk}] [get_ports {la_oenb[*]}]
 # set_input_delay -max 3.17 -clock [get_clocks {clk}] [get_ports {wbs_sel_i[*]}]
 # set_input_delay -max 3.74 -clock [get_clocks {clk}] [get_ports {wbs_we_i}]
@@ -97,32 +106,84 @@ set_input_delay -min 0.18 -clock [get_clocks {clk}] [get_ports {debug[*]}]
 # set_input_delay -min 1.65 -clock [get_clocks {clk}] [get_ports {wbs_we_i}]
 # set_input_delay -min 1.69 -clock [get_clocks {clk}] [get_ports {wbs_cyc_i}]
 # set_input_delay -min 1.86 -clock [get_clocks {clk}] [get_ports {wbs_stb_i}]
-
-#SMELL: Anton's additions:
-#Ins:
-set_input_delay -max 4.55 -clock [get_clocks {clk}] [get_ports {io_in[*]}]
-set_input_delay -min 1.26 -clock [get_clocks {clk}] [get_ports {io_in[*]}]
-set_input_delay -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_hsync}]
-set_input_delay -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_hsync}]
-set_input_delay -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_vsync}]
-set_input_delay -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_vsync}]
-set_input_delay -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_rgb[*]}]
-set_input_delay -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_rgb[*]}]
-set_input_delay -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_csb}]
-set_input_delay -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_csb}]
-set_input_delay -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_sclk}]
-set_input_delay -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_sclk}]
-set_input_delay -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_out0}]
-set_input_delay -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_out0}]
-set_input_delay -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_gpout[*]}]
-set_input_delay -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_gpout[*]}]
-#Outs:
-set_output_delay -max 9.12 -clock [get_clocks {clk}] [get_ports {trzf_io_in[*]}]
-set_output_delay -min 3.9  -clock [get_clocks {clk}] [get_ports {trzf_io_in[*]}]
+# Anton's extras for muxed IOs:
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {io_in[*]}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {io_in[*]}]
 set_output_delay -max 9.12 -clock [get_clocks {clk}] [get_ports {io_out[*]}]
 set_output_delay -min 3.9  -clock [get_clocks {clk}] [get_ports {io_out[*]}]
 set_output_delay -max 9.32 -clock [get_clocks {clk}] [get_ports {io_oeb[*]}]
 set_output_delay -min 2.34 -clock [get_clocks {clk}] [get_ports {io_oeb[*]}]
+
+# --- top_raybox_zero_fsm ---
+#Ins:
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_hsync}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_hsync}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_vsync}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_vsync}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_rgb[*]}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_rgb[*]}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_csb}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_csb}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_sclk}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_sclk}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_out0}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_out0}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_oeb0}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_tex_oeb0}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf_o_gpout[*]}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf_o_gpout[*]}]
+#Outs:
+set_output_delay -max 9.12 -clock [get_clocks {clk}] [get_ports {trzf_io_in[*]}]
+set_output_delay -min 3.9  -clock [get_clocks {clk}] [get_ports {trzf_io_in[*]}]
+set_output_delay -max 9.12 -clock [get_clocks {clk}] [get_ports {trzf_la_in[*]}]
+set_output_delay -min 3.9  -clock [get_clocks {clk}] [get_ports {trzf_la_in[*]}]
+#SMELL: Need clk/rst too?
+# --- top_raybox_zero_fsm2 ---
+#Ins:
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf2_o_hsync}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf2_o_hsync}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf2_o_vsync}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf2_o_vsync}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf2_o_rgb[*]}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf2_o_rgb[*]}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf2_o_tex_csb}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf2_o_tex_csb}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf2_o_tex_sclk}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf2_o_tex_sclk}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf2_o_tex_out0}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf2_o_tex_out0}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf2_o_tex_oeb0}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf2_o_tex_oeb0}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {trzf2_o_gpout[*]}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {trzf2_o_gpout[*]}]
+#Outs:
+set_output_delay -max 9.12 -clock [get_clocks {clk}] [get_ports {trzf2_io_in[*]}]
+set_output_delay -min 3.9  -clock [get_clocks {clk}] [get_ports {trzf2_io_in[*]}]
+set_output_delay -max 9.12 -clock [get_clocks {clk}] [get_ports {trzf2_la_in[*]}]
+set_output_delay -min 3.9  -clock [get_clocks {clk}] [get_ports {trzf2_la_in[*]}]
+#SMELL: Need clk/rst too?
+# --- Pawel's macro ---
+#Ins:
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {pawel_io_out[*]}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {pawel_io_out[*]}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {pawel_io_oeb[*]}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {pawel_io_oeb[*]}]
+#Outs:
+set_output_delay -max 9.12 -clock [get_clocks {clk}] [get_ports {pawel_io_in[*]}]
+set_output_delay -min 3.9  -clock [get_clocks {clk}] [get_ports {pawel_io_in[*]}]
+set_output_delay -max 9.12 -clock [get_clocks {clk}] [get_ports {pawel_la_in[*]}]
+set_output_delay -min 3.9  -clock [get_clocks {clk}] [get_ports {pawel_la_in[*]}]
+#SMELL: Need clk/rst too?
+# --- Diego's macro ---
+#Ins:
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {diego_io_out[*]}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {diego_io_out[*]}]
+set_input_delay  -max 4.55 -clock [get_clocks {clk}] [get_ports {diego_io_oeb[*]}]
+set_input_delay  -min 1.26 -clock [get_clocks {clk}] [get_ports {diego_io_oeb[*]}]
+#Outs:
+set_output_delay -max 9.12 -clock [get_clocks {clk}] [get_ports {diego_io_in[*]}]
+set_output_delay -min 3.9  -clock [get_clocks {clk}] [get_ports {diego_io_in[*]}]
+#SMELL: Need clk/rst too?
 
 
 if { $::env(IO_SYNC) } {
@@ -135,10 +196,20 @@ if { $::env(IO_SYNC) } {
 # Input Transition
 set_input_transition -max 0.38  [get_ports {io_in[*]}]
 set_input_transition -min 0.05  [get_ports {io_in[*]}]
-set_input_transition -max 0.86  [get_ports {sel_id[*]}]
-set_input_transition -min 0.07  [get_ports {sel_id[*]}]
-set_input_transition -max 0.86  [get_ports {debug[*]}]
-set_input_transition -min 0.07  [get_ports {debug[*]}]
+set_input_transition -max 0.86  [get_ports {la_in[*]}]
+set_input_transition -min 0.07  [get_ports {la_in[*]}]
+# Mux control:
+set_input_transition -max 0.86  [get_ports {i_mux_sel[*]}]
+set_input_transition -min 0.07  [get_ports {i_mux_sel[*]}]
+set_input_transition -max 0.86  [get_ports {i_design_reset[*]}]
+set_input_transition -min 0.07  [get_ports {i_design_reset[*]}]
+set_input_transition -max 0.86  [get_ports {mux_conf_clk}]
+set_input_transition -min 0.07  [get_ports {mux_conf_clk}]
+set_input_transition -max 0.86  [get_ports {i_mux_sys_reset_enb}]
+set_input_transition -min 0.07  [get_ports {i_mux_sys_reset_enb}]
+set_input_transition -max 0.86  [get_ports {i_mux_auto_reset_enb}]
+set_input_transition -min 0.07  [get_ports {i_mux_auto_reset_enb}]
+# top_raybox_zero_fsm
 set_input_transition -max 0.38  [get_ports {trzf_o_hsync}]
 set_input_transition -min 0.05  [get_ports {trzf_o_hsync}]
 set_input_transition -max 0.38  [get_ports {trzf_o_vsync}]
@@ -151,8 +222,37 @@ set_input_transition -max 0.38  [get_ports {trzf_o_tex_sclk}]
 set_input_transition -min 0.05  [get_ports {trzf_o_tex_sclk}]
 set_input_transition -max 0.38  [get_ports {trzf_o_tex_out0}]
 set_input_transition -min 0.05  [get_ports {trzf_o_tex_out0}]
+set_input_transition -max 0.38  [get_ports {trzf_o_tex_oeb0}]
+set_input_transition -min 0.05  [get_ports {trzf_o_tex_oeb0}]
 set_input_transition -max 0.38  [get_ports {trzf_o_gpout[*]}]
 set_input_transition -min 0.05  [get_ports {trzf_o_gpout[*]}]
+# top_raybox_zero_fsm2
+set_input_transition -max 0.38  [get_ports {trzf2_o_hsync}]
+set_input_transition -min 0.05  [get_ports {trzf2_o_hsync}]
+set_input_transition -max 0.38  [get_ports {trzf2_o_vsync}]
+set_input_transition -min 0.05  [get_ports {trzf2_o_vsync}]
+set_input_transition -max 0.38  [get_ports {trzf2_o_rgb[*]}]
+set_input_transition -min 0.05  [get_ports {trzf2_o_rgb[*]}]
+set_input_transition -max 0.38  [get_ports {trzf2_o_tex_csb}]
+set_input_transition -min 0.05  [get_ports {trzf2_o_tex_csb}]
+set_input_transition -max 0.38  [get_ports {trzf2_o_tex_sclk}]
+set_input_transition -min 0.05  [get_ports {trzf2_o_tex_sclk}]
+set_input_transition -max 0.38  [get_ports {trzf2_o_tex_out0}]
+set_input_transition -min 0.05  [get_ports {trzf2_o_tex_out0}]
+set_input_transition -max 0.38  [get_ports {trzf2_o_tex_oeb0}]
+set_input_transition -min 0.05  [get_ports {trzf2_o_tex_oeb0}]
+set_input_transition -max 0.38  [get_ports {trzf2_o_gpout[*]}]
+set_input_transition -min 0.05  [get_ports {trzf2_o_gpout[*]}]
+# Pawel
+set_input_transition -max 0.38  [get_ports {pawel_io_out[*]}]
+set_input_transition -min 0.05  [get_ports {pawel_io_out[*]}]
+set_input_transition -max 0.38  [get_ports {pawel_io_oeb[*]}]
+set_input_transition -min 0.05  [get_ports {pawel_io_oeb[*]}]
+# Diego
+set_input_transition -max 0.38  [get_ports {diego_io_out[*]}]
+set_input_transition -min 0.05  [get_ports {diego_io_out[*]}]
+set_input_transition -max 0.38  [get_ports {diego_io_oeb[*]}]
+set_input_transition -min 0.05  [get_ports {diego_io_oeb[*]}]
 
 
 # set_input_transition -max 0.14  [get_ports {wbs_we_i}]
