@@ -24,6 +24,7 @@ module top_design_mux (
     input       [3:0]   i_mux_sel,
     input               i_mux_sys_reset_enb,
     input               i_mux_auto_reset_enb,
+    input               i_mux_io5_reset_enb,
     input       [7:0]   i_design_reset,
 
     // === NOTE: For the following design interfaces, outputs from the design ===
@@ -87,6 +88,7 @@ module top_design_mux (
     //NOTE: No reset on these regs, so they can persist across full system resets.
     reg [1:0] r_mux_sel0, r_mux_sel1, r_mux_sel2, r_mux_sel3;
     reg [1:0] r_mux_sys_reset_enb;
+    reg [1:0] r_mux_io5_reset_enb;
     reg [1:0] r_mux_auto_reset_enb;
     always @(posedge mux_conf_clk) begin
         r_mux_sel0           <= {          r_mux_sel0[0], i_mux_sel[0]};
@@ -94,20 +96,23 @@ module top_design_mux (
         r_mux_sel2           <= {          r_mux_sel2[0], i_mux_sel[2]};
         r_mux_sel3           <= {          r_mux_sel3[0], i_mux_sel[3]};
         r_mux_sys_reset_enb  <= { r_mux_sys_reset_enb[0], i_mux_sys_reset_enb};
+        r_mux_io5_reset_enb  <= { r_mux_io5_reset_enb[0], i_mux_io5_reset_enb};
         r_mux_auto_reset_enb <= {r_mux_auto_reset_enb[0], i_mux_auto_reset_enb};
     end
     wire [3:0] mux_sel = {r_mux_sel3[1], r_mux_sel2[1], r_mux_sel1[1], r_mux_sel0[1]};
     wire mux_sys_reset_ena  = !r_mux_sys_reset_enb[1];  // NOTE: enb (active-LOW) becomes ena (active-HIGH).
+    wire mux_io5_reset_ena  = !r_mux_io5_reset_enb[1];  // NOTE: enb (active-LOW) becomes ena (active-HIGH).
     wire mux_auto_reset_ena = !r_mux_auto_reset_enb[1]; // NOTE: enb (active-LOW) becomes ena (active-HIGH).
     wire sys_reset = mux_sys_reset_ena & wb_rst_i;
+    wire io5_reset = mux_io5_reset_ena & io_in[5];
 
     // *_rst: Combinatorial reset lines:
-    //                 Direct design rst | Auto reset lock if design not active    | wb_rst_i applied?
-    //                 ------------------|-----------------------------------------|------------------
-    assign trzf_rst  = i_design_reset[0] | (mux_auto_reset_ena && mux_sel != 4'd0) | sys_reset;
-    assign trzf2_rst = i_design_reset[1] | (mux_auto_reset_ena && mux_sel != 4'd1) | sys_reset;
-    assign pawel_rst = i_design_reset[2] | (mux_auto_reset_ena && mux_sel != 4'd2) | sys_reset;
-    assign diego_rst = i_design_reset[3] | (mux_auto_reset_ena && mux_sel != 4'd3) | sys_reset;
+    //                 Direct design rst | Auto reset lock if design not active    | wb_rst_i? | io5?
+    //                 ------------------|-----------------------------------------|-----------|-----------
+    assign trzf_rst  = i_design_reset[0] | (mux_auto_reset_ena && mux_sel != 4'd0) | sys_reset | io5_reset;
+    assign trzf2_rst = i_design_reset[1] | (mux_auto_reset_ena && mux_sel != 4'd1) | sys_reset | io5_reset;
+    assign pawel_rst = i_design_reset[2] | (mux_auto_reset_ena && mux_sel != 4'd2) | sys_reset | io5_reset;
+    assign diego_rst = i_design_reset[3] | (mux_auto_reset_ena && mux_sel != 4'd3) | sys_reset | io5_reset;
 
     // *_ena: Enable lines, for active design:
     assign trzf_ena  = mux_sel == 4'd0;
