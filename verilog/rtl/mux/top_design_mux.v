@@ -31,9 +31,9 @@ module top_design_mux (
     // === become INPUTS to the mux, and vice versa. Hence, io_in becomes an  ===
     // === output that goes into the design, and io_out and io_oeb come out   ===
     // === from the design and INTO the mux (which then sends them back out   ===
-    // === via io_out and io_oeb above.                                       ===
+    // === via io_out and io_oeb above).                                      ===
 
-    // --- DESIGN interface: top_raybox_zero_fsm ---
+    // --- DESIGN 0 interface: top_raybox_zero_fsm ---
     // Outputs to be mapped to IO pads:
     output              trzf_clk,
     output              trzf_rst,
@@ -49,7 +49,7 @@ module top_design_mux (
     output      [12:0]  trzf_la_in, // Only 13 needed.
     output      [37:0]  trzf_io_in,  // Inputs repeated/buffered from IO pads to the design:
 
-    // --- DESIGN interface: SECOND top_raybox_zero_fsm ---
+    // --- DESIGN 1 interface: SECOND top_raybox_zero_fsm ---
     // Outputs to be mapped to IO pads:
     output              trzf2_clk,
     output              trzf2_rst,
@@ -65,23 +65,49 @@ module top_design_mux (
     output      [12:0]  trzf2_la_in, // Only 13 needed.
     output      [37:0]  trzf2_io_in,  // Inputs repeated/buffered from IO pads to the design:
 
-    // --- DESIGN interface: Pawel's macro (TBC) ---
+    // --- DESIGN 2 interface: Pawel's wrapped_wb_hyperram ---
     output              pawel_clk,      // Unused; design uses wb_clk_i directly.
     output              pawel_rst,      // Unused; design uses wb_rst_i directly.
     output              pawel_ena,
-    input       [12:0]  pawel_io_out,   //TODO: Replace with Pawel's actual ports/needs.
-    input       [12:0]  pawel_io_oeb,   //TODO: Replace with Pawel's actual ports/needs.
+    input       [12:0]  pawel_io_out,
+    input       [12:0]  pawel_io_oeb,
     output      [15:0]  pawel_la_in,    //NOTE: Unused now, but I'll keep them for now to avoid reshaping the mux macro.
     output      [37:0]  pawel_io_in,  // Inputs repeated/buffered from IO pads to the design:
 
-    // --- DESIGN interface: Diego's macro (TBC) ---
+    // --- DESIGN 3 interface: Diego's user_proj_cpu ---
     output              diego_clk,
     output              diego_rst,      // Unused; design has its own external reset.
     output              diego_ena,
-    input       [31:0]  diego_io_out,   //TODO: Replace with Diego's actual ports/needs.
-    input       [31:0]  diego_io_oeb,   //TODO: Replace with Diego's actual ports/needs.
+    input       [31:0]  diego_io_out,
+    input       [31:0]  diego_io_oeb,
     // output      [15:0]  diego_la_in, // No LA needed?
-    output      [37:0]  diego_io_in  // Inputs repeated/buffered from IO pads to the design:
+    output      [37:0]  diego_io_in,  // Inputs repeated/buffered from IO pads to the design.
+
+    // --- DESIGN 4 interface: Uri's urish_simon_says ---
+    output              uri_clk,
+    output              uri_rst,      // Unused; design has its own external reset.
+    output              uri_ena,
+    input       [18:0]  uri_io_out,
+    input       [18:0]  uri_io_oeb,
+    output      [37:0]  uri_io_in,  // Inputs repeated/buffered from IO pads to the design.
+
+    // --- DESIGN 5 interface: Anton's solo_squash_caravel_gf180 ---
+    output              solos_clk,
+    output              solos_rst,
+    output              solos_ena,
+    input       [12:0]  solos_io_out,
+    output      [37:0]  solos_io_in,
+    output              solos_gpio_ready,   // Controlled by 1 LA pin
+
+    // --- DESIGN 6 interface: Anton's vga_spi_rom_gf180 (a TT05 design) ---
+    output              vgasp_clk,
+    output              vgasp_rst,
+    output              vgasp_ena,
+    output      [7:0]   vgasp_uio_in,
+    input       [7:0]   vgasp_uo_out,
+    input       [7:0]   vgasp_uio_out,
+    input       [7:0]   vgasp_uio_oe,   //NOTE: For this, 0=in, 1=out
+    output      [37:0]  vgasp_io_in
 
 );
     // Mux control registers, 2xDFF deep for each to avoid possible LA glitches...
@@ -113,12 +139,18 @@ module top_design_mux (
     assign trzf2_rst = i_design_reset[1] | (mux_auto_reset_ena && mux_sel != 4'd1) | sys_reset | io5_reset;
     assign pawel_rst = i_design_reset[2] | (mux_auto_reset_ena && mux_sel != 4'd2) | sys_reset | io5_reset;
     assign diego_rst = i_design_reset[3] | (mux_auto_reset_ena && mux_sel != 4'd3) | sys_reset | io5_reset;
+    assign uri_rst   = i_design_reset[4] | (mux_auto_reset_ena && mux_sel != 4'd4) | sys_reset | io5_reset;
+    assign solos_rst = i_design_reset[5] | (mux_auto_reset_ena && mux_sel != 4'd5) | sys_reset | io5_reset;
+    assign vgasp_rst = i_design_reset[6] | (mux_auto_reset_ena && mux_sel != 4'd6) | sys_reset | io5_reset;
 
     // *_ena: Enable lines, for active design:
     assign trzf_ena  = mux_sel == 4'd0;
     assign trzf2_ena = mux_sel == 4'd1;
     assign pawel_ena = mux_sel == 4'd2;
     assign diego_ena = mux_sel == 4'd3;
+    assign uri_ena   = mux_sel == 4'd4;
+    assign solos_ena = mux_sel == 4'd5;
+    assign vgasp_ena = mux_sel == 4'd6;
 
     // *_clk: Clock (wb_clk_i) repeated to each design:
     wire clk = wb_clk_i;
@@ -126,6 +158,9 @@ module top_design_mux (
     assign trzf2_clk    = clk;
     assign pawel_clk    = clk;
     assign diego_clk    = clk;
+    assign uri_clk      = clk;
+    assign solos_clk    = clk;
+    assign vgasp_clk    = clk;
 
     // Repeaters/buffers for INPUTS to each design (io_in and la_in)...
     assign trzf_io_in   = io_in; // Repeat/buffer IO inputs, to pass them on to the design(s)
@@ -135,11 +170,16 @@ module top_design_mux (
     assign trzf2_la_in  = la_in[12:0]; // Only 13 needed.
 
     assign pawel_io_in  = io_in;
-    assign pawel_la_in  = la_in; // All 16 needed.
+    assign pawel_la_in  = la_in; // All 16 WERE needed, but not anymore, so this is unused.
 
     assign diego_io_in  = io_in;
-    //assign diego_la_in  = la_in; // None needed?
 
+    assign uri_io_in    = io_in;
+
+    assign solos_io_in  = io_in;
+    assign solos_gpio_ready = la_in[0];
+
+    assign vgasp_io_in  = io_in;
 
 
     always @(*) begin
@@ -216,16 +256,75 @@ module top_design_mux (
                 };
             end
 
-            // *** Other people's designs would slot in here, up to ID 7 ***
+            // Uri's design:
+            4: begin
+                io_oeb = {
+                    11'h7FF,
+                    uri_io_oeb,
+                    8'hFF
+                };
+                io_out = {
+                    11'h7FF,            // 11 IO[37:27] (unused) inputs
+                    uri_io_out,         // 19 IO[26:8]  dir controlled by design.
+                    8'hFF               //  8 IO[7:0]   (unused) inputs
+                };
+            end
 
-            //TODO: Uri's design.
+            // Anton's solo_squash design:
+            5: begin
+                io_oeb = {
+                    17'h1FFFF,          // 17 IO[37:21] (unused) inputs
+                    8'h00,              //  8 IO[20:13] dedicated OUTPUTS
+                    5'h1F,              //  5 IO[12:8]  dedicated INPUTS
+                    8'hFF               //  8 IO[7:0]   (unused) inputs
+                };
+                io_out = {
+                    17'h1FFFF,          // 17 IO[37:21] (unused) inputs
+                    solos_io_out,       // 13 IO[20:8]  a mix of inputs and outputs as hardcoded into io_oeb above.
+                };
+            end
+
+            // Anton's vga_spi_rom_gf180 design:
+            //NOTE: I've tried to match these to the VGA and SPI memory pins of TRZF.
+            6: begin
+                io_oeb = {
+                    ~vgasp_uio_oe[5],   //  1 IO[37]    BIDIR (SPI /RST)
+                    1'b0,               //  1 IO[36]    dedicated OUTPUT (Test_out)
+                    8'hFF,              //  8 IO[35:28] (unused) inputs
+                    6'h3F,              //  6 IO[27:22] dedicated inputs for various other things
+                    3'h7,               //  3 IO[21:19] dedicated inputs (spi_in[3:1])
+                    ~vgasp_uio_oe[1],   //  1 IO[18]    BIDIR (spi_oeb0)
+                    10'h000,            // 10 IO[17:8]  dedicated OUTPUTS
+                    8'hFF               //  8 IO[7:0]   (unused) inputs.
+                };
+                io_out = {
+                    vgasp_uio_out[5],   //  1 IO[37]    BIDIR (SPI /RST)
+                    vgasp_uio_out[4],   //  1 IO[36]    dedicated OUTPUT (Test_out)
+                    8'hFF,              //  8 IO[35:28] (unused) inputs
+                    6'h3F,              //  6 IO[27:22] dedicated inputs for various other things
+                    3'h7,               //  3 IO[21:19] inputs (spi_in[3:1])
+                    vgasp_uio_out[1],   //  1 IO[18]    BIDIR:  spi_out0
+                    vgasp_uio_out[3],   //  1 IO[17]    OUT:    spi_sclk
+                    vgasp_uio_out[0],   //  1 IO[16]    OUT:    spi_csb
+                    vgasp_uo_out[2],    //  1 IO[15]    OUT:    b1
+                    vgasp_uo_out[6],    //  1 IO[14]    OUT:    b0
+                    vgasp_uo_out[1],    //  1 IO[13]    OUT:    g1
+                    vgasp_uo_out[5],    //  1 IO[12]    OUT:    g0
+                    vgasp_uo_out[0],    //  1 IO[11]    OUT:    r1
+                    vgasp_uo_out[4],    //  1 IO[10]    OUT:    r0
+                    vgasp_uo_out[3],    //  1 IO[9]     OUT:    vsync
+                    vgasp_uo_out[7],    //  1 IO[8]     OUT:    hsync
+                    8'hFF               //  8 IO[7:0]   (unused) inputs.
+                };
+            end
+
+            // *** Other people's designs would slot in here, up to ID 7 ***
 
             //TODO: *** Put other test implementations in IDs 8..15 ***
 
-            //TODO: Loopback for a sampling of other LA lines, just for general testing.
-            // What about loopback of user_clock2?
+            //TODO: What about loopback of user_clock2?
 
-            // Loopback design LA lines and some io_ins:
+            // Loopback design: LA lines and some io_ins:
             11: begin
                 io_oeb = {
                     7'h7F,

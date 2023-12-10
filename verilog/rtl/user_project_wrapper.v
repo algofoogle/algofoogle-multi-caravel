@@ -133,6 +133,7 @@ module user_project_wrapper (
         .trzf2_o_gpout          (trzf2_o_gpout),
         .trzf2_io_in            (trzf2_io_in), // The mux repeats/buffers these from the IO inputs into our design.
 
+        // Pawel's wrapped_wb_hyperram:
         .pawel_clk              (pawel_clk),
         .pawel_rst              (pawel_mux_rst),
         .pawel_io_out           (pawel_io_out),
@@ -146,7 +147,15 @@ module user_project_wrapper (
         // .diego_ena              (diego_ena), // Unused.
         .diego_io_out           (diego_io_out),
         .diego_io_oeb           (diego_io_oeb),
-        .diego_io_in            (diego_io_in_all38)
+        .diego_io_in            (diego_io_in_all38),
+
+        // Uri's urish_simon_says:
+        .uri_clk                (uri_clk),
+        .uri_rst                (uri_rst),
+        // .uri_ena                (uri_ena),  // Unused.
+        .uri_io_out             (uri_io_out[26:8]),
+        .uri_io_oeb             (uri_io_oeb[26:8]),
+        .uri_io_in              (uri_io_in)
 
         //TODO: PUT IN INTERFACES FOR PAWEL AND DIEGO'S DESIGNS!
     );
@@ -301,7 +310,6 @@ module user_project_wrapper (
 
     //// BEGIN: INSTANTIATION OF PAWEL'S wrapped_wb_hyperram -------------------
 
-
     // wrapped_wb_hyperram uses wb_rst_i directly, but this is an alternate reset to respect the mux:
     wire        pawel_clk;      // Unused.
     wire        pawel_mux_rst;
@@ -340,6 +348,32 @@ module user_project_wrapper (
 
     //// END: INSTANTIATION OF PAWEL'S wrapped_wb_hyperram -------------------
 
+
+    //// BEGIN: INSTANTIATION OF URI'S urish_simon_says -------------------
+
+    wire            uri_clk;
+    wire            uri_rst;
+    // wire            uri_ena;    // Unused.
+    wire    [37:0]  uri_io_out; // NOTE: Only a subset of these get passed to mux.
+    wire    [37:0]  uri_io_oeb; // NOTE: Only a subset of these get passed to mux.
+    wire    [37:0]  uri_io_in;  // Inputs repeated/buffered from IO pads to the design.
+
+    urish_simon_says urish_simon_says (
+    `ifdef USE_POWER_PINS
+        .vdd(vdd),
+        .vss(vss),
+    `endif
+
+        .wb_clk_i               (uri_clk),
+        .wb_rst_i               (uri_rst),
+
+        .io_in                  (uri_io_in),
+        .io_out                 (uri_io_out),
+        .io_oeb                 (uri_io_oeb)
+    );
+
+
+    //// END: INSTANTIATION OF URI'S urish_simon_says -------------------
 
 endmodule	// user_project_wrapper
 

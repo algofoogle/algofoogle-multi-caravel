@@ -47,3 +47,6 @@
 -v $(USER_PROJECT_VERILOG)/rtl/user_proj_cpu/timer.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_proj_cpu/ucode.v
 
+# Uri's urish_simon_says:
+-v $(USER_PROJECT_VERILOG)/rtl/urish_simon_says/simon.v
+-v $(USER_PROJECT_VERILOG)/rtl/urish_simon_says/urish_simon_says.v

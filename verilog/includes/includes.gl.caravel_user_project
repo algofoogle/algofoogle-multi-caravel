@@ -2,3 +2,6 @@
 -v $(USER_PROJECT_VERILOG)/gl/user_project_wrapper.v
 -v $(USER_PROJECT_VERILOG)/gl/top_design_mux.v
 -v $(USER_PROJECT_VERILOG)/gl/top_raybox_zero_fsm.v
+-v $(USER_PROJECT_VERILOG)/gl/wrapped_wb_hyperram.v
+-v $(USER_PROJECT_VERILOG)/gl/urish_simon_says.v
+-v $(USER_PROJECT_VERILOG)/gl/user_proj_cpu.v
