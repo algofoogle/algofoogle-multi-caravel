@@ -103,7 +103,7 @@ module top_design_mux (
     output              vgasp_clk,
     output              vgasp_rst,
     output              vgasp_ena,
-    output      [7:0]   vgasp_uio_in,
+    // output      [7:0]   vgasp_uio_in, // Not used here because it is just a subset of vgasp_io_in.
     input       [7:0]   vgasp_uo_out,
     input       [7:0]   vgasp_uio_out,
     input       [7:0]   vgasp_uio_oe,   //NOTE: For this, 0=in, 1=out
@@ -281,6 +281,7 @@ module top_design_mux (
                 io_out = {
                     17'h1FFFF,          // 17 IO[37:21] (unused) inputs
                     solos_io_out,       // 13 IO[20:8]  a mix of inputs and outputs as hardcoded into io_oeb above.
+                    8'hFF               //  8 IO[7:0]   (unused) inputs
                 };
             end
 
