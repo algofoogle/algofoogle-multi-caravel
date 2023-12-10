@@ -138,7 +138,7 @@ module top_design_mux (
     assign pawel_la_in  = la_in; // All 16 needed.
 
     assign diego_io_in  = io_in;
-    //assign pawel_la_in  = la_in; // None needed?
+    //assign diego_la_in  = la_in; // None needed?
 
 
 
@@ -218,7 +218,12 @@ module top_design_mux (
 
             // *** Other people's designs would slot in here, up to ID 7 ***
 
+            //TODO: Uri's design.
+
             //TODO: *** Put other test implementations in IDs 8..15 ***
+
+            //TODO: Loopback for a sampling of other LA lines, just for general testing.
+            // What about loopback of user_clock2?
 
             // Loopback design LA lines and some io_ins:
             11: begin

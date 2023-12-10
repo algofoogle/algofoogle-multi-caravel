@@ -291,9 +291,9 @@ module user_project_wrapper (
         .vss(vss),
     `endif
         .wb_clk_i               (diego_clk),
-        .io_in                  (diego_io_in_all38[37:6]) // Mux gives all 38; we use upper 32.
+        .io_in                  (diego_io_in_all38[37:6]), // Mux gives all 38; we use upper 32.
         .io_out                 (diego_io_out),
-        .io_oeb                 (diego_io_oeb),
+        .io_oeb                 (diego_io_oeb)
     );
 
     //// END: INSTANTIATION OF DEIGO'S user_proj_cpu -------------------

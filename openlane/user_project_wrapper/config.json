@@ -11,6 +11,7 @@
 		"top_design_mux.wb_clk_i",
 		"top_raybox_zero_fsm.i_clk",
 		"top_raybox_zero_fsm2.i_clk",
+        "wrapped_wb_hyperram.wb_clk_i",
 		"user_proj_cpu.wb_clk_i"
 	],
 	"CLOCK_PERIOD": 40,
@@ -18,21 +19,25 @@
 	"VERILOG_FILES_BLACKBOX": [
 		"dir::../../verilog/gl/top_raybox_zero_fsm.v",
 		"dir::../../verilog/gl/top_design_mux.v",
+		"dir::../../verilog/gl/wrapped_wb_hyperram.v",
 		"dir::../../verilog/gl/user_proj_cpu.v"
 	],
 	"EXTRA_LEFS": [
 		"dir::../../lef/top_raybox_zero_fsm.lef",
 		"dir::../../lef/top_design_mux.lef",
+		"dir::../../lef/wrapped_wb_hyperram.lef",
 		"dir::../../lef/user_proj_cpu.lef"
 	],
 	"EXTRA_GDS_FILES": [
 		"dir::../../gds/top_raybox_zero_fsm.gds",
 		"dir::../../gds/top_design_mux.gds",
+		"dir::../../gds/wrapped_wb_hyperram.gds",
 		"dir::../../gds/user_proj_cpu.gds"
 	],
 	"EXTRA_LIBS": [
 		"dir::../../lib/top_raybox_zero_fsm.lib",
 		"dir::../../lib/top_design_mux.lib",
+		"dir::../../lib/wrapped_wb_hyperram.lib",
 		"dir::../../lib/user_proj_cpu.lib"
 	],
 	"EXTRA_SPEFS": [
@@ -49,12 +54,19 @@
 		"user_proj_cpu",
 		"dir::../../spef/multicorner/user_proj_cpu.min.spef",
 		"dir::../../spef/multicorner/user_proj_cpu.nom.spef",
-		"dir::../../spef/multicorner/user_proj_cpu.max.spef"
+		"dir::../../spef/multicorner/user_proj_cpu.max.spef",
+
+        "wrapped_wb_hyperram",
+		"dir::../../spef/multicorner/wrapped_wb_hyperram.min.spef",
+		"dir::../../spef/multicorner/wrapped_wb_hyperram.nom.spef",
+		"dir::../../spef/multicorner/wrapped_wb_hyperram.max.spef"
+
 	],
 	"FP_PDN_MACRO_HOOKS": [
 		"top_raybox_zero_fsm  vdd vss vdd vss",
 		"top_raybox_zero_fsm2 vdd vss vdd vss",
 		"top_design_mux       vdd vss vdd vss",
+        "wrapped_wb_hyperram  vdd vss vdd vss",
 		"user_proj_cpu        vdd vss vdd vss"
 	],
 	"QUIT_ON_SYNTH_CHECKS": 0,
