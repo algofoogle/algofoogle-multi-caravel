@@ -5,13 +5,13 @@
 		"dir::../../verilog/rtl/mux/top_design_mux.v"
 	],
 
-	"//": "CLOCK_PORT is for STA, where we time mux signals against system clock:",
-	"CLOCK_PORT": "wb_clk_i",
+	"CLOCK_PORT": "mux_conf_clk",
+	"CLOCK_NET": [
+		"top_design_mux.mux_conf_clk",
+		"top_design_mux.wb_clk_i"
+	],
 
-	"//": "CLOCK_NET is for synthesis; in this macro only sel_clk is used:",
-	"CLOCK_NET": "top_design_mux.sel_clk",
-
-	"CLOCK_PERIOD": "24.0",
+	"CLOCK_PERIOD": "80.0",
 	"FP_SIZING": "absolute",
 	"DIE_AREA": "0 0 2400 220",
 	"FP_PIN_ORDER_CFG": "dir::pin_order.cfg",

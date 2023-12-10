@@ -262,7 +262,7 @@ module top_design_mux (
                 };
                 io_out = {
                     6'h3F,              //  6 IO[37:32] (unused)    inputs
-                    12'h55AA,           // 12 IO[31:16] dedicated   OUTPUTS
+                    16'h55AA,           // 16 IO[31:16] dedicated   OUTPUTS
                     16'hFFFF            // 16 IO[15:0]  (unused)    inputs
                 };
             end
@@ -276,7 +276,7 @@ module top_design_mux (
                 };
                 io_out = {
                     6'h3F,              //  6 IO[37:32] (unused)    inputs
-                    12'hAA55,           // 12 IO[31:16] dedicated   OUTPUTS
+                    16'hAA55,           // 16 IO[31:16] dedicated   OUTPUTS
                     16'hFFFF            // 16 IO[15:0]  (unused)    inputs
                 };
             end

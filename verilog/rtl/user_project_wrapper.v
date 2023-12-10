@@ -168,7 +168,6 @@ module user_project_wrapper (
 
         .i_clk                  (trzf_clk),
         .i_reset                (trzf_rst),
-        .i_reset_alt            (trzf_reset_alt),
 
         .o_hsync                (trzf_o_hsync),
         .o_vsync                (trzf_o_vsync),
@@ -229,7 +228,6 @@ module user_project_wrapper (
 
         .i_clk                  (trzf2_clock_in),
         .i_reset                (trzf2_reset),
-        .i_reset_alt            (trzf2_reset_alt),
 
         .o_hsync                (trzf2_o_hsync),
         .o_vsync                (trzf2_o_vsync),
