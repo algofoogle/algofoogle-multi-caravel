@@ -1,8 +1,27 @@
+<!--
+# SPDX-FileCopyrightText: 2023 Anton Maurovic <anton@maurovic.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
+-->
+
 # ztoa-team-group-caravel
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # Group GFMPW-1 ASIC design organised by "Zero to ASIC" participants
+
+![Cover image featuring Zero to ASIC logo and image representing combined designs](docs/cover.jpg)
 
 A team of participants from the [Zero to ASIC Course](https://zerotoasiccourse.com) decided to independently assemble this group submission to GFMPW-1 as a way to test/debug/characterise some of their more complex, larger, and experimental designs.
 
@@ -12,19 +31,22 @@ For my comprehensive notes about the journey to get this submitted, [start here 
 
 This submission is made possible by Google's Open MPW program, the Global Foundries GF180 Open PDK, and Efabless.
 
+## License
+
+This repo is licensed with [Apache 2.0](LICENSE).
+
 
 ## Design 0: top_raybox_zero_fsm - raybox-zero FSM version
 
 By: [algofoogle (Anton Maurovic)] - original repo: [raybox-zero @ gf180-for-mux](https://github.com/algofoogle/raybox-zero/tree/gf180-for-mux)
 
-This project is an attempt to do a minimalist ray caster (Wolf3D-like) VGA renderer in hardware, as a sort of primitive GPU. Earlier, simpler version was previously submitted to be made as part of a community ASIC via the [Tiny Tapeout] program (see [tt04-raybox-zero])
+![raybox-zero running on an FPGA](docs/d0-raybox-zero.jpg)
+
+This project is an attempt to do a minimalist ray caster (Wolf3D-like) VGA renderer in hardware, as a sort of primitive GPU. Earlier, simpler version was previously submitted to be made as part of a community ASIC via the [Tiny Tapeout] program (see [tt04-raybox-zero]).
+
+This version features support for an external SPI memory containing wall texture data, and extra registers for changing the appearance of the rendering. It also has a reworked wall tracer.
 
 For additional documentation and details about the project, please see [algofoogle/raybox-zero](https://github.com/algofoogle/raybox-zero)
-
-
-[algofoogle (Anton Maurovic)]: https://github.com/algofoogle
-[Tiny Tapeout]: https://tinytapeout.com
-[tt04-raybox-zero]: https://github.com/algofoogle/tt04-raybox-zero
 
 
 ## Design 1: 2nd instance of top_raybox_zero_fsm for characterisation
@@ -34,13 +56,13 @@ Same as Design 0 above, but with different placement, different routing via mux.
 
 ## Design 2: wrapped_wb_hyperram - Wishbone connected HyperRAM memory driver
 
-By: [embelon] - Original repo: [wb_hyperram @ 186838b](https://github.com/embelon/wb_hyperram/tree/186838b2605fdc31cdaf1b83afdefef1dd36c42d)
+By: [embelon (Pawel Sitarz)] - Original repo: [wb_hyperram @ 186838b](https://github.com/embelon/wb_hyperram/tree/186838b2605fdc31cdaf1b83afdefef1dd36c42d)
 
 This is an implementation of a HyperRAM memory driver connected to Wishbone bus.
 
 For additional documentation and details about the project, please see [embelon/wb_hyperram](https://github.com/embelon/wb_hyperram)
 
-[embelon]: https://github.com/embelon
+[embelon (Pawel Sitarz)]: https://github.com/embelon
 
 
 ## Design 3: user_proj_cpu - CPUy 8-bit CPU
@@ -71,7 +93,7 @@ For additional documentation and details about the project, please see [dsatizab
 
 ## Design 4: urish_simon_says - Simon Says game for GFMPW-1 Shuttle
 
-By: [urish] - original repo: [gfmpw1-simon-says @ gds_north](https://github.com/urish/gfmpw1-simon-says/tree/gds_north)
+By: [urish (Uri Shaked)] - original repo: [gfmpw1-simon-says @ gds_north](https://github.com/urish/gfmpw1-simon-says/tree/gds_north)
 
 Simon says is a simple electronic memory game: the user has to repeat a growing sequence of colors. The sequence is displayed by lighting up the LEDs. Each color also has a corresponding tone.
 
@@ -83,27 +105,36 @@ You can play the game using the online Wokwi simulation at https://wokwi.com/pro
 
 For additional documentation and details about the project, please see [urish/gfmpw1-simon-says](https://github.com/urish/gfmpw1-simon-says)
 
-[urish]: https://github.com/urish
+[urish (Uri Shaked)]: https://github.com/urish
 
 
 
 ## Design 5: top_solo_squash
 
-TBC
+By: [algofoogle (Anton Maurovic)] - original repo: [solo_squash @ main](https://github.com/algofoogle/solo_squash)
 
-https://github.com/algofoogle/solo_squash
+This is a Verilog HDL project that implements a primitive digital-logic-based video game that resembles Pong, but with one player just bouncing a ball within a 3-walled space, resembling a game of [squash](https://en.wikipedia.org/wiki/Squash_(sport)) but with just 1 paddle. It also uses a subset of the vertical timing to produce speaker tones for different game states.
+
+For additional documentation and details about the project, please see [algofoogle/solo_squash](https://github.com/algofoogle/solo_squash)
+
 
 
 ## Design 6: top_vga_spi_rom
 
-TBC
+By: [algofoogle (Anton Maurovic)] - original repo: [tt05-vga-spi-rom @ main](https://github.com/algofoogle/tt05-vga-spi-rom)
 
-https://github.com/algofoogle/tt05-vga-spi-rom
+This is an experiment to see if we can generate a VGA display that uses a constant stream of data from an external SPI ROM, demonstrating a few specific goals:
+
+*   Have an option to switch between timing for a 640x480 VGA display and a 1440x900 VGA display using the same source clock.
+*   Have alternating modes that switch between registered and unregistered output.
+*   Alternate between Quad SPI mode and single SPI mode.
+*   Attempt to demonstrate any actual IO, memory, and other logic delays visually.
+
+For additional documentation and details about the project, please see [algofoogle/tt05-vga-spi-rom](https://github.com/algofoogle/tt05-vga-spi-rom)
+
 
 
 ## Mux, including other internal 'test designs'
-
-TBC
 
 For documentation on controlling the mux, see: [Using LA pins to control the mux](https://github.com/algofoogle/journal/blob/master/0187-2023-12-09.md#using-la-pins-to-control-the-mux)
 
@@ -162,3 +193,7 @@ Here's a very high-level overview of hardening any given design, assuming you al
     ```
 
 NOTE: The final `user_project_wrapper` harden is expected to end with reporting hold violations. These are intentional: They relate specifically to *secondary* reset lines connected to the designs, each controlled by a separate `la_data_in[]` pin. While other more-stable system-wide reset options are provided, these are intended for specific experimentation/characterisation.
+
+[Tiny Tapeout]: https://tinytapeout.com
+[tt04-raybox-zero]: https://github.com/algofoogle/tt04-raybox-zero
+[algofoogle (Anton Maurovic)]: https://github.com/algofoogle
