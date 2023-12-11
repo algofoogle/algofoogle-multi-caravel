@@ -1,0 +1,4 @@
+__pycache__
+*.ppm
+results.xml
+sim_build
