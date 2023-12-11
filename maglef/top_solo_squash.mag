@@ -1,7 +1,7 @@
 magic
 tech gf180mcuD
 magscale 1 10
-timestamp 1702289012
+timestamp 1702302686
 << nwell >>
 rect 1258 41120 40070 41638
 rect 1258 39577 40070 40416
@@ -237,7 +237,7 @@ string FIXED_BBOX 0 0 41437 45021
 string LEFclass BLOCK
 string LEFview TRUE
 string GDS_END 1326800
-string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/top_solo_squash/runs/23_12_11_20_32/results/signoff/top_solo_squash.magic.gds
+string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/top_solo_squash/runs/23_12_12_00_20/results/signoff/top_solo_squash.magic.gds
 string GDS_START 265422
 << end >>
 

@@ -1,7 +1,7 @@
 magic
 tech gf180mcuD
 magscale 1 10
-timestamp 1702276905
+timestamp 1702302760
 << nwell >>
 rect 1258 48985 48806 49824
 rect 1258 48960 15677 48985
@@ -318,7 +318,7 @@ string FIXED_BBOX 0 0 50087 53671
 string LEFclass BLOCK
 string LEFview TRUE
 string GDS_END 2226910
-string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/top_vga_spi_rom/runs/23_12_11_17_10/results/signoff/top_vga_spi_rom.magic.gds
+string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/top_vga_spi_rom/runs/23_12_12_00_21/results/signoff/top_vga_spi_rom.magic.gds
 string GDS_START 348292
 << end >>
 

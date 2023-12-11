@@ -1,9 +1,9 @@
 magic
 tech gf180mcuD
 magscale 1 5
-timestamp 1702288911
+timestamp 1702301904
 << obsm1 >>
-rect 672 1538 239288 28545
+rect 672 463 239288 28545
 << metal2 >>
 rect 3360 29600 3416 30000
 rect 4032 29600 4088 30000
@@ -155,15 +155,15 @@ rect 114912 29600 114968 30000
 rect 115584 29600 115640 30000
 rect 116256 29600 116312 30000
 rect 116928 29600 116984 30000
-rect 137760 29600 137816 30000
-rect 138432 29600 138488 30000
-rect 139104 29600 139160 30000
-rect 139776 29600 139832 30000
-rect 140448 29600 140504 30000
-rect 141120 29600 141176 30000
-rect 141792 29600 141848 30000
-rect 142464 29600 142520 30000
-rect 143136 29600 143192 30000
+rect 144480 29600 144536 30000
+rect 145152 29600 145208 30000
+rect 145824 29600 145880 30000
+rect 146496 29600 146552 30000
+rect 147168 29600 147224 30000
+rect 147840 29600 147896 30000
+rect 148512 29600 148568 30000
+rect 149184 29600 149240 30000
+rect 149856 29600 149912 30000
 rect 150528 29600 150584 30000
 rect 151200 29600 151256 30000
 rect 151872 29600 151928 30000
@@ -219,15 +219,15 @@ rect 184800 29600 184856 30000
 rect 185472 29600 185528 30000
 rect 186144 29600 186200 30000
 rect 186816 29600 186872 30000
-rect 187488 29600 187544 30000
-rect 188160 29600 188216 30000
-rect 188832 29600 188888 30000
-rect 189504 29600 189560 30000
-rect 190176 29600 190232 30000
 rect 190848 29600 190904 30000
 rect 191520 29600 191576 30000
 rect 192192 29600 192248 30000
 rect 192864 29600 192920 30000
+rect 193536 29600 193592 30000
+rect 194208 29600 194264 30000
+rect 194880 29600 194936 30000
+rect 195552 29600 195608 30000
+rect 196224 29600 196280 30000
 rect 200256 29600 200312 30000
 rect 200928 29600 200984 30000
 rect 201600 29600 201656 30000
@@ -701,16 +701,16 @@ rect 114326 29570 114882 29666
 rect 114998 29570 115554 29666
 rect 115670 29570 116226 29666
 rect 116342 29570 116898 29666
-rect 117014 29570 137730 29666
-rect 137846 29570 138402 29666
-rect 138518 29570 139074 29666
-rect 139190 29570 139746 29666
-rect 139862 29570 140418 29666
-rect 140534 29570 141090 29666
-rect 141206 29570 141762 29666
-rect 141878 29570 142434 29666
-rect 142550 29570 143106 29666
-rect 143222 29570 150498 29666
+rect 117014 29570 144450 29666
+rect 144566 29570 145122 29666
+rect 145238 29570 145794 29666
+rect 145910 29570 146466 29666
+rect 146582 29570 147138 29666
+rect 147254 29570 147810 29666
+rect 147926 29570 148482 29666
+rect 148598 29570 149154 29666
+rect 149270 29570 149826 29666
+rect 149942 29570 150498 29666
 rect 150614 29570 151170 29666
 rect 151286 29570 151842 29666
 rect 151958 29570 152514 29666
@@ -765,16 +765,16 @@ rect 184214 29570 184770 29666
 rect 184886 29570 185442 29666
 rect 185558 29570 186114 29666
 rect 186230 29570 186786 29666
-rect 186902 29570 187458 29666
-rect 187574 29570 188130 29666
-rect 188246 29570 188802 29666
-rect 188918 29570 189474 29666
-rect 189590 29570 190146 29666
-rect 190262 29570 190818 29666
+rect 186902 29570 190818 29666
 rect 190934 29570 191490 29666
 rect 191606 29570 192162 29666
 rect 192278 29570 192834 29666
-rect 192950 29570 200226 29666
+rect 192950 29570 193506 29666
+rect 193622 29570 194178 29666
+rect 194294 29570 194850 29666
+rect 194966 29570 195522 29666
+rect 195638 29570 196194 29666
+rect 196310 29570 200226 29666
 rect 200342 29570 200898 29666
 rect 201014 29570 201570 29666
 rect 201686 29570 202242 29666
@@ -1443,29 +1443,21 @@ rect 217264 1538 217424 28254
 rect 224944 1538 225104 28254
 rect 232624 1538 232784 28254
 << obsm4 >>
-rect 54054 28284 214634 28551
-rect 54054 1633 55954 28284
-rect 56174 1633 63634 28284
-rect 63854 1633 71314 28284
-rect 71534 1633 78994 28284
-rect 79214 1633 86674 28284
-rect 86894 1633 94354 28284
-rect 94574 1633 102034 28284
-rect 102254 1633 109714 28284
-rect 109934 1633 117394 28284
-rect 117614 1633 125074 28284
-rect 125294 1633 132754 28284
-rect 132974 1633 140434 28284
-rect 140654 1633 148114 28284
-rect 148334 1633 155794 28284
-rect 156014 1633 163474 28284
-rect 163694 1633 171154 28284
-rect 171374 1633 178834 28284
-rect 179054 1633 186514 28284
-rect 186734 1633 194194 28284
-rect 194414 1633 201874 28284
-rect 202094 1633 209554 28284
-rect 209774 1633 214634 28284
+rect 69398 2081 71314 27711
+rect 71534 2081 78994 27711
+rect 79214 2081 86674 27711
+rect 86894 2081 94354 27711
+rect 94574 2081 102034 27711
+rect 102254 2081 109714 27711
+rect 109934 2081 117394 27711
+rect 117614 2081 125074 27711
+rect 125294 2081 132754 27711
+rect 132974 2081 140434 27711
+rect 140654 2081 148114 27711
+rect 148334 2081 155794 27711
+rect 156014 2081 163474 27711
+rect 163694 2081 171154 27711
+rect 171374 2081 172018 27711
 << labels >>
 rlabel metal2 s 143472 0 143528 400 6 diego_clk
 port 1 nsew signal output
@@ -1721,11 +1713,11 @@ rlabel metal3 s 239600 26768 240000 26824 6 io_in[14]
 port 126 nsew signal input
 rlabel metal3 s 239600 28112 240000 28168 6 io_in[15]
 port 127 nsew signal input
-rlabel metal2 s 143136 29600 143192 30000 6 io_in[16]
+rlabel metal2 s 196224 29600 196280 30000 6 io_in[16]
 port 128 nsew signal input
-rlabel metal2 s 141120 29600 141176 30000 6 io_in[17]
+rlabel metal2 s 194208 29600 194264 30000 6 io_in[17]
 port 129 nsew signal input
-rlabel metal2 s 139104 29600 139160 30000 6 io_in[18]
+rlabel metal2 s 192192 29600 192248 30000 6 io_in[18]
 port 130 nsew signal input
 rlabel metal2 s 63840 29600 63896 30000 6 io_in[19]
 port 131 nsew signal input
@@ -1797,11 +1789,11 @@ rlabel metal3 s 239600 27664 240000 27720 6 io_oeb[14]
 port 164 nsew signal output
 rlabel metal3 s 239600 29008 240000 29064 6 io_oeb[15]
 port 165 nsew signal output
-rlabel metal2 s 141792 29600 141848 30000 6 io_oeb[16]
+rlabel metal2 s 194880 29600 194936 30000 6 io_oeb[16]
 port 166 nsew signal output
-rlabel metal2 s 139776 29600 139832 30000 6 io_oeb[17]
+rlabel metal2 s 192864 29600 192920 30000 6 io_oeb[17]
 port 167 nsew signal output
-rlabel metal2 s 137760 29600 137816 30000 6 io_oeb[18]
+rlabel metal2 s 190848 29600 190904 30000 6 io_oeb[18]
 port 168 nsew signal output
 rlabel metal2 s 62496 29600 62552 30000 6 io_oeb[19]
 port 169 nsew signal output
@@ -1873,11 +1865,11 @@ rlabel metal3 s 239600 27216 240000 27272 6 io_out[14]
 port 202 nsew signal output
 rlabel metal3 s 239600 28560 240000 28616 6 io_out[15]
 port 203 nsew signal output
-rlabel metal2 s 142464 29600 142520 30000 6 io_out[16]
+rlabel metal2 s 195552 29600 195608 30000 6 io_out[16]
 port 204 nsew signal output
-rlabel metal2 s 140448 29600 140504 30000 6 io_out[17]
+rlabel metal2 s 193536 29600 193592 30000 6 io_out[17]
 port 205 nsew signal output
-rlabel metal2 s 138432 29600 138488 30000 6 io_out[18]
+rlabel metal2 s 191520 29600 191576 30000 6 io_out[18]
 port 206 nsew signal output
 rlabel metal2 s 63168 29600 63224 30000 6 io_out[19]
 port 207 nsew signal output
@@ -2679,133 +2671,133 @@ rlabel metal4 s 217264 1538 217424 28254 6 vdd
 port 591 nsew power bidirectional
 rlabel metal4 s 232624 1538 232784 28254 6 vdd
 port 591 nsew power bidirectional
-rlabel metal2 s 150528 29600 150584 30000 6 vgasp_clk
+rlabel metal2 s 144480 29600 144536 30000 6 vgasp_clk
 port 592 nsew signal output
-rlabel metal2 s 192864 29600 192920 30000 6 vgasp_io_in[0]
+rlabel metal2 s 170688 29600 170744 30000 6 vgasp_io_in[0]
 port 593 nsew signal output
-rlabel metal2 s 186144 29600 186200 30000 6 vgasp_io_in[10]
+rlabel metal2 s 163968 29600 164024 30000 6 vgasp_io_in[10]
 port 594 nsew signal output
-rlabel metal2 s 185472 29600 185528 30000 6 vgasp_io_in[11]
+rlabel metal2 s 163296 29600 163352 30000 6 vgasp_io_in[11]
 port 595 nsew signal output
-rlabel metal2 s 184800 29600 184856 30000 6 vgasp_io_in[12]
+rlabel metal2 s 162624 29600 162680 30000 6 vgasp_io_in[12]
 port 596 nsew signal output
-rlabel metal2 s 184128 29600 184184 30000 6 vgasp_io_in[13]
+rlabel metal2 s 161952 29600 162008 30000 6 vgasp_io_in[13]
 port 597 nsew signal output
-rlabel metal2 s 183456 29600 183512 30000 6 vgasp_io_in[14]
+rlabel metal2 s 161280 29600 161336 30000 6 vgasp_io_in[14]
 port 598 nsew signal output
-rlabel metal2 s 182784 29600 182840 30000 6 vgasp_io_in[15]
+rlabel metal2 s 160608 29600 160664 30000 6 vgasp_io_in[15]
 port 599 nsew signal output
-rlabel metal2 s 182112 29600 182168 30000 6 vgasp_io_in[16]
+rlabel metal2 s 159936 29600 159992 30000 6 vgasp_io_in[16]
 port 600 nsew signal output
-rlabel metal2 s 181440 29600 181496 30000 6 vgasp_io_in[17]
+rlabel metal2 s 159264 29600 159320 30000 6 vgasp_io_in[17]
 port 601 nsew signal output
-rlabel metal2 s 180768 29600 180824 30000 6 vgasp_io_in[18]
+rlabel metal2 s 158592 29600 158648 30000 6 vgasp_io_in[18]
 port 602 nsew signal output
-rlabel metal2 s 180096 29600 180152 30000 6 vgasp_io_in[19]
+rlabel metal2 s 157920 29600 157976 30000 6 vgasp_io_in[19]
 port 603 nsew signal output
-rlabel metal2 s 192192 29600 192248 30000 6 vgasp_io_in[1]
+rlabel metal2 s 170016 29600 170072 30000 6 vgasp_io_in[1]
 port 604 nsew signal output
-rlabel metal2 s 179424 29600 179480 30000 6 vgasp_io_in[20]
+rlabel metal2 s 157248 29600 157304 30000 6 vgasp_io_in[20]
 port 605 nsew signal output
-rlabel metal2 s 178752 29600 178808 30000 6 vgasp_io_in[21]
+rlabel metal2 s 156576 29600 156632 30000 6 vgasp_io_in[21]
 port 606 nsew signal output
-rlabel metal2 s 178080 29600 178136 30000 6 vgasp_io_in[22]
+rlabel metal2 s 155904 29600 155960 30000 6 vgasp_io_in[22]
 port 607 nsew signal output
-rlabel metal2 s 177408 29600 177464 30000 6 vgasp_io_in[23]
+rlabel metal2 s 155232 29600 155288 30000 6 vgasp_io_in[23]
 port 608 nsew signal output
-rlabel metal2 s 176736 29600 176792 30000 6 vgasp_io_in[24]
+rlabel metal2 s 154560 29600 154616 30000 6 vgasp_io_in[24]
 port 609 nsew signal output
-rlabel metal2 s 176064 29600 176120 30000 6 vgasp_io_in[25]
+rlabel metal2 s 153888 29600 153944 30000 6 vgasp_io_in[25]
 port 610 nsew signal output
-rlabel metal2 s 175392 29600 175448 30000 6 vgasp_io_in[26]
+rlabel metal2 s 153216 29600 153272 30000 6 vgasp_io_in[26]
 port 611 nsew signal output
-rlabel metal2 s 174720 29600 174776 30000 6 vgasp_io_in[27]
+rlabel metal2 s 152544 29600 152600 30000 6 vgasp_io_in[27]
 port 612 nsew signal output
-rlabel metal2 s 174048 29600 174104 30000 6 vgasp_io_in[28]
+rlabel metal2 s 151872 29600 151928 30000 6 vgasp_io_in[28]
 port 613 nsew signal output
-rlabel metal2 s 173376 29600 173432 30000 6 vgasp_io_in[29]
+rlabel metal2 s 151200 29600 151256 30000 6 vgasp_io_in[29]
 port 614 nsew signal output
-rlabel metal2 s 191520 29600 191576 30000 6 vgasp_io_in[2]
+rlabel metal2 s 169344 29600 169400 30000 6 vgasp_io_in[2]
 port 615 nsew signal output
-rlabel metal2 s 172704 29600 172760 30000 6 vgasp_io_in[30]
+rlabel metal2 s 150528 29600 150584 30000 6 vgasp_io_in[30]
 port 616 nsew signal output
-rlabel metal2 s 172032 29600 172088 30000 6 vgasp_io_in[31]
+rlabel metal2 s 149856 29600 149912 30000 6 vgasp_io_in[31]
 port 617 nsew signal output
-rlabel metal2 s 171360 29600 171416 30000 6 vgasp_io_in[32]
+rlabel metal2 s 149184 29600 149240 30000 6 vgasp_io_in[32]
 port 618 nsew signal output
-rlabel metal2 s 170688 29600 170744 30000 6 vgasp_io_in[33]
+rlabel metal2 s 148512 29600 148568 30000 6 vgasp_io_in[33]
 port 619 nsew signal output
-rlabel metal2 s 170016 29600 170072 30000 6 vgasp_io_in[34]
+rlabel metal2 s 147840 29600 147896 30000 6 vgasp_io_in[34]
 port 620 nsew signal output
-rlabel metal2 s 169344 29600 169400 30000 6 vgasp_io_in[35]
+rlabel metal2 s 147168 29600 147224 30000 6 vgasp_io_in[35]
 port 621 nsew signal output
-rlabel metal2 s 168672 29600 168728 30000 6 vgasp_io_in[36]
+rlabel metal2 s 146496 29600 146552 30000 6 vgasp_io_in[36]
 port 622 nsew signal output
-rlabel metal2 s 168000 29600 168056 30000 6 vgasp_io_in[37]
+rlabel metal2 s 145824 29600 145880 30000 6 vgasp_io_in[37]
 port 623 nsew signal output
-rlabel metal2 s 190848 29600 190904 30000 6 vgasp_io_in[3]
+rlabel metal2 s 168672 29600 168728 30000 6 vgasp_io_in[3]
 port 624 nsew signal output
-rlabel metal2 s 190176 29600 190232 30000 6 vgasp_io_in[4]
+rlabel metal2 s 168000 29600 168056 30000 6 vgasp_io_in[4]
 port 625 nsew signal output
-rlabel metal2 s 189504 29600 189560 30000 6 vgasp_io_in[5]
+rlabel metal2 s 167328 29600 167384 30000 6 vgasp_io_in[5]
 port 626 nsew signal output
-rlabel metal2 s 188832 29600 188888 30000 6 vgasp_io_in[6]
+rlabel metal2 s 166656 29600 166712 30000 6 vgasp_io_in[6]
 port 627 nsew signal output
-rlabel metal2 s 188160 29600 188216 30000 6 vgasp_io_in[7]
+rlabel metal2 s 165984 29600 166040 30000 6 vgasp_io_in[7]
 port 628 nsew signal output
-rlabel metal2 s 187488 29600 187544 30000 6 vgasp_io_in[8]
+rlabel metal2 s 165312 29600 165368 30000 6 vgasp_io_in[8]
 port 629 nsew signal output
-rlabel metal2 s 186816 29600 186872 30000 6 vgasp_io_in[9]
+rlabel metal2 s 164640 29600 164696 30000 6 vgasp_io_in[9]
 port 630 nsew signal output
-rlabel metal2 s 151200 29600 151256 30000 6 vgasp_rst
+rlabel metal2 s 145152 29600 145208 30000 6 vgasp_rst
 port 631 nsew signal output
-rlabel metal2 s 167328 29600 167384 30000 6 vgasp_uio_oe[0]
+rlabel metal2 s 186816 29600 186872 30000 6 vgasp_uio_oe[0]
 port 632 nsew signal input
-rlabel metal2 s 166656 29600 166712 30000 6 vgasp_uio_oe[1]
+rlabel metal2 s 186144 29600 186200 30000 6 vgasp_uio_oe[1]
 port 633 nsew signal input
-rlabel metal2 s 165984 29600 166040 30000 6 vgasp_uio_oe[2]
+rlabel metal2 s 185472 29600 185528 30000 6 vgasp_uio_oe[2]
 port 634 nsew signal input
-rlabel metal2 s 165312 29600 165368 30000 6 vgasp_uio_oe[3]
+rlabel metal2 s 184800 29600 184856 30000 6 vgasp_uio_oe[3]
 port 635 nsew signal input
-rlabel metal2 s 164640 29600 164696 30000 6 vgasp_uio_oe[4]
+rlabel metal2 s 184128 29600 184184 30000 6 vgasp_uio_oe[4]
 port 636 nsew signal input
-rlabel metal2 s 163968 29600 164024 30000 6 vgasp_uio_oe[5]
+rlabel metal2 s 183456 29600 183512 30000 6 vgasp_uio_oe[5]
 port 637 nsew signal input
-rlabel metal2 s 163296 29600 163352 30000 6 vgasp_uio_oe[6]
+rlabel metal2 s 182784 29600 182840 30000 6 vgasp_uio_oe[6]
 port 638 nsew signal input
-rlabel metal2 s 162624 29600 162680 30000 6 vgasp_uio_oe[7]
+rlabel metal2 s 182112 29600 182168 30000 6 vgasp_uio_oe[7]
 port 639 nsew signal input
-rlabel metal2 s 161952 29600 162008 30000 6 vgasp_uio_out[0]
+rlabel metal2 s 181440 29600 181496 30000 6 vgasp_uio_out[0]
 port 640 nsew signal input
-rlabel metal2 s 161280 29600 161336 30000 6 vgasp_uio_out[1]
+rlabel metal2 s 180768 29600 180824 30000 6 vgasp_uio_out[1]
 port 641 nsew signal input
-rlabel metal2 s 160608 29600 160664 30000 6 vgasp_uio_out[2]
+rlabel metal2 s 180096 29600 180152 30000 6 vgasp_uio_out[2]
 port 642 nsew signal input
-rlabel metal2 s 159936 29600 159992 30000 6 vgasp_uio_out[3]
+rlabel metal2 s 179424 29600 179480 30000 6 vgasp_uio_out[3]
 port 643 nsew signal input
-rlabel metal2 s 159264 29600 159320 30000 6 vgasp_uio_out[4]
+rlabel metal2 s 178752 29600 178808 30000 6 vgasp_uio_out[4]
 port 644 nsew signal input
-rlabel metal2 s 158592 29600 158648 30000 6 vgasp_uio_out[5]
+rlabel metal2 s 178080 29600 178136 30000 6 vgasp_uio_out[5]
 port 645 nsew signal input
-rlabel metal2 s 157920 29600 157976 30000 6 vgasp_uio_out[6]
+rlabel metal2 s 177408 29600 177464 30000 6 vgasp_uio_out[6]
 port 646 nsew signal input
-rlabel metal2 s 157248 29600 157304 30000 6 vgasp_uio_out[7]
+rlabel metal2 s 176736 29600 176792 30000 6 vgasp_uio_out[7]
 port 647 nsew signal input
-rlabel metal2 s 156576 29600 156632 30000 6 vgasp_uo_out[0]
+rlabel metal2 s 176064 29600 176120 30000 6 vgasp_uo_out[0]
 port 648 nsew signal input
-rlabel metal2 s 155904 29600 155960 30000 6 vgasp_uo_out[1]
+rlabel metal2 s 175392 29600 175448 30000 6 vgasp_uo_out[1]
 port 649 nsew signal input
-rlabel metal2 s 155232 29600 155288 30000 6 vgasp_uo_out[2]
+rlabel metal2 s 174720 29600 174776 30000 6 vgasp_uo_out[2]
 port 650 nsew signal input
-rlabel metal2 s 154560 29600 154616 30000 6 vgasp_uo_out[3]
+rlabel metal2 s 174048 29600 174104 30000 6 vgasp_uo_out[3]
 port 651 nsew signal input
-rlabel metal2 s 153888 29600 153944 30000 6 vgasp_uo_out[4]
+rlabel metal2 s 173376 29600 173432 30000 6 vgasp_uo_out[4]
 port 652 nsew signal input
-rlabel metal2 s 153216 29600 153272 30000 6 vgasp_uo_out[5]
+rlabel metal2 s 172704 29600 172760 30000 6 vgasp_uo_out[5]
 port 653 nsew signal input
-rlabel metal2 s 152544 29600 152600 30000 6 vgasp_uo_out[6]
+rlabel metal2 s 172032 29600 172088 30000 6 vgasp_uo_out[6]
 port 654 nsew signal input
-rlabel metal2 s 151872 29600 151928 30000 6 vgasp_uo_out[7]
+rlabel metal2 s 171360 29600 171416 30000 6 vgasp_uo_out[7]
 port 655 nsew signal input
 rlabel metal4 s 9904 1538 10064 28254 6 vss
 port 656 nsew ground bidirectional
@@ -2845,8 +2837,8 @@ port 658 nsew signal input
 string FIXED_BBOX 0 0 240000 30000
 string LEFclass BLOCK
 string LEFview TRUE
-string GDS_END 4649870
-string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/top_design_mux/runs/23_12_11_20_30/results/signoff/top_design_mux.magic.gds
+string GDS_END 4664662
+string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/top_design_mux/runs/23_12_12_00_07/results/signoff/top_design_mux.magic.gds
 string GDS_START 299144
 << end >>
 
