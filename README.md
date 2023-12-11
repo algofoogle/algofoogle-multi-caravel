@@ -52,6 +52,7 @@ CPUy is an 8-bits CPU "mind-crafted by experience" and inspired in the AT89S5X s
 CPUy is meant to be used with an external ROM chip like one of the 27CXXX series that must be flashed with the desired program to be executed supporting a maximum of 4KB of program memory.
 
 The characteristics of CPUy are:
+
 *   10-bits address bus for a maximum external memory of 4096 bytes.
 *   8-bits data bus.
 *   256 bytes internal scratch pad memory.
@@ -121,6 +122,7 @@ Here's a very high-level overview of hardening any given design, assuming you al
 > NOTE: Zero to ASIC VM also redirects certain other things (`MGMT_AREA_ROOT`, `DESIGNS`, `CARAVEL_ROOT`, etc. to subdirectories of `~/asic_tools/caravel_user_project`). Check your `~/.bashrc` for details. I've been trying to make this a bit more flexible (see [Tip 2312A](https://github.com/algofoogle/journal/blob/master/tips/2312A.md) point 5) but note that I've not completed this work yet.
 
 1.  Switch to the branch you want (default for the submission is `gf180`) set it up for the first time:
+
     ```bash
     git checkout gf180
     mkdir -p dependencies
@@ -132,7 +134,9 @@ Here's a very high-level overview of hardening any given design, assuming you al
     # This will download and install caravel, the PDK, required OpenLane version, etc.
     make setup
     ```
+
 2.  Each time you want to harden:
+
     ```bash
     # Optional, as above:
       export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
@@ -143,29 +147,18 @@ Here's a very high-level overview of hardening any given design, assuming you al
     # MAIN HARDENING STEP:
     make top_design_mux
     ```
+
 3.  To harden all:
+
     ```bash
-    make top_design_mux         &&
-    make top_raybox_zero_fsm    &&
-    make urish_simon_says       &&
-    make user_proj_cpu          &&
-    make wrapped_wb_hyperram    &&
-    make user_project_wrapper
+    make top_design_mux         \
+         top_raybox_zero_fsm    \
+         top_solo_squash        \
+         top_vga_spi_rom        \
+         urish_simon_says       \
+         user_proj_cpu          \
+         wrapped_wb_hyperram    \
+         user_project_wrapper
     ```
-    NOTE: Up to 3 more macros might be added before final submission; if I don't manage to update this doco in time, you might also need to harden `top_raybox_zero_combo`, `top_solo_squash`, and `top_vga_spi_rom` before you do `make user_project_wrapper`.
 
-
-
-
-
-# Specific project for branch `gf180-rbz-fsm`: 
-
-You are on the branch `gf180-rbz-fsm`.
-
-**This design implements a simple hardware ray caster**
-
-It instantiates a version of [raybox-zero] that uses and extra reciprocal module FSM to try and get better timing for GF180. According to OpenLane, the macro hardens successfully with a target of 22.72MHz (44ns period), which is slow for VGA but still good enough for my monitor to sync.
-
-**NOTE:** The top macro was formerly `top_ew_algofoogle` but is now `top_raybox_zero_fsm`.
-
-[raybox-zero]: https://github.com/algofoogle/raybox-zero/tree/gf180
+NOTE: The final `user_project_wrapper` harden is expected to end with reporting hold violations. These are intentional: They relate specifically to *secondary* reset lines connected to the designs, each controlled by a separate `la_data_in[]` pin. While other more-stable system-wide reset options are provided, these are intended for specific experimentation/characterisation.
