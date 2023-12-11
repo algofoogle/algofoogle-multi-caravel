@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2023 Efabless Corporation
+# SPDX-FileCopyrightText: 2023 Anton Maurovic <anton@maurovic.com>
 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,6 +13,11 @@
 # limitations under the License.
 
 # SPDX-License-Identifier: Apache-2.0
+
+####################
+## If you want to know how to use the mux properly, consider checking out:
+## https://github.com/algofoogle/journal/blob/master/0187-2023-12-09.md#using-la-pins-to-control-the-mux
+## ...and read about the different reset options that you can register.
 
 from caravel_cocotb.caravel_interfaces import * # import python APIs
 import cocotb
