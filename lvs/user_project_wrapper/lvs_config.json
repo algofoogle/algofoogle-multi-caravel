@@ -22,10 +22,13 @@
         "$PDK_ROOT/$PDK/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice"
     ],
     "LVS_VERILOG_FILES": [
+        "$UPRJ_ROOT/verilog/gl/top_design_mux.v",
         "$UPRJ_ROOT/verilog/gl/top_raybox_zero_fsm.v",
         "$UPRJ_ROOT/verilog/gl/wrapped_wb_hyperram.v",
         "$UPRJ_ROOT/verilog/gl/user_proj_cpu.v",
         "$UPRJ_ROOT/verilog/gl/urish_simon_says.v",
+        "$UPRJ_ROOT/verilog/gl/top_solo_squash.v",
+        "$UPRJ_ROOT/verilog/gl/top_vga_spi_rom.v",
         "$UPRJ_ROOT/verilog/gl/$TOP_SOURCE.v"
     ],
     "LAYOUT_FILE": "$UPRJ_ROOT/gds/$TOP_LAYOUT.gds"

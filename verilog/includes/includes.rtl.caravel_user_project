@@ -50,3 +50,14 @@
 # Uri's urish_simon_says:
 -v $(USER_PROJECT_VERILOG)/rtl/urish_simon_says/simon.v
 -v $(USER_PROJECT_VERILOG)/rtl/urish_simon_says/urish_simon_says.v
+
+# Anton's top_solo_squash:
+-v $(USER_PROJECT_VERILOG)/rtl/top_solo_squash.v
+-v $(USER_PROJECT_VERILOG)/rtl/solo_squash/src/solo_squash.v
+
+# Anton's top_vga_spi_rom:
+-v $(USER_PROJECT_VERILOG)/rtl/top_vga_spi_rom.v
+-v $(USER_PROJECT_VERILOG)/rtl/vga_spi_rom/helpers.v
+-v $(USER_PROJECT_VERILOG)/rtl/vga_spi_rom/vga_sync.v
+-v $(USER_PROJECT_VERILOG)/rtl/vga_spi_rom/vga_spi_rom.v
+-v $(USER_PROJECT_VERILOG)/rtl/vga_spi_rom/tt05_top.v

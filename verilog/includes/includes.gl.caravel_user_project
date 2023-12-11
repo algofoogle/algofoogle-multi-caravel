@@ -5,3 +5,5 @@
 -v $(USER_PROJECT_VERILOG)/gl/wrapped_wb_hyperram.v
 -v $(USER_PROJECT_VERILOG)/gl/urish_simon_says.v
 -v $(USER_PROJECT_VERILOG)/gl/user_proj_cpu.v
+-v $(USER_PROJECT_VERILOG)/gl/top_solo_squash.v
+-v $(USER_PROJECT_VERILOG)/gl/top_vga_spi_rom.v

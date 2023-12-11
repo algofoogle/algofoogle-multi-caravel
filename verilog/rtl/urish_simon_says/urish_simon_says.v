@@ -1,6 +1,10 @@
 `default_nettype none
 
 module urish_simon_says #(parameter CLK_KHZ = 16'd10_000) (
+`ifdef USE_POWER_PINS
+    inout vdd,
+    inout vss,
+`endif
     input wb_clk_i,
     input wb_rst_i,
 

@@ -5,3 +5,5 @@ $USER_PROJECT_VERILOG/gl/top_raybox_zero_fsm.v
 $USER_PROJECT_VERILOG/gl/wrapped_wb_hyperram.v
 $USER_PROJECT_VERILOG/gl/urish_simon_says.v
 $USER_PROJECT_VERILOG/gl/user_proj_cpu.v
+$USER_PROJECT_VERILOG/gl/top_solo_squash.v
+$USER_PROJECT_VERILOG/gl/top_vga_spi_rom.v

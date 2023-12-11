@@ -1,3 +1,18 @@
+// SPDX-FileCopyrightText: 2023 Anton Maurovic <anton@maurovic.com>
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// SPDX-License-Identifier: Apache-2.0
+
 `default_nettype none
 
 // This is a mux macro that is to be used to select the desired design and connect it
@@ -71,8 +86,8 @@ module top_design_mux (
     output              pawel_ena,
     input       [12:0]  pawel_io_out,
     input       [12:0]  pawel_io_oeb,
-    output      [15:0]  pawel_la_in,    //NOTE: Unused now, but I'll keep them for now to avoid reshaping the mux macro.
     output      [37:0]  pawel_io_in,  // Inputs repeated/buffered from IO pads to the design:
+    // output      [15:0]  pawel_la_in,    //NOTE: Unused now, but I'll keep them for now to avoid reshaping the mux macro.
 
     // --- DESIGN 3 interface: Diego's user_proj_cpu ---
     output              diego_clk,
@@ -85,8 +100,8 @@ module top_design_mux (
 
     // --- DESIGN 4 interface: Uri's urish_simon_says ---
     output              uri_clk,
-    output              uri_rst,      // Unused; design has its own external reset.
-    output              uri_ena,
+    output              uri_rst,
+    output              uri_ena,    // Unused.
     input       [18:0]  uri_io_out,
     input       [18:0]  uri_io_oeb,
     output      [37:0]  uri_io_in,  // Inputs repeated/buffered from IO pads to the design.
@@ -94,7 +109,7 @@ module top_design_mux (
     // --- DESIGN 5 interface: Anton's solo_squash_caravel_gf180 ---
     output              solos_clk,
     output              solos_rst,
-    output              solos_ena,
+    output              solos_ena,  // Unused.
     input       [12:0]  solos_io_out,
     output      [37:0]  solos_io_in,
     output              solos_gpio_ready,   // Controlled by 1 LA pin
@@ -102,12 +117,12 @@ module top_design_mux (
     // --- DESIGN 6 interface: Anton's vga_spi_rom_gf180 (a TT05 design) ---
     output              vgasp_clk,
     output              vgasp_rst,
-    output              vgasp_ena,
-    // output      [7:0]   vgasp_uio_in, // Not used here because it is just a subset of vgasp_io_in.
     input       [7:0]   vgasp_uo_out,
     input       [7:0]   vgasp_uio_out,
     input       [7:0]   vgasp_uio_oe,   //NOTE: For this, 0=in, 1=out
     output      [37:0]  vgasp_io_in
+    // output              vgasp_ena,
+    // output      [7:0]   vgasp_uio_in, // Not used here because it is just a subset of vgasp_io_in.
 
 );
     // Mux control registers, 2xDFF deep for each to avoid possible LA glitches...
@@ -150,7 +165,7 @@ module top_design_mux (
     assign diego_ena = mux_sel == 4'd3;
     assign uri_ena   = mux_sel == 4'd4;
     assign solos_ena = mux_sel == 4'd5;
-    assign vgasp_ena = mux_sel == 4'd6;
+    wire   vgasp_ena = mux_sel == 4'd6; // 'wire', because it's not sent out.
 
     // *_clk: Clock (wb_clk_i) repeated to each design:
     wire clk = wb_clk_i;
@@ -170,7 +185,7 @@ module top_design_mux (
     assign trzf2_la_in  = la_in[12:0]; // Only 13 needed.
 
     assign pawel_io_in  = io_in;
-    assign pawel_la_in  = la_in; // All 16 WERE needed, but not anymore, so this is unused.
+    // assign pawel_la_in  = la_in; // All 16 WERE needed, but not anymore, so this is unused.
 
     assign diego_io_in  = io_in;
 
@@ -181,6 +196,13 @@ module top_design_mux (
 
     assign vgasp_io_in  = io_in;
 
+    //NOTE: NOTE: NOTE: io_out[7:0] are not used by ANY of our designs.
+    // I had to double-check user_proj_cpu's code, because while it does
+    // drive io_oeb[7:6], they're always 1 and hence inputs (i.e.
+    // the design does use io_in[7:6], but not io_out[7:6]). To keep the
+    // LVS precheck happy with this, even though the full io_out[37:0]
+    // port range is provided by this mux, the user_project_wrapper will
+    // leave io_out[7:0] disconnected completely.
 
     always @(*) begin
         case (mux_sel)
@@ -232,7 +254,7 @@ module top_design_mux (
 
             // Pawel's design:
             2: begin
-                // io_oeb = ?????????????1111111111111111111111111
+                // io_oeb = ??_????_????_???1_1111_1111_1111_1111_1111_1111
                 io_oeb = {
                     pawel_io_oeb,
                     25'h1FF_FFFF
@@ -245,7 +267,12 @@ module top_design_mux (
 
             // Diego's design:
             3: begin
-                // io_oeb = ????????????????????????????????111111
+                // io_oeb = ??_????_????_????_????_????_????_????_??11_1111
+                // NOTE: diego_io_oeb[9:0] (hence caravel io_oeb[15:6]) are always
+                // configured as INPUTs. Hence, io_out[15:6] in this case are
+                // not used. Diego's design is the only one that uses io_in[7:6],
+                // and NO design uses io_out[7:6] at this time.
+                // 
                 io_oeb = {
                     diego_io_oeb,
                     6'h3F
@@ -270,7 +297,7 @@ module top_design_mux (
                 };
             end
 
-            // Anton's solo_squash design:
+            // Anton's top_solo_squash design:
             5: begin
                 io_oeb = {
                     17'h1FFFF,          // 17 IO[37:21] (unused) inputs
@@ -285,7 +312,7 @@ module top_design_mux (
                 };
             end
 
-            // Anton's vga_spi_rom_gf180 design:
+            // Anton's top_vga_spi_rom design:
             //NOTE: I've tried to match these to the VGA and SPI memory pins of TRZF.
             6: begin
                 io_oeb = {
@@ -318,6 +345,44 @@ module top_design_mux (
                     8'hFF               //  8 IO[7:0]   (unused) inputs.
                 };
             end
+            /*
+            # Internal/external/mux pin mapping for top_vga_spi_rom
+
+            | GPIO | DIR   | FUNCTION     | uo_out | uio_out | uio_in | ui_in |
+            |-----:|-------|--------------|-------:|--------:|-------:|------:|
+            |    8 | OUT   | hsync        |    7   |         |        |       |
+            |    9 | OUT   | vsync        |    3   |         |        |       |
+            |   10 | OUT   | r0           |    4   |         |        |       |
+            |   11 | OUT   | r1           |    0   |         |        |       |
+            |   12 | OUT   | g0           |    5   |         |        |       |
+            |   13 | OUT   | g1           |    1   |         |        |       |
+            |   14 | OUT   | b0           |    6   |         |        |       |
+            |   15 | OUT   | b1           |    2   |         |        |       |
+            |   16 | OUT   | spi_csb      |        |    0    |    -   |       |
+            |   17 | OUT   | spi_sclk     |        |    3    |    -   |       |
+            |   18 | BIDIR | spi_IO[0]    |        |    1    |    1   |       |
+            |   19 | IN    | spi_in[1]    |        |    -    |    2   |       |
+            |   20 | IN    | spi_in[2]    |        |    -    |    6   |       |
+            |   21 | IN    | spi_in[3]    |        |    -    |    7   |       |
+            |   22 | IN    | vga_mode     |        |         |        |   0   |
+            |   23 | IN    | spi_rst_mode |        |         |        |   1   |
+            |   24 | IN    | un/reg mode  |        |         |        |   2   |
+            |   25 | IN    | Test_in[0]   |        |         |        |   5   |
+            |   26 | IN    | Test_in[1]   |        |         |        |   6   |
+            |   27 | IN    | Test_in[2]   |        |         |        |   7   |
+            |   28 | IN    | (unused)     |        |         |        |   -   |
+            |   29 | IN    | (unused)     |        |         |        |   -   |
+            |   30 | IN    | (unused)     |        |         |        |       |
+            |   31 | IN    | (unused)     |        |         |        |       |
+            |   32 | IN    | (unused)     |        |         |        |       |
+            |   33 | IN    | (unused)     |        |         |        |       |
+            |   34 | IN    | (unused)     |        |         |        |       |
+            |   35 | IN    | (unused)     |        |         |        |       |
+            |   36 | OUT   | Test_out     |        |    4    |    -   |       |
+            |   37 | BIDIR | SPI /RST     |        |    5    |    5   |       |
+
+            Unused pins: `ui_in[4:3]`
+            */
 
             // *** Other people's designs would slot in here, up to ID 7 ***
 
