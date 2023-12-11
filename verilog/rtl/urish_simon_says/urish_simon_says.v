@@ -41,13 +41,18 @@ module urish_simon_says #(parameter CLK_KHZ = 16'd10_000) (
   assign io_out[26] = 1'b0;
   assign io_oeb[26] = 1'b1;
 
-  assign io_out[`MPRJ_IO_PADS-1:27] = 11'b00000000000;
-  assign io_oeb[`MPRJ_IO_PADS-1:27] = 11'b11111111111;
+  wire slow_clk = io_in[27];
+  assign io_out[27] = 1'b0;
+  assign io_oeb[27] = 1'b1;
+
+  assign io_out[`MPRJ_IO_PADS-1:28] = 11'b0000000000;
+  assign io_oeb[`MPRJ_IO_PADS-1:28] = 11'b1111111111;
+
 
   simon simon1 (
       .clk   (wb_clk_i),
       .rst   (wb_rst_i),
-      .ticks_per_milli (CLK_KHZ),
+      .ticks_per_milli (slow_clk ? 16'd100 : CLK_KHZ),
       .btn   (btn),
       .led   (led),
       .segments(segments),
