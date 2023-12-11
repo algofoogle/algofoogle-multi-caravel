@@ -21,7 +21,7 @@
 
 # Group GFMPW-1 ASIC design organised by "Zero to ASIC" participants
 
-![Cover image featuring Zero to ASIC logo and image representing combined designs](docs/cover.jpg)
+![Cover image featuring Zero to ASIC logo and image representing combined designs](./docs/cover.jpg)
 
 A team of participants from the [Zero to ASIC Course](https://zerotoasiccourse.com) decided to independently assemble this group submission to GFMPW-1 as a way to test/debug/characterise some of their more complex, larger, and experimental designs.
 
@@ -30,6 +30,8 @@ There are 7 designs in this one die, selectable via a mux. **Each of the individ
 For my comprehensive notes about the journey to get this submitted, [start here with my final journal entry 0189](https://github.com/algofoogle/journal/blob/master/0189-2023-12-11.md) and work backwards by using the 'Previous journal' link atop each page.
 
 This submission is made possible by Google's Open MPW program, the Global Foundries GF180 Open PDK, and Efabless.
+
+NOTE: The original non-flattened version of this repo is found here: https://github.com/algofoogle/algofoogle-multi-caravel
 
 ## License
 
@@ -40,7 +42,7 @@ This repo is licensed with [Apache 2.0](LICENSE).
 
 By: [algofoogle (Anton Maurovic)] - original repo: [raybox-zero @ gf180-for-mux](https://github.com/algofoogle/raybox-zero/tree/gf180-for-mux)
 
-![raybox-zero running on an FPGA](docs/d0-raybox-zero.jpg)
+![raybox-zero running on an FPGA](./docs/d0-raybox-zero.jpg)
 
 This project is an attempt to do a minimalist ray caster (Wolf3D-like) VGA renderer in hardware, as a sort of primitive GPU. Earlier, simpler version was previously submitted to be made as part of a community ASIC via the [Tiny Tapeout] program (see [tt04-raybox-zero]).
 
