@@ -58,7 +58,7 @@ module vga_spi_rom(
   wire [9:0] hpos, vpos;
   wire visible;
   wire hmax, vmax;
-  vga_sync vga_sync(
+  vga_sync_vsr vga_sync_vsr(
     .clk      (clk),
     .reset    (reset),
     .mode     (vga_mode), // 0=640x480@60Hz, 1=1440x900@60Hz
