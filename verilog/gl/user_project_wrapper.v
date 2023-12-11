@@ -142,6 +142,14 @@ module user_project_wrapper (user_clock2,
  wire \diego_io_out[7] ;
  wire \diego_io_out[8] ;
  wire \diego_io_out[9] ;
+ wire \io_out_slice[0] ;
+ wire \io_out_slice[1] ;
+ wire \io_out_slice[2] ;
+ wire \io_out_slice[3] ;
+ wire \io_out_slice[4] ;
+ wire \io_out_slice[5] ;
+ wire \io_out_slice[6] ;
+ wire \io_out_slice[7] ;
  wire pawel_clk;
  wire \pawel_io_in_all38[0] ;
  wire \pawel_io_in_all38[10] ;
@@ -207,23 +215,61 @@ module user_project_wrapper (user_clock2,
  wire \pawel_io_out[7] ;
  wire \pawel_io_out[8] ;
  wire \pawel_io_out[9] ;
- wire \pawel_la_in[0] ;
- wire \pawel_la_in[10] ;
- wire \pawel_la_in[11] ;
- wire \pawel_la_in[12] ;
- wire \pawel_la_in[13] ;
- wire \pawel_la_in[14] ;
- wire \pawel_la_in[15] ;
- wire \pawel_la_in[1] ;
- wire \pawel_la_in[2] ;
- wire \pawel_la_in[3] ;
- wire \pawel_la_in[4] ;
- wire \pawel_la_in[5] ;
- wire \pawel_la_in[6] ;
- wire \pawel_la_in[7] ;
- wire \pawel_la_in[8] ;
- wire \pawel_la_in[9] ;
  wire pawel_mux_rst;
+ wire solos_clk;
+ wire solos_gpio_ready;
+ wire \solos_io_in_all38[0] ;
+ wire \solos_io_in_all38[10] ;
+ wire \solos_io_in_all38[11] ;
+ wire \solos_io_in_all38[12] ;
+ wire \solos_io_in_all38[13] ;
+ wire \solos_io_in_all38[14] ;
+ wire \solos_io_in_all38[15] ;
+ wire \solos_io_in_all38[16] ;
+ wire \solos_io_in_all38[17] ;
+ wire \solos_io_in_all38[18] ;
+ wire \solos_io_in_all38[19] ;
+ wire \solos_io_in_all38[1] ;
+ wire \solos_io_in_all38[20] ;
+ wire \solos_io_in_all38[21] ;
+ wire \solos_io_in_all38[22] ;
+ wire \solos_io_in_all38[23] ;
+ wire \solos_io_in_all38[24] ;
+ wire \solos_io_in_all38[25] ;
+ wire \solos_io_in_all38[26] ;
+ wire \solos_io_in_all38[27] ;
+ wire \solos_io_in_all38[28] ;
+ wire \solos_io_in_all38[29] ;
+ wire \solos_io_in_all38[2] ;
+ wire \solos_io_in_all38[30] ;
+ wire \solos_io_in_all38[31] ;
+ wire \solos_io_in_all38[32] ;
+ wire \solos_io_in_all38[33] ;
+ wire \solos_io_in_all38[34] ;
+ wire \solos_io_in_all38[35] ;
+ wire \solos_io_in_all38[36] ;
+ wire \solos_io_in_all38[37] ;
+ wire \solos_io_in_all38[3] ;
+ wire \solos_io_in_all38[4] ;
+ wire \solos_io_in_all38[5] ;
+ wire \solos_io_in_all38[6] ;
+ wire \solos_io_in_all38[7] ;
+ wire \solos_io_in_all38[8] ;
+ wire \solos_io_in_all38[9] ;
+ wire \solos_io_out[0] ;
+ wire \solos_io_out[10] ;
+ wire \solos_io_out[11] ;
+ wire \solos_io_out[12] ;
+ wire \solos_io_out[1] ;
+ wire \solos_io_out[2] ;
+ wire \solos_io_out[3] ;
+ wire \solos_io_out[4] ;
+ wire \solos_io_out[5] ;
+ wire \solos_io_out[6] ;
+ wire \solos_io_out[7] ;
+ wire \solos_io_out[8] ;
+ wire \solos_io_out[9] ;
+ wire solos_rst;
  wire trzf2_clk;
  wire trzf2_ena;
  wire \trzf2_io_in[0] ;
@@ -478,6 +524,70 @@ module user_project_wrapper (user_clock2,
  wire \uri_io_out[8] ;
  wire \uri_io_out[9] ;
  wire uri_rst;
+ wire vgasp_clk;
+ wire \vgasp_io_in[0] ;
+ wire \vgasp_io_in[10] ;
+ wire \vgasp_io_in[11] ;
+ wire \vgasp_io_in[12] ;
+ wire \vgasp_io_in[13] ;
+ wire \vgasp_io_in[14] ;
+ wire \vgasp_io_in[15] ;
+ wire \vgasp_io_in[16] ;
+ wire \vgasp_io_in[17] ;
+ wire \vgasp_io_in[18] ;
+ wire \vgasp_io_in[19] ;
+ wire \vgasp_io_in[1] ;
+ wire \vgasp_io_in[20] ;
+ wire \vgasp_io_in[21] ;
+ wire \vgasp_io_in[22] ;
+ wire \vgasp_io_in[23] ;
+ wire \vgasp_io_in[24] ;
+ wire \vgasp_io_in[25] ;
+ wire \vgasp_io_in[26] ;
+ wire \vgasp_io_in[27] ;
+ wire \vgasp_io_in[28] ;
+ wire \vgasp_io_in[29] ;
+ wire \vgasp_io_in[2] ;
+ wire \vgasp_io_in[30] ;
+ wire \vgasp_io_in[31] ;
+ wire \vgasp_io_in[32] ;
+ wire \vgasp_io_in[33] ;
+ wire \vgasp_io_in[34] ;
+ wire \vgasp_io_in[35] ;
+ wire \vgasp_io_in[36] ;
+ wire \vgasp_io_in[37] ;
+ wire \vgasp_io_in[3] ;
+ wire \vgasp_io_in[4] ;
+ wire \vgasp_io_in[5] ;
+ wire \vgasp_io_in[6] ;
+ wire \vgasp_io_in[7] ;
+ wire \vgasp_io_in[8] ;
+ wire \vgasp_io_in[9] ;
+ wire vgasp_rst;
+ wire \vgasp_uio_oe[0] ;
+ wire \vgasp_uio_oe[1] ;
+ wire \vgasp_uio_oe[2] ;
+ wire \vgasp_uio_oe[3] ;
+ wire \vgasp_uio_oe[4] ;
+ wire \vgasp_uio_oe[5] ;
+ wire \vgasp_uio_oe[6] ;
+ wire \vgasp_uio_oe[7] ;
+ wire \vgasp_uio_out[0] ;
+ wire \vgasp_uio_out[1] ;
+ wire \vgasp_uio_out[2] ;
+ wire \vgasp_uio_out[3] ;
+ wire \vgasp_uio_out[4] ;
+ wire \vgasp_uio_out[5] ;
+ wire \vgasp_uio_out[6] ;
+ wire \vgasp_uio_out[7] ;
+ wire \vgasp_uo_out[0] ;
+ wire \vgasp_uo_out[1] ;
+ wire \vgasp_uo_out[2] ;
+ wire \vgasp_uo_out[3] ;
+ wire \vgasp_uo_out[4] ;
+ wire \vgasp_uo_out[5] ;
+ wire \vgasp_uo_out[6] ;
+ wire \vgasp_uo_out[7] ;
 
  top_design_mux top_design_mux (.diego_clk(diego_clk),
     .i_mux_auto_reset_enb(la_data_in[54]),
@@ -486,6 +596,9 @@ module user_project_wrapper (user_clock2,
     .mux_conf_clk(la_data_in[63]),
     .pawel_clk(pawel_clk),
     .pawel_rst(pawel_mux_rst),
+    .solos_clk(solos_clk),
+    .solos_gpio_ready(solos_gpio_ready),
+    .solos_rst(solos_rst),
     .trzf2_clk(trzf2_clk),
     .trzf2_ena(trzf2_ena),
     .trzf2_o_hsync(trzf2_o_hsync),
@@ -507,6 +620,8 @@ module user_project_wrapper (user_clock2,
     .uri_clk(uri_clk),
     .uri_rst(uri_rst),
     .vdd(vdd),
+    .vgasp_clk(vgasp_clk),
+    .vgasp_rst(vgasp_rst),
     .vss(vss),
     .wb_clk_i(wb_clk_i),
     .wb_rst_i(wb_rst_i),
@@ -730,14 +845,14 @@ module user_project_wrapper (user_clock2,
     io_out[10],
     io_out[9],
     io_out[8],
-    io_out[7],
-    io_out[6],
-    io_out[5],
-    io_out[4],
-    io_out[3],
-    io_out[2],
-    io_out[1],
-    io_out[0]}),
+    \io_out_slice[7] ,
+    \io_out_slice[6] ,
+    \io_out_slice[5] ,
+    \io_out_slice[4] ,
+    \io_out_slice[3] ,
+    \io_out_slice[2] ,
+    \io_out_slice[1] ,
+    \io_out_slice[0] }),
     .la_in({la_data_in[23],
     la_data_in[22],
     la_data_in[21],
@@ -818,73 +933,57 @@ module user_project_wrapper (user_clock2,
     \pawel_io_out[2] ,
     \pawel_io_out[1] ,
     \pawel_io_out[0] }),
-    .pawel_la_in({\pawel_la_in[15] ,
-    \pawel_la_in[14] ,
-    \pawel_la_in[13] ,
-    \pawel_la_in[12] ,
-    \pawel_la_in[11] ,
-    \pawel_la_in[10] ,
-    \pawel_la_in[9] ,
-    \pawel_la_in[8] ,
-    \pawel_la_in[7] ,
-    \pawel_la_in[6] ,
-    \pawel_la_in[5] ,
-    \pawel_la_in[4] ,
-    \pawel_la_in[3] ,
-    \pawel_la_in[2] ,
-    \pawel_la_in[1] ,
-    \pawel_la_in[0] }),
-    .solos_io_in({_NC1,
-    _NC2,
-    _NC3,
-    _NC4,
-    _NC5,
-    _NC6,
-    _NC7,
-    _NC8,
-    _NC9,
-    _NC10,
-    _NC11,
-    _NC12,
-    _NC13,
-    _NC14,
-    _NC15,
-    _NC16,
-    _NC17,
-    _NC18,
-    _NC19,
-    _NC20,
-    _NC21,
-    _NC22,
-    _NC23,
-    _NC24,
-    _NC25,
-    _NC26,
-    _NC27,
-    _NC28,
-    _NC29,
-    _NC30,
-    _NC31,
-    _NC32,
-    _NC33,
-    _NC34,
-    _NC35,
-    _NC36,
-    _NC37,
-    _NC38}),
-    .solos_io_out({_NC39,
-    _NC40,
-    _NC41,
-    _NC42,
-    _NC43,
-    _NC44,
-    _NC45,
-    _NC46,
-    _NC47,
-    _NC48,
-    _NC49,
-    _NC50,
-    _NC51}),
+    .solos_io_in({\solos_io_in_all38[37] ,
+    \solos_io_in_all38[36] ,
+    \solos_io_in_all38[35] ,
+    \solos_io_in_all38[34] ,
+    \solos_io_in_all38[33] ,
+    \solos_io_in_all38[32] ,
+    \solos_io_in_all38[31] ,
+    \solos_io_in_all38[30] ,
+    \solos_io_in_all38[29] ,
+    \solos_io_in_all38[28] ,
+    \solos_io_in_all38[27] ,
+    \solos_io_in_all38[26] ,
+    \solos_io_in_all38[25] ,
+    \solos_io_in_all38[24] ,
+    \solos_io_in_all38[23] ,
+    \solos_io_in_all38[22] ,
+    \solos_io_in_all38[21] ,
+    \solos_io_in_all38[20] ,
+    \solos_io_in_all38[19] ,
+    \solos_io_in_all38[18] ,
+    \solos_io_in_all38[17] ,
+    \solos_io_in_all38[16] ,
+    \solos_io_in_all38[15] ,
+    \solos_io_in_all38[14] ,
+    \solos_io_in_all38[13] ,
+    \solos_io_in_all38[12] ,
+    \solos_io_in_all38[11] ,
+    \solos_io_in_all38[10] ,
+    \solos_io_in_all38[9] ,
+    \solos_io_in_all38[8] ,
+    \solos_io_in_all38[7] ,
+    \solos_io_in_all38[6] ,
+    \solos_io_in_all38[5] ,
+    \solos_io_in_all38[4] ,
+    \solos_io_in_all38[3] ,
+    \solos_io_in_all38[2] ,
+    \solos_io_in_all38[1] ,
+    \solos_io_in_all38[0] }),
+    .solos_io_out({\solos_io_out[12] ,
+    \solos_io_out[11] ,
+    \solos_io_out[10] ,
+    \solos_io_out[9] ,
+    \solos_io_out[8] ,
+    \solos_io_out[7] ,
+    \solos_io_out[6] ,
+    \solos_io_out[5] ,
+    \solos_io_out[4] ,
+    \solos_io_out[3] ,
+    \solos_io_out[2] ,
+    \solos_io_out[1] ,
+    \solos_io_out[0] }),
     .trzf2_io_in({\trzf2_io_in[37] ,
     \trzf2_io_in[36] ,
     \trzf2_io_in[35] ,
@@ -1081,68 +1180,68 @@ module user_project_wrapper (user_clock2,
     \uri_io_out[10] ,
     \uri_io_out[9] ,
     \uri_io_out[8] }),
-    .vgasp_io_in({_NC52,
-    _NC53,
-    _NC54,
-    _NC55,
-    _NC56,
-    _NC57,
-    _NC58,
-    _NC59,
-    _NC60,
-    _NC61,
-    _NC62,
-    _NC63,
-    _NC64,
-    _NC65,
-    _NC66,
-    _NC67,
-    _NC68,
-    _NC69,
-    _NC70,
-    _NC71,
-    _NC72,
-    _NC73,
-    _NC74,
-    _NC75,
-    _NC76,
-    _NC77,
-    _NC78,
-    _NC79,
-    _NC80,
-    _NC81,
-    _NC82,
-    _NC83,
-    _NC84,
-    _NC85,
-    _NC86,
-    _NC87,
-    _NC88,
-    _NC89}),
-    .vgasp_uio_oe({_NC90,
-    _NC91,
-    _NC92,
-    _NC93,
-    _NC94,
-    _NC95,
-    _NC96,
-    _NC97}),
-    .vgasp_uio_out({_NC98,
-    _NC99,
-    _NC100,
-    _NC101,
-    _NC102,
-    _NC103,
-    _NC104,
-    _NC105}),
-    .vgasp_uo_out({_NC106,
-    _NC107,
-    _NC108,
-    _NC109,
-    _NC110,
-    _NC111,
-    _NC112,
-    _NC113}));
+    .vgasp_io_in({\vgasp_io_in[37] ,
+    \vgasp_io_in[36] ,
+    \vgasp_io_in[35] ,
+    \vgasp_io_in[34] ,
+    \vgasp_io_in[33] ,
+    \vgasp_io_in[32] ,
+    \vgasp_io_in[31] ,
+    \vgasp_io_in[30] ,
+    \vgasp_io_in[29] ,
+    \vgasp_io_in[28] ,
+    \vgasp_io_in[27] ,
+    \vgasp_io_in[26] ,
+    \vgasp_io_in[25] ,
+    \vgasp_io_in[24] ,
+    \vgasp_io_in[23] ,
+    \vgasp_io_in[22] ,
+    \vgasp_io_in[21] ,
+    \vgasp_io_in[20] ,
+    \vgasp_io_in[19] ,
+    \vgasp_io_in[18] ,
+    \vgasp_io_in[17] ,
+    \vgasp_io_in[16] ,
+    \vgasp_io_in[15] ,
+    \vgasp_io_in[14] ,
+    \vgasp_io_in[13] ,
+    \vgasp_io_in[12] ,
+    \vgasp_io_in[11] ,
+    \vgasp_io_in[10] ,
+    \vgasp_io_in[9] ,
+    \vgasp_io_in[8] ,
+    \vgasp_io_in[7] ,
+    \vgasp_io_in[6] ,
+    \vgasp_io_in[5] ,
+    \vgasp_io_in[4] ,
+    \vgasp_io_in[3] ,
+    \vgasp_io_in[2] ,
+    \vgasp_io_in[1] ,
+    \vgasp_io_in[0] }),
+    .vgasp_uio_oe({\vgasp_uio_oe[7] ,
+    \vgasp_uio_oe[6] ,
+    \vgasp_uio_oe[5] ,
+    \vgasp_uio_oe[4] ,
+    \vgasp_uio_oe[3] ,
+    \vgasp_uio_oe[2] ,
+    \vgasp_uio_oe[1] ,
+    \vgasp_uio_oe[0] }),
+    .vgasp_uio_out({\vgasp_uio_out[7] ,
+    \vgasp_uio_out[6] ,
+    \vgasp_uio_out[5] ,
+    \vgasp_uio_out[4] ,
+    \vgasp_uio_out[3] ,
+    \vgasp_uio_out[2] ,
+    \vgasp_uio_out[1] ,
+    \vgasp_uio_out[0] }),
+    .vgasp_uo_out({\vgasp_uo_out[7] ,
+    \vgasp_uo_out[6] ,
+    \vgasp_uo_out[5] ,
+    \vgasp_uo_out[4] ,
+    \vgasp_uo_out[3] ,
+    \vgasp_uo_out[2] ,
+    \vgasp_uo_out[1] ,
+    \vgasp_uo_out[0] }));
  top_raybox_zero_fsm top_raybox_zero_fsm (.i_clk(trzf_clk),
     .i_debug_map_overlay(\trzf_io_in[29] ),
     .i_debug_trace_overlay(\trzf_io_in[30] ),
@@ -1239,6 +1338,81 @@ module user_project_wrapper (user_clock2,
     \trzf2_o_rgb[2] ,
     \trzf2_o_rgb[1] ,
     \trzf2_o_rgb[0] }));
+ top_solo_squash top_solo_squash (.clk(solos_clk),
+    .gpio_ready(solos_gpio_ready),
+    .rst(solos_rst),
+    .vdd(vdd),
+    .vss(vss),
+    .io_in({\solos_io_in_all38[20] ,
+    \solos_io_in_all38[19] ,
+    \solos_io_in_all38[18] ,
+    \solos_io_in_all38[17] ,
+    \solos_io_in_all38[16] ,
+    \solos_io_in_all38[15] ,
+    \solos_io_in_all38[14] ,
+    \solos_io_in_all38[13] ,
+    \solos_io_in_all38[12] ,
+    \solos_io_in_all38[11] ,
+    \solos_io_in_all38[10] ,
+    \solos_io_in_all38[9] ,
+    \solos_io_in_all38[8] }),
+    .io_out({\solos_io_out[12] ,
+    \solos_io_out[11] ,
+    \solos_io_out[10] ,
+    \solos_io_out[9] ,
+    \solos_io_out[8] ,
+    \solos_io_out[7] ,
+    \solos_io_out[6] ,
+    \solos_io_out[5] ,
+    \solos_io_out[4] ,
+    \solos_io_out[3] ,
+    \solos_io_out[2] ,
+    \solos_io_out[1] ,
+    \solos_io_out[0] }));
+ top_vga_spi_rom top_vga_spi_rom (.clk(vgasp_clk),
+    .rst(vgasp_rst),
+    .vdd(vdd),
+    .vss(vss),
+    .ui_in({\vgasp_io_in[27] ,
+    \vgasp_io_in[26] ,
+    \vgasp_io_in[25] ,
+    \vgasp_io_in[29] ,
+    \vgasp_io_in[28] ,
+    \vgasp_io_in[24] ,
+    \vgasp_io_in[23] ,
+    \vgasp_io_in[22] }),
+    .uio_in({\vgasp_io_in[21] ,
+    \vgasp_io_in[20] ,
+    \vgasp_io_in[37] ,
+    \vgasp_io_in[31] ,
+    \vgasp_io_in[30] ,
+    \vgasp_io_in[19] ,
+    \vgasp_io_in[18] ,
+    \vgasp_io_in[32] }),
+    .uio_oe({\vgasp_uio_oe[7] ,
+    \vgasp_uio_oe[6] ,
+    \vgasp_uio_oe[5] ,
+    \vgasp_uio_oe[4] ,
+    \vgasp_uio_oe[3] ,
+    \vgasp_uio_oe[2] ,
+    \vgasp_uio_oe[1] ,
+    \vgasp_uio_oe[0] }),
+    .uio_out({\vgasp_uio_out[7] ,
+    \vgasp_uio_out[6] ,
+    \vgasp_uio_out[5] ,
+    \vgasp_uio_out[4] ,
+    \vgasp_uio_out[3] ,
+    \vgasp_uio_out[2] ,
+    \vgasp_uio_out[1] ,
+    \vgasp_uio_out[0] }),
+    .uo_out({\vgasp_uo_out[7] ,
+    \vgasp_uo_out[6] ,
+    \vgasp_uo_out[5] ,
+    \vgasp_uo_out[4] ,
+    \vgasp_uo_out[3] ,
+    \vgasp_uo_out[2] ,
+    \vgasp_uo_out[1] ,
+    \vgasp_uo_out[0] }));
  urish_simon_says urish_simon_says (.vdd(vdd),
     .vss(vss),
     .wb_clk_i(uri_clk),
