@@ -1,5 +1,5 @@
 {
-    "ROUTING_CORES": 7,
+    "ROUTING_CORES": 4,
     "RUN_KLAYOUT_XOR": false,
     "RUN_KLAYOUT_DRC": false,
     "FP_PIN_ORDER_CFG": "dir::pin_order.cfg",
@@ -20,8 +20,8 @@
     "CLOCK_NET": "top_solo_squash.clk",
     "CLOCK_PERIOD": 40.0,
     "FP_SIZING": "relative",
-    "FP_CORE_UTIL": 50,
-    "PL_TARGET_DENSITY": 0.55,
+    "FP_CORE_UTIL": 35,
+    "PL_TARGET_DENSITY": 0.40,
     "BASE_SDC_FILE": "dir::base_top_solo_squash.sdc",
     
     "//": "Common stuff for GFMPW-1...",
@@ -35,5 +35,5 @@
     "GND_NETS": ["vss"],
     "RUN_HEURISTIC_DIODE_INSERTION": 1,
     "RUN_CVC": 1,
-    "QUIT_ON_LINTER_ERRORS": 0
+    "QUIT_ON_LINTER_ERRORS": 1
 }

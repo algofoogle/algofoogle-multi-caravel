@@ -419,11 +419,11 @@ module user_project_wrapper (
 
     wire            vgasp_clk;
     wire            vgasp_rst;
-    // wire            vgasp_ena;   // Unused.
     wire  [7:0]     vgasp_uo_out;
     wire  [7:0]     vgasp_uio_out;
     wire  [7:0]     vgasp_uio_oe;   //NOTE: Design gives [0=in, 1=out] and mux inverts for us.
     wire  [37:0]    vgasp_io_in;
+    // wire            vgasp_ena;   // Unused.
 
     // This is a bit weird, but trust me... :)
     // This horrid mapping is because I wanted to save on macro pins,
@@ -432,14 +432,14 @@ module user_project_wrapper (
     //SMELL: This sort of thing should be in the mux instead...?
     wire  [7:0]     vgasp_mapped_ui_in = {
         vgasp_io_in[27:25],
-        vgasp_io_in[29:28] // Unused, so could be unassigned instead??
+        vgasp_io_in[29:28], // Unused, so could be unassigned instead??
         vgasp_io_in[24:22]
     };
     wire  [7:0]     vgasp_mapped_uio_in = {
         vgasp_io_in[21:20],
         vgasp_io_in[37],
         vgasp_io_in[31:30], //Unused, so could be unassigned instead??
-        vgasp_io_in[19:18]
+        vgasp_io_in[19:18],
         vgasp_io_in[32] //Unused, so could be unassigned instead??
     };
 

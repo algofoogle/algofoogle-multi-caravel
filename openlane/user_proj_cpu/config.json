@@ -1,5 +1,5 @@
 {
-    "ROUTING_CORES": 7,
+    "ROUTING_CORES": 4,
     "DESIGN_NAME": "user_proj_cpu",
     "VERILOG_FILES": [
         "dir::../../verilog/rtl/defines.v",
@@ -31,5 +31,5 @@
     "BASE_SDC_FILE": "dir::base_user_proj_cpu.sdc",
     "RUN_HEURISTIC_DIODE_INSERTION": 1,
     "RUN_CVC": 1,
-    "QUIT_ON_LINTER_ERRORS": 0
+    "QUIT_ON_LINTER_ERRORS": 1
 }

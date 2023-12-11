@@ -41,7 +41,6 @@ module top_vga_spi_rom(
     output  [7:0]   uio_oe
 );
 
-    wire clk = clk;
     wire rst_n = !rst; // AH reset; we change it to AL for the TT05 design.
 
     // This module is implemented in tt05_top.v
@@ -53,7 +52,7 @@ module top_vga_spi_rom(
         .uo_out         (uo_out),
         .uio_in         (uio_in),
         .uio_out        (uio_out),
-        .uio_oe         (uio_oe),
+        .uio_oe         (uio_oe)
     );
 
 endmodule

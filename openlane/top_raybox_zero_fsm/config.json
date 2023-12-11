@@ -1,5 +1,5 @@
 {
-    "ROUTING_CORES": 7,
+    "ROUTING_CORES": 4,
     "RUN_KLAYOUT_XOR": false,
     "RUN_KLAYOUT_DRC": false,
     "//": "SYNTH_AUTONAME: true",
@@ -51,5 +51,5 @@
     "GND_NETS": ["vss"],
     "RUN_HEURISTIC_DIODE_INSERTION": 1,
     "RUN_CVC": 1,
-    "QUIT_ON_LINTER_ERRORS": 0
+    "QUIT_ON_LINTER_ERRORS": 1
 }

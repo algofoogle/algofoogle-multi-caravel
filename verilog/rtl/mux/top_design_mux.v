@@ -117,11 +117,11 @@ module top_design_mux (
     // --- DESIGN 6 interface: Anton's vga_spi_rom_gf180 (a TT05 design) ---
     output              vgasp_clk,
     output              vgasp_rst,
-    output              vgasp_ena,
     input       [7:0]   vgasp_uo_out,
     input       [7:0]   vgasp_uio_out,
     input       [7:0]   vgasp_uio_oe,   //NOTE: For this, 0=in, 1=out
     output      [37:0]  vgasp_io_in
+    // output              vgasp_ena,
     // output      [7:0]   vgasp_uio_in, // Not used here because it is just a subset of vgasp_io_in.
 
 );
@@ -165,7 +165,7 @@ module top_design_mux (
     assign diego_ena = mux_sel == 4'd3;
     assign uri_ena   = mux_sel == 4'd4;
     assign solos_ena = mux_sel == 4'd5;
-    assign vgasp_ena = mux_sel == 4'd6;
+    wire   vgasp_ena = mux_sel == 4'd6; // 'wire', because it's not sent out.
 
     // *_clk: Clock (wb_clk_i) repeated to each design:
     wire clk = wb_clk_i;

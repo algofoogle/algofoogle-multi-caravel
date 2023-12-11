@@ -64,6 +64,7 @@ module top_solo_squash(
     assign down_key_n   = io_in[3];
     assign up_key_n     = io_in[4];
 
+    assign io_out[4:0] = 5'h00;
     assign io_out[ 5]   = red;
     assign io_out[ 6]   = green;
     assign io_out[ 7]   = blue;
