@@ -16,7 +16,9 @@
 `default_nettype none
 // `timescale 1ns / 1ps
 
-module vga_sync #(
+//SMELL: Renamed from vga_sync to vga_sync_vsr to avoid collision
+// with vga_sync in top_raybox_zero_fsm, when running tests.
+module vga_sync_vsr #(
 
   //SMELL: Instead of having lots of ternary operators (muxes based on mode),
   // it might be better to just use registers to store the parameters and load

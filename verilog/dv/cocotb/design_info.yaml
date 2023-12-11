@@ -1,8 +1,8 @@
-CARAVEL_ROOT: /home/zerotoasic/anton/algofoogle-multi-caravel/caravel
-MCW_ROOT: /home/zerotoasic/anton/algofoogle-multi-caravel/mgmt_core_wrapper
+CARAVEL_ROOT: /home/zerotoasic/CUP/caravel
+MCW_ROOT: /home/zerotoasic/CUP/mgmt_core_wrapper
 PDK: gf180mcuD
 PDK_ROOT: /home/zerotoasic/asic_tools/pdk
-USER_PROJECT_ROOT: /home/zerotoasic/anton/algofoogle-multi-caravel
+USER_PROJECT_ROOT: /home/zerotoasic/CUP
 caravan: false
 clk: 25
 emailto:

@@ -20,24 +20,27 @@
 -v $(USER_PROJECT_VERILOG)/rtl/mux/top_design_mux.v
 
 # Anton's top_raybox_zero_fsm:
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/top_raybox_zero_fsm.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/debug_overlay.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/fixed_point_params.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/helpers.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/lzc.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/map_overlay.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/map_rom.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/pov.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/rbzero.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/reciprocal.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/row_render.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/spi_registers.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/vga_mux.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/vga_sync.v
--v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/wall_tracer.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/top_raybox_zero_fsm.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/fixed_point_params.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/helpers.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/debug_overlay.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/lzc.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/map_overlay.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/map_rom.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/pov.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/rbzero.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/reciprocal.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/row_render.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/spi_registers.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/vga_mux.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/vga_sync.v
+-v $(USER_PROJECT_VERILOG)/rtl/raybox-zero-fsm/src/rtl/wall_tracer.v
 
 # Pawel's wrapped_wb_hyperram:
 -v $(USER_PROJECT_VERILOG)/rtl/wrapped_wb_hyperram.v
+-v $(USER_PROJECT_VERILOG)/rtl/wb_hyperram/src/hyperram.sv
+-v $(USER_PROJECT_VERILOG)/rtl/wb_hyperram/src/register_rw.v
+-v $(USER_PROJECT_VERILOG)/rtl/wb_hyperram/src/wb_hyperram.sv
 
 # Diego's user_proj_cpu:
 -v $(USER_PROJECT_VERILOG)/rtl/user_proj_cpu/user_proj_cpu.v
