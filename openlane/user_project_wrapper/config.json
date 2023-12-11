@@ -13,7 +13,9 @@
 		"top_raybox_zero_fsm2.i_clk",
         "wrapped_wb_hyperram.wb_clk_i",
 		"urish_simon_says.wb_clk_i",
-		"user_proj_cpu.wb_clk_i"
+		"user_proj_cpu.wb_clk_i",
+        "top_solo_squash.clk",
+        "top_vga_spi_rom.clk"
 	],
 	"CLOCK_PERIOD": 40,
 	"MACRO_PLACEMENT_CFG": "dir::macro.cfg",
@@ -22,28 +24,36 @@
 		"dir::../../verilog/gl/top_design_mux.v",
 		"dir::../../verilog/gl/wrapped_wb_hyperram.v",
 		"dir::../../verilog/gl/urish_simon_says.v",
-		"dir::../../verilog/gl/user_proj_cpu.v"
+		"dir::../../verilog/gl/user_proj_cpu.v",
+        "dir::../../verilog/gl/top_solo_squash.v",
+        "dir::../../verilog/gl/top_vga_spi_rom.v"
 	],
 	"EXTRA_LEFS": [
 		"dir::../../lef/top_raybox_zero_fsm.lef",
 		"dir::../../lef/top_design_mux.lef",
 		"dir::../../lef/wrapped_wb_hyperram.lef",
 		"dir::../../lef/urish_simon_says.lef",
-		"dir::../../lef/user_proj_cpu.lef"
+		"dir::../../lef/user_proj_cpu.lef",
+        "dir::../../lef/top_solo_squash.lef",
+        "dir::../../lef/top_vga_spi_rom.lef"
 	],
 	"EXTRA_GDS_FILES": [
 		"dir::../../gds/top_raybox_zero_fsm.gds",
 		"dir::../../gds/top_design_mux.gds",
 		"dir::../../gds/wrapped_wb_hyperram.gds",
 		"dir::../../gds/urish_simon_says.gds",
-		"dir::../../gds/user_proj_cpu.gds"
+		"dir::../../gds/user_proj_cpu.gds",
+        "dir::../../gds/top_solo_squash.gds",
+        "dir::../../gds/top_vga_spi_rom.gds"
 	],
 	"EXTRA_LIBS": [
 		"dir::../../lib/top_raybox_zero_fsm.lib",
 		"dir::../../lib/top_design_mux.lib",
 		"dir::../../lib/wrapped_wb_hyperram.lib",
 		"dir::../../lib/urish_simon_says.lib",
-		"dir::../../lib/user_proj_cpu.lib"
+		"dir::../../lib/user_proj_cpu.lib",
+        "dir::../../lib/top_solo_squash.lib",
+        "dir::../../lib/top_vga_spi_rom.lib"
 	],
 	"EXTRA_SPEFS": [
 		"top_raybox_zero_fsm",
@@ -69,7 +79,17 @@
         "wrapped_wb_hyperram",
 		"dir::../../spef/multicorner/wrapped_wb_hyperram.min.spef",
 		"dir::../../spef/multicorner/wrapped_wb_hyperram.nom.spef",
-		"dir::../../spef/multicorner/wrapped_wb_hyperram.max.spef"
+		"dir::../../spef/multicorner/wrapped_wb_hyperram.max.spef",
+
+        "top_solo_squash",
+		"dir::../../spef/multicorner/top_solo_squash.min.spef",
+		"dir::../../spef/multicorner/top_solo_squash.nom.spef",
+		"dir::../../spef/multicorner/top_solo_squash.max.spef",
+        
+        "top_vga_spi_rom",
+		"dir::../../spef/multicorner/top_vga_spi_rom.min.spef",
+		"dir::../../spef/multicorner/top_vga_spi_rom.nom.spef",
+		"dir::../../spef/multicorner/top_vga_spi_rom.max.spef"
 
 	],
 	"FP_PDN_MACRO_HOOKS": [
@@ -78,7 +98,9 @@
 		"top_design_mux       vdd vss vdd vss",
         "wrapped_wb_hyperram  vdd vss vdd vss",
         "urish_simon_says     vdd vss vdd vss",
-		"user_proj_cpu        vdd vss vdd vss"
+		"user_proj_cpu        vdd vss vdd vss",
+        "top_solo_squash      vdd vss vdd vss",
+        "top_vga_spi_rom      vdd vss vdd vss"
 	],
 	"QUIT_ON_SYNTH_CHECKS": 0,
 	"FP_PDN_CHECK_NODES": 0,

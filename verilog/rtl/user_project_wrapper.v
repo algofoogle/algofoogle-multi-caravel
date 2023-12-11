@@ -26,11 +26,13 @@
  *  -   The mux (top_design_mux) that connects each of the designs
  *      with IO pads.
  *  -   Our main top design macros:
- *      -   top_raybox_zero_fsm
- *      -   top_raybox_zero_fsm (2nd instance)
- *      -   Pawel's macro (TBC)
- *      -   Diego's macro (TBC)
- *      -   Anton's 3rd, 4th, and 5th macros (TBC)
+ *      -   Anton's top_raybox_zero_fsm
+ *      -   Anton's top_raybox_zero_fsm (2nd instance)
+ *      -   Pawel's wrapped_wb_hyperram
+ *      -   Diego's user_proj_cpu
+ *      -   Uri's   urish_simon_says
+ *      -   Anton's top_vga_spi_rom
+ *      -   Anton's top_solo_squash
  *
  *-------------------------------------------------------------
  */
@@ -83,8 +85,8 @@ module user_project_wrapper (
 
     top_design_mux top_design_mux(
     `ifdef USE_POWER_PINS
-        .vdd(vdd),        // User area 1 1.8V power
-        .vss(vss),        // User area 1 digital ground
+        .vdd(vdd),
+        .vss(vss),
     `endif
         .wb_clk_i               (wb_clk_i),
         .wb_rst_i               (wb_rst_i),
@@ -138,26 +140,41 @@ module user_project_wrapper (
         .pawel_rst              (pawel_mux_rst),
         .pawel_io_out           (pawel_io_out),
         .pawel_io_oeb           (pawel_io_oeb),
-        .pawel_la_in            (pawel_la_in),
         .pawel_io_in            (pawel_io_in_all38),
+        // .pawel_la_in            (pawel_la_in), // Unused.
 
         // Diego's user_proj_cpu:
         .diego_clk              (diego_clk),
-        // .diego_rst              (diego_rst), // Not required: Diego's using io_in[6] as reset.
-        // .diego_ena              (diego_ena), // Unused.
         .diego_io_out           (diego_io_out),
         .diego_io_oeb           (diego_io_oeb),
         .diego_io_in            (diego_io_in_all38),
+        // .diego_rst              (diego_rst), // Not required: Diego's using io_in[6] as reset.
+        // .diego_ena              (diego_ena), // Unused.
 
         // Uri's urish_simon_says:
         .uri_clk                (uri_clk),
         .uri_rst                (uri_rst),
-        // .uri_ena                (uri_ena),  // Unused.
         .uri_io_out             (uri_io_out[26:8]),
         .uri_io_oeb             (uri_io_oeb[26:8]),
-        .uri_io_in              (uri_io_in)
+        .uri_io_in              (uri_io_in),
+        // .uri_ena                (uri_ena),  // Unused.
 
-        //TODO: PUT IN INTERFACES FOR PAWEL AND DIEGO'S DESIGNS!
+        // Anton's top_solo_squash:
+        .solos_clk              (solos_clk),
+        .solos_rst              (solos_rst),
+        .solos_io_out           (solos_io_out),
+        .solos_io_in            (solos_io_in_all38),
+        .solos_gpio_ready       (solos_gpio_ready),
+        // .solos_ena              (solos_ena), // Unused.
+
+        .vgasp_clk              (vgasp_clk),
+        .vgasp_rst              (vgasp_rst),
+        .vgasp_uo_out           (vgasp_uo_out),
+        .vgasp_uio_out          (vgasp_uio_out),
+        .vgasp_uio_oe           (vgasp_uio_oe),
+        .vgasp_io_in            (vgasp_io_in)
+        // .vgasp_ena              (vgasp_ena), // Unused.
+
     );
 
     //// END: INSTANTIATION OF top_design_mux -------------------
@@ -316,7 +333,7 @@ module user_project_wrapper (
     wire [12:0] pawel_io_out;
     wire [12:0] pawel_io_oeb;
     wire [37:0] pawel_io_in_all38;
-    wire [15:0] pawel_la_in;    // Unused.
+    // wire [15:0] pawel_la_in;    // Unused.
 
     wrapped_wb_hyperram wrapped_wb_hyperram (
     `ifdef USE_POWER_PINS
@@ -367,13 +384,87 @@ module user_project_wrapper (
         .wb_clk_i               (uri_clk),
         .wb_rst_i               (uri_rst),
 
-        .io_in                  (uri_io_in),
+        .io_in                  (uri_io_in), //NOTE: many of these are unused. Can we make them Z?
         .io_out                 (uri_io_out),
         .io_oeb                 (uri_io_oeb)
     );
 
-
     //// END: INSTANTIATION OF URI'S urish_simon_says -------------------
+
+
+    //// BEGIN: INSTANTIATION OF ANTON'S top_solo_squash -------------------
+
+    wire            solos_clk;
+    wire            solos_rst;
+    wire    [12:0]  solos_io_out;
+    wire    [37:0]  solos_io_in_all38;
+    wire            solos_gpio_ready;   // From la_data_in[8]
+
+    top_solo_squash top_solo_squash(
+    `ifdef USE_POWER_PINS
+        .vdd(vdd),
+        .vss(vss),
+    `endif
+        .clk        (solos_clk),
+        .rst        (solos_rst),
+        .io_out     (solos_io_out),
+        .io_in      (solos_io_in_all38[20:8]),
+        .gpio_ready (solos_gpio_ready)
+    );
+
+    //// END: INSTANTIATION OF ANTON'S top_solo_squash -------------------
+
+
+    //// BEGIN: INSTANTIATION OF ANTON'S top_vga_spi_rom -------------------
+
+    wire            vgasp_clk;
+    wire            vgasp_rst;
+    // wire            vgasp_ena;   // Unused.
+    wire  [7:0]     vgasp_uo_out;
+    wire  [7:0]     vgasp_uio_out;
+    wire  [7:0]     vgasp_uio_oe;   //NOTE: Design gives [0=in, 1=out] and mux inverts for us.
+    wire  [37:0]    vgasp_io_in;
+
+    // This is a bit weird, but trust me... :)
+    // This horrid mapping is because I wanted to save on macro pins,
+    // while also accommodating the specific way my TT05 design was
+    // arranged (where not all "uio"s are bi-dir).
+    //SMELL: This sort of thing should be in the mux instead...?
+    wire  [7:0]     vgasp_mapped_ui_in = {
+        vgasp_io_in[27:25],
+        vgasp_io_in[29:28] // Unused, so could be unassigned instead??
+        vgasp_io_in[24:22]
+    };
+    wire  [7:0]     vgasp_mapped_uio_in = {
+        vgasp_io_in[21:20],
+        vgasp_io_in[37],
+        vgasp_io_in[31:30], //Unused, so could be unassigned instead??
+        vgasp_io_in[19:18]
+        vgasp_io_in[32] //Unused, so could be unassigned instead??
+    };
+
+    top_vga_spi_rom top_vga_spi_rom(
+    `ifdef USE_POWER_PINS
+        .vdd(vdd),
+        .vss(vss),
+    `endif
+
+        //REMEMBER: These go into the mux, then the mux decides
+        // which pins they get, but because we get ALL 38 io_ins,
+        // we need to try and match them to what the mux does for
+        // bidirectional ones (uio pairs)...
+        .clk        (vgasp_clk),
+        .rst        (vgasp_rst),
+        .ui_in      (vgasp_mapped_ui_in),
+        .uio_in     (vgasp_mapped_uio_in),
+        .uo_out     (vgasp_uo_out),
+        .uio_out    (vgasp_uio_out),
+        .uio_oe     (vgasp_uio_oe)
+
+    );
+
+    //// END: INSTANTIATION OF ANTON'S top_vga_spi_rom -------------------
+
 
 endmodule	// user_project_wrapper
 
