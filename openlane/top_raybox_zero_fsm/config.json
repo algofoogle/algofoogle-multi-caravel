@@ -16,9 +16,9 @@
     "VERILOG_FILES": [
         "dir::../../verilog/rtl/defines.v",
         "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/top_raybox_zero_fsm.v",
-        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/debug_overlay.v",
         "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/fixed_point_params.v",
         "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/helpers.v",
+        "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/debug_overlay.v",
         "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/lzc.v",
         "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/map_overlay.v",
         "dir::../../verilog/rtl/raybox-zero-fsm/src/rtl/map_rom.v",

@@ -19,28 +19,31 @@ import cocotb
 
 @cocotb.test() # cocotb test marker
 @report_test # wrapper for configure test reporting files
-async def gpio_test(dut):
+async def mux_test(dut):
     caravelEnv = await test_configure(dut) #configure, start up and reset caravel
     #await caravelEnv.release_csb()
     
+    cocotb.log.info('Waiting for first GPIO pulse...')
+
     # This just gets us to the system being powered on...
     await caravelEnv.wait_mgmt_gpio(1)
+    cocotb.log.info('GPIO is high...')
     await caravelEnv.wait_mgmt_gpio(0)
     cocotb.log.info('GPIO pulse: Firmware is starting')
 
     await caravelEnv.wait_mgmt_gpio(1)
     await caravelEnv.wait_mgmt_gpio(0)
     cocotb.log.info('GPIO pulse: Initial mux state has been set')
-    gpios_value_str = caravelEnv.monitor_gpio(37, 0).binstr
+    gpios_value_str = caravelEnv.monitor_gpio(37, 8).binstr
     cocotb.log.info (f"All gpios '{gpios_value_str}'")
-    gpio_value_int = caravelEnv.monitor_gpio(37, 0).integer
+    gpio_value_int = caravelEnv.monitor_gpio(31, 16).integer
 
     await caravelEnv.wait_mgmt_gpio(1)
     await caravelEnv.wait_mgmt_gpio(0)
     cocotb.log.info('GPIO pulse: Final mux state has been set')
-    gpios_value_str = caravelEnv.monitor_gpio(37, 0).binstr
+    gpios_value_str = caravelEnv.monitor_gpio(37, 8).binstr
     cocotb.log.info (f"All gpios '{gpios_value_str}'")
-    gpio_value_int = caravelEnv.monitor_gpio(37, 0).integer
+    gpio_value_int = caravelEnv.monitor_gpio(31, 16).integer
 
     #expected_gpio_value = 0xF8
     # expected_gpio_value = 0x8F

@@ -13,39 +13,25 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-#include <defs.h>
-#include <stub.c>
+// #include <defs.h>
+// #include <stub.c>
 
-/*
-IO Control Registers
+#include <firmware_apis.h> // include required APIs
 
-| DM     | VTRIP | SLOW  | AN_POL | AN_SEL | AN_EN | MOD_SEL | INP_DIS | HOLDH | OEB_N | MGMT_EN |
-|--------|-------|-------|--------|--------|-------|---------|---------|-------|-------|---------|
-| Output: GPIO_MODE_USER_STD_OUTPUT         = 0000_0110_0000_1110 (0x1808)                       |
-| 110    | 0     | 0     | 0      | 0      | 0     | 0       | 1       | 0     | 0     | 0       |
-| Input:  GPIO_MODE_USER_STD_INPUT_NOPULL   = 0000_0001_0000_1111 (0x0402)                       |
-| 001    | 0     | 0     | 0      | 0      | 0     | 0       | 0       | 0     | 1     | 0       |
-*/
 
 void pulse_gpio()
 {
-    reg_gpio_out = 1;
-    reg_gpio_out = 0;
+    ManagmentGpio_write(1);
+    ManagmentGpio_write(0);
 }
 
 void main()
 {
-
-    // Signal via the SoC's single 'gpio' pin that we're starting our main code execution...
-    // Start with gpio=0:
-    reg_gpio_out = 0;
-    // Enable gpio OUTPUT:
-    reg_gpio_mode1 = 1;
-    reg_gpio_mode0 = 0;
-    reg_gpio_ien = 1;
-    reg_gpio_oe = 1;
-
+    // Set up the SoC's single 'gpio' pin so we can toggle it to sync tests:
+    ManagmentGpio_outputEnable();
+    ManagmentGpio_write(0);
     pulse_gpio();
+
 
     // We'll start with mux design 13, then 14, for a simple test of selectable outputs.
 
@@ -56,15 +42,13 @@ void main()
     // - Make GPIO[31:16] present 0x55AA
     // - Make all other GPIOs inputs
 
-    // Configure 2nd LA bank for 'input'
-    // (i.e. output from SoC, input to the user project area):
-    reg_la1_oenb = reg_la1_iena = 0xffffffff;
-    // la_data_in[63:32] are now writable.
+
+    // Make all LA[63:32] outputs INTO the user design:
+    LogicAnalyzer_outputEnable(LA_REG_1, 0);
 
     // Prepare the values that WILL be written into the
     // mux registers after 2 mux_conf_clk rising edges:
-    uint32_t la1;
-    reg_la1_data = la1 =
+    uint32_t la1 =
      0b01111111101110110000000000000000;
     // 0-------------------------------     mux_conf_clk: Start with mux configuration clock low
     // -11111111-----------------------     i_design_reset[7:0]: All asserted
@@ -73,55 +57,34 @@ void main()
     // -----------1101-----------------     i_mux_sel[3:0]=1101: We'll select design 13
     // ---------------1----------------     i_mux_io5_reset_enb: 1=Do not use io[5] as a reset
     // ----------------XXXXXXXXXXXXXXXX     Unused.
+    LogicAnalyzer_write(LA_REG_1, la1);
 
     // Pulse mux_conf_clk once...
-    reg_la1_data = (la1 |= 0x80000000);
-    reg_la1_data = (la1 ^= 0x80000000);
+    LogicAnalyzer_write(LA_REG_1, la1 |= 0x80000000);
+    LogicAnalyzer_write(LA_REG_1, la1 ^= 0x80000000);
     // ...and again:
-    reg_la1_data = (la1 |= 0x80000000);
-    reg_la1_data = (la1 ^= 0x80000000);
+    LogicAnalyzer_write(LA_REG_1, la1 |= 0x80000000);
+    LogicAnalyzer_write(LA_REG_1, la1 ^= 0x80000000);
 
     // Design 13 should now be selected, but note that All GPIOs start in
     // INPUT mode by default (per user_defines), so we won't see the
     // intended output until the GPIO modes are reconfigured...
 
     // Let's set GPIO[37:8] to BIDIRECTIONAL mode, since our OEBs should
-    // be driven by the mux:
-
-    reg_mprj_io_8   = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_9   = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_10  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_11  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_12  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_13  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_14  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_15  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_16  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_17  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_18  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_19  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_20  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_21  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_22  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_23  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_24  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_25  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_26  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_27  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_28  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_29  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_30  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_31  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_32  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_33  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_34  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_35  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_36  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-    reg_mprj_io_37  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
+    // be driven by the mux...
+    GPIOs_configureAll(GPIO_MODE_USER_STD_BIDIRECTIONAL); // Set all...
+    // ...but then change our mind for just the first 8:
+    GPIOs_configure(0, GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    GPIOs_configure(1, GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    GPIOs_configure(2, GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    GPIOs_configure(3, GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    GPIOs_configure(4, GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    GPIOs_configure(5, GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    GPIOs_configure(6, GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    GPIOs_configure(7, GPIO_MODE_MGMT_STD_INPUT_NOPULL);
 
     // Apply the above configuration:
-    reg_mprj_xfer = 1;
-    while (reg_mprj_xfer == 1);
+    GPIOs_loadConfigs();
 
     // Hopefully now we should see 0x55AA presenting on GPIO[31:16].
 
@@ -129,17 +92,17 @@ void main()
     pulse_gpio();
 
     // Now we'll set up to select design 14:
-
-    reg_la1_data = la1 =
+    la1 = 
      0b01111111101111010000000000000000;
     // -----------1110-----------------     // Design 14.
+    LogicAnalyzer_write(LA_REG_1, la1);
 
     // Pulse mux_conf_clk once...
-    reg_la1_data = (la1 |= 0x80000000);
-    reg_la1_data = (la1 ^= 0x80000000);
+    LogicAnalyzer_write(LA_REG_1, la1 |= 0x80000000);
+    LogicAnalyzer_write(LA_REG_1, la1 ^= 0x80000000);
     // ...and again:
-    reg_la1_data = (la1 |= 0x80000000);
-    reg_la1_data = (la1 ^= 0x80000000);
+    LogicAnalyzer_write(LA_REG_1, la1 |= 0x80000000);
+    LogicAnalyzer_write(LA_REG_1, la1 ^= 0x80000000);
 
     // Pulse gpio again to show we're now finished:
     pulse_gpio();
