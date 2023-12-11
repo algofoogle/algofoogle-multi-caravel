@@ -101,10 +101,10 @@ module top_solo_squash(
     assign debug_gpio_ready = gpio_ready;
 
     solo_squash solo_squash(
-    `ifdef USE_POWER_PINS
-        .vdd        (vdd),
-        .vss        (vss),
-    `endif
+    // `ifdef USE_POWER_PINS
+    //     .vdd        (vdd),
+    //     .vss        (vss),
+    // `endif
         // --- Inputs ---
         // Our design's main clock comes directly from Wishbone bus clock:
         .clk        (wb_clk_i),

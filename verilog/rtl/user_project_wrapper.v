@@ -83,6 +83,12 @@ module user_project_wrapper (
 
     //// BEGIN: INSTANTIATION OF top_design_mux -------------------
 
+    // NONE of our designs use io_out[7:0] (while only Diego's uses io_in[7:6])
+    // so to keep LVS precheck happy, we leave io_out[7:0] disconnected:
+    wire [37:0] io_out_slice; // This gets all 38 io_out lines from the mux...
+    assign io_out[37:8] = io_out_slice[37:8]; // ...and this connects only the top 30 of them.
+    //NOTE: We should now be confident that io_out[7:0] are not connected at all.
+
     top_design_mux top_design_mux(
     `ifdef USE_POWER_PINS
         .vdd(vdd),
@@ -92,7 +98,7 @@ module user_project_wrapper (
         .wb_rst_i               (wb_rst_i),
 
         .io_in                  (io_in),
-        .io_out                 (io_out),
+        .io_out                 (io_out_slice),
         .io_oeb                 (io_oeb),
         .la_in                  (design_la_in),
 
@@ -370,10 +376,10 @@ module user_project_wrapper (
 
     wire            uri_clk;
     wire            uri_rst;
-    // wire            uri_ena;    // Unused.
     wire    [37:0]  uri_io_out; // NOTE: Only a subset of these get passed to mux.
     wire    [37:0]  uri_io_oeb; // NOTE: Only a subset of these get passed to mux.
     wire    [37:0]  uri_io_in;  // Inputs repeated/buffered from IO pads to the design.
+    // wire            uri_ena;    // Unused.
 
     urish_simon_says urish_simon_says (
     `ifdef USE_POWER_PINS

@@ -196,6 +196,13 @@ module top_design_mux (
 
     assign vgasp_io_in  = io_in;
 
+    //NOTE: NOTE: NOTE: io_out[7:0] are not used by ANY of our designs.
+    // I had to double-check user_proj_cpu's code, because while it does
+    // drive io_oeb[7:6], they're always 1 and hence inputs (i.e.
+    // the design does use io_in[7:6], but not io_out[7:6]). To keep the
+    // LVS precheck happy with this, even though the full io_out[37:0]
+    // port range is provided by this mux, the user_project_wrapper will
+    // leave io_out[7:0] disconnected completely.
 
     always @(*) begin
         case (mux_sel)
@@ -247,7 +254,7 @@ module top_design_mux (
 
             // Pawel's design:
             2: begin
-                // io_oeb = ?????????????1111111111111111111111111
+                // io_oeb = ??_????_????_???1_1111_1111_1111_1111_1111_1111
                 io_oeb = {
                     pawel_io_oeb,
                     25'h1FF_FFFF
@@ -260,7 +267,12 @@ module top_design_mux (
 
             // Diego's design:
             3: begin
-                // io_oeb = ????????????????????????????????111111
+                // io_oeb = ??_????_????_????_????_????_????_????_??11_1111
+                // NOTE: diego_io_oeb[9:0] (hence caravel io_oeb[15:6]) are always
+                // configured as INPUTs. Hence, io_out[15:6] in this case are
+                // not used. Diego's design is the only one that uses io_in[7:6],
+                // and NO design uses io_out[7:6] at this time.
+                // 
                 io_oeb = {
                     diego_io_oeb,
                     6'h3F
