@@ -1,7 +1,7 @@
 magic
 tech gf180mcuD
 magscale 1 10
-timestamp 1702319686
+timestamp 1702351729
 << nwell >>
 rect 1258 55232 158678 56096
 rect 1258 53664 158678 54528
@@ -750,7 +750,7 @@ string FIXED_BBOX 0 0 160000 60000
 string LEFclass BLOCK
 string LEFview TRUE
 string GDS_END 3365310
-string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/wrapped_wb_hyperram/runs/23_12_12_05_03/results/signoff/wrapped_wb_hyperram.magic.gds
+string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/wrapped_wb_hyperram/runs/23_12_12_13_57/results/signoff/wrapped_wb_hyperram.magic.gds
 string GDS_START 388592
 << end >>
 

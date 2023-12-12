@@ -1,7 +1,7 @@
 magic
 tech gf180mcuD
 magscale 1 5
-timestamp 1702318726
+timestamp 1702350765
 << obsm1 >>
 rect 672 463 239288 28545
 << metal2 >>
@@ -2838,7 +2838,7 @@ string FIXED_BBOX 0 0 240000 30000
 string LEFclass BLOCK
 string LEFview TRUE
 string GDS_END 4664662
-string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/top_design_mux/runs/23_12_12_04_47/results/signoff/top_design_mux.magic.gds
+string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/top_design_mux/runs/23_12_12_13_41/results/signoff/top_design_mux.magic.gds
 string GDS_START 299144
 << end >>
 
