@@ -10,3 +10,6 @@ from simple_add_test.simple_add_test import simple_add_test
 from timer_interrupt_test.timer_interrupt_test import timer_interrupt_test
 from ports_mov_test.ports_mov_test import ports_mov_test
 from port0_io_test.port0_io_test import port0_io_test
+
+# Uri's user design specific tests
+from simon_test.simon_test import simon_test
