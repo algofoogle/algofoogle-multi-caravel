@@ -47,7 +47,7 @@ void main()
     // -11111111-----------------------     i_design_reset[7:0]: All asserted
     // ---------0----------------------     i_mux_auto_reset_enb: 0=auto-reset non-selected designs
     // ----------1---------------------     i_mux_sys_reset_enb: 1=do not use wb_rst_i as a reset
-    // -----------0010-----------------     i_mux_sel[3:0]=1101: We'll select design 2 (HyperRAM)
+    // -----------0010-----------------     i_mux_sel[3:0]=0010: We'll select design 2 (HyperRAM)
     // ---------------1----------------     i_mux_io5_reset_enb: 1=Do not use io[5] as a reset
     // ----------------XXXXXXXXXXXXXXXX     Unused.
     LogicAnalyzer_write(LA_REG_1, la1);
