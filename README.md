@@ -19,9 +19,29 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+> NOTE: The original non-flattened version of this repo is found here: https://github.com/algofoogle/algofoogle-multi-caravel
+
 # Group GFMPW-1 ASIC design organised by "Zero to ASIC" participants
 
 ![Cover image featuring Zero to ASIC logo and image representing combined designs](./docs/cover.jpg)
+
+# Table of Contents
+
+*   [Summary](#summary)
+*   [License](#license)
+*   [Die layout](#die-layout)
+*   [Design 0: **top_raybox_zero_fsm** - raybox-zero FSM version](#design-0-top_raybox_zero_fsm---raybox-zero-fsm-version)
+*   [Design 1: 2nd instance of top_raybox_zero_fsm for characterisation](#design-1-2nd-instance-of-top_raybox_zero_fsm-for-characterisation)
+*   [Design 2: **wrapped_wb_hyperram** - Wishbone connected HyperRAM memory driver](#design-2-wrapped_wb_hyperram---wishbone-connected-hyperram-memory-driver)
+*   [Design 3: **user_proj_cpu** - CPUy 8-bit CPU](#design-3-user_proj_cpu---cpuy-8-bit-cpu)
+*   [Design 4: **urish_simon_says** - Simon Says game for GFMPW-1 Shuttle](#design-4-urish_simon_says---simon-says-game-for-gfmpw-1-shuttle)
+*   [Design 5: **top_solo_squash**](#design-5-top_solo_squash)
+*   [Design 6: **top_vga_spi_rom**](#design-6-top_vga_spi_rom)
+*   [Mux, including other internal 'test designs'](#mux-including-other-internal-test-designs)
+*   [Hardening guide](#hardening-guide)
+*   [Running tests](#running-tests)
+
+## Summary
 
 A team of participants from the [Zero to ASIC Course](https://zerotoasiccourse.com) decided to independently assemble this group submission to GFMPW-1 as a way to test/debug/characterise some of their more complex, larger, and experimental designs.
 
@@ -29,13 +49,15 @@ There are 7 designs in this one die, selectable via a mux. **Each of the individ
 
 For my comprehensive notes about the journey to get this submitted, [start here with my final journal entry 0189](https://github.com/algofoogle/journal/blob/master/0189-2023-12-11.md) and work backwards by using the 'Previous journal' link atop each page.
 
-This submission is made possible by Google's Open MPW program, the Global Foundries GF180 Open PDK, and Efabless.
-
-NOTE: The original non-flattened version of this repo is found here: https://github.com/algofoogle/algofoogle-multi-caravel
 
 ## License
 
 This repo is licensed with [Apache 2.0](LICENSE).
+
+
+## Die layout
+
+The die layout (as shown in the cover image above) can be downloaded as a PDF: [`docs/ztoa-team-layout--gfmpw-1.pdf`](./docs/ztoa-team-layout--gfmpw-1.pdf).
 
 
 ## Design 0: top_raybox_zero_fsm - raybox-zero FSM version
@@ -140,8 +162,10 @@ For additional documentation and details about the project, please see [algofoog
 
 For documentation on controlling the mux, see: [Using LA pins to control the mux](https://github.com/algofoogle/journal/blob/master/0187-2023-12-09.md#using-la-pins-to-control-the-mux)
 
+For example firmware, see C source files in test subdirectories of [verilog/dv/cocotb/](verilog/dv/cocotb/), e.g. [hyperram_test.c](./verilog/dv/cocotb/hyperram_test/hyperram_test.c).
 
-# Hardening guide
+
+## Hardening guide
 
 >   NOTE: The original repo with all development progress branches can be found on GitHub: https://github.com/algofoogle/algofoogle-multi-caravel
 >   
@@ -195,6 +219,38 @@ Here's a very high-level overview of hardening any given design, assuming you al
     ```
 
 NOTE: The final `user_project_wrapper` harden is expected to end with reporting hold violations. These are intentional: They relate specifically to *secondary* reset lines connected to the designs, each controlled by a separate `la_data_in[]` pin. While other more-stable system-wide reset options are provided, these are intended for specific experimentation/characterisation.
+
+## Running tests
+
+Running tests assumes you have set your environment (as above), have run `make setup`, and have done `pip install caravel-cocotb`. Additionally, you might also need to use `verilog/dv/setup-cocotb.py` (or otherwise modify `verilog/dv/cocotb/design_info.yaml`). For more info, see [efabless/caravel_user_project @ gfmpw-1d](https://github.com/efabless/caravel_user_project/tree/gfmpw-1d) (or a more recent `gfmpw*` tag), but note that at the time of writing some of the documentation needs an update or clarification.
+
+Anyway, given a working test environment, you can run (for example):
+
+```bash
+cd verilog/dv/cocotb
+SIM=RTL  # or GL for a much slower and more-thorough gate-level simulation.
+RUNTAG=my_RTL_test_run_123  # Set to whatever you want to store results in a specific directory.
+caravel_cocotb -sim $SIM -tag $RUNTAG -test mux_test hyperram_test simon_test
+```
+
+Artefacts include `.vcd` files also for all internal traces of the caravel framework, IOs, and the specific user designs.
+
+
+## Acknowledgements
+
+Thank you to everyone who both contributed to this submission and also helped me along the way:
+
+*   [embelon (Pawel Sitarz)]
+*   [urish (Uri Shaked)]
+*   [dsatizabal (Diego Satizabal)]
+
+Special thanks goes to:
+
+*   [Matt Venn](https://www.zerotoasiccourse.com/matt_venn/) who provided great training through the [Zero to ASIC course](https://zerotoasiccourse.com) to allow me (and maybe all of us) to get to this point, and who was a vital source of expert knowledge during the more nail-biting moments of wrapping everything up.
+*   Many helpful and friendly people in the Discord communities of Zero to ASIC and [Tiny Tapeout].
+*   Google, [Efabless](https://efabless.com), and Global Foundries who made this all possible through, respectively: Google's Open MPW program; chipIgnite (and the foundation of all the tooling used to develop/harden this chip); and the GF180 Open PDK.
+
+
 
 [Tiny Tapeout]: https://tinytapeout.com
 [tt04-raybox-zero]: https://github.com/algofoogle/tt04-raybox-zero
