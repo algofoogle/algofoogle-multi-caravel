@@ -22252,7 +22252,7 @@ NETS 1200 ;
       NEW Metal2 ( 281680 122640 ) RECT ( -280 -660 280 0 ) 
       NEW Metal3 ( 277200 190960 ) RECT ( -660 -280 0 280 ) 
       NEW Metal2 ( 277200 190960 ) RECT ( -280 -660 280 0 )  ;
-    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[0\] ( _1884_ Q ) ( _1129_ I ) ( _1023_ A1 ) + USE SIGNAL
+    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[0\] ( _1884_ Q ) ( _1129_ I ) ( _1023_ A1 ) + USE SIGNAL
       + ROUTED Metal2 ( 255920 138320 ) ( * 142800 )
       NEW Metal2 ( 246960 136080 ) ( * 142800 )
       NEW Metal3 ( 246960 142800 ) ( 255920 * )
@@ -22268,7 +22268,7 @@ NETS 1200 ;
       NEW Metal2 ( 375760 155120 ) Via2_VH
       NEW Metal1 ( 375760 159600 ) Via1_VV
       NEW Metal2 ( 286160 142800 ) Via2_VH ;
-    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[1\] ( ANTENNA__1024__A1 I ) ( ANTENNA__1128__I I ) ( ANTENNA__1438__A1 I ) ( ANTENNA__1460__A2 I ) ( _1885_ Q ) ( _1460_ A2 ) ( _1438_ A1 )
+    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[1\] ( ANTENNA__1024__A1 I ) ( ANTENNA__1128__I I ) ( ANTENNA__1438__A1 I ) ( ANTENNA__1460__A2 I ) ( _1885_ Q ) ( _1460_ A2 ) ( _1438_ A1 )
       ( _1128_ I ) ( _1024_ A1 ) + USE SIGNAL
       + ROUTED Metal2 ( 208880 158480 ) ( 213360 * )
       NEW Metal2 ( 213360 151200 ) ( * 158480 )
@@ -22318,7 +22318,7 @@ NETS 1200 ;
       NEW Metal2 ( 241360 130480 ) RECT ( -280 -660 280 0 ) 
       NEW Metal3 ( 361200 159600 ) RECT ( -660 -280 0 280 ) 
       NEW Metal2 ( 361200 159600 ) RECT ( -280 -660 280 0 )  ;
-    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[2\] ( _1886_ Q ) ( _0979_ I ) ( _0976_ A2 ) + USE SIGNAL
+    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[2\] ( _1886_ Q ) ( _0979_ I ) ( _0976_ A2 ) + USE SIGNAL
       + ROUTED Metal2 ( 273840 105840 ) ( 277200 * )
       NEW Metal2 ( 270480 99120 ) ( 271600 * )
       NEW Metal2 ( 271600 99120 ) ( * 105840 )
@@ -22326,7 +22326,7 @@ NETS 1200 ;
       NEW Metal1 ( 273840 105840 ) Via1_VV
       NEW Metal1 ( 277200 105840 ) Via1_VV
       NEW Metal1 ( 270480 99120 ) Via1_HV ;
-    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[3\] ( ANTENNA__1020__A1 I ) ( ANTENNA__1119__A1 I ) ( ANTENNA__1437__I I ) ( _1887_ Q ) ( _1437_ I ) ( _1119_ A1 ) ( _1020_ A1 ) + USE SIGNAL
+    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[3\] ( ANTENNA__1020__A1 I ) ( ANTENNA__1119__A1 I ) ( ANTENNA__1437__I I ) ( _1887_ Q ) ( _1437_ I ) ( _1119_ A1 ) ( _1020_ A1 ) + USE SIGNAL
       + ROUTED Metal2 ( 244720 162960 ) ( 246960 * )
       NEW Metal2 ( 246960 162960 ) ( * 176400 )
       NEW Metal3 ( 224560 168560 ) ( 246960 * )
@@ -22368,7 +22368,7 @@ NETS 1200 ;
       NEW Metal2 ( 246960 168560 ) RECT ( -280 -660 280 0 ) 
       NEW Metal2 ( 367920 168560 ) RECT ( -280 -660 280 0 ) 
       NEW Metal3 ( 379120 149520 ) RECT ( -660 -280 0 280 )  ;
-    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[4\] ( _1888_ Q ) ( _1462_ A1 ) ( _1430_ I ) ( _1122_ A3 ) ( _1029_ A1 ) + USE SIGNAL
+    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[4\] ( _1888_ Q ) ( _1462_ A1 ) ( _1430_ I ) ( _1122_ A3 ) ( _1029_ A1 ) + USE SIGNAL
       + ROUTED Metal3 ( 161840 176400 ) ( 174160 * )
       NEW Metal2 ( 173040 145040 ) ( * 146160 )
       NEW Metal2 ( 147280 160720 ) ( 148400 * )
@@ -22390,7 +22390,7 @@ NETS 1200 ;
       NEW Metal2 ( 161840 176400 ) RECT ( -280 -660 280 0 ) 
       NEW Metal2 ( 174160 176400 ) RECT ( -280 -660 280 0 ) 
       NEW Metal2 ( 147280 146160 ) RECT ( -280 -660 280 0 )  ;
-    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[5\] ( _1889_ Q ) ( _1121_ I ) ( _1030_ A1 ) + USE SIGNAL
+    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[5\] ( _1889_ Q ) ( _1121_ I ) ( _1030_ A1 ) + USE SIGNAL
       + ROUTED Metal3 ( 173040 193200 ) ( 183120 * )
       NEW Metal2 ( 183120 184240 ) ( * 193200 )
       NEW Metal2 ( 168560 193200 ) ( * 199920 )
@@ -22402,7 +22402,7 @@ NETS 1200 ;
       NEW Metal1 ( 168560 199920 ) Via1_VV
       NEW Metal2 ( 168560 193200 ) Via2_VH
       NEW Metal2 ( 173040 193200 ) RECT ( -280 -660 280 0 )  ;
-    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[6\] ( ANTENNA__1026__A1 I ) ( ANTENNA__1120__I I ) ( ANTENNA__1134__A3 I ) ( _1890_ Q ) ( _1134_ A3 ) ( _1120_ I ) ( _1026_ A1 ) + USE SIGNAL
+    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[6\] ( ANTENNA__1026__A1 I ) ( ANTENNA__1120__I I ) ( ANTENNA__1134__A3 I ) ( _1890_ Q ) ( _1134_ A3 ) ( _1120_ I ) ( _1026_ A1 ) + USE SIGNAL
       + ROUTED Metal2 ( 221200 179760 ) ( * 183120 )
       NEW Metal3 ( 166320 179760 ) ( 221200 * )
       NEW Metal2 ( 166320 177520 ) ( * 179760 )
@@ -22435,7 +22435,7 @@ NETS 1200 ;
       NEW Metal2 ( 346640 171920 ) Via2_VH
       NEW Metal1 ( 361200 174160 ) Via1_VV
       NEW Metal2 ( 360080 171920 ) Via2_VH ;
-    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[7\] ( ANTENNA__1027__A1 I ) ( ANTENNA__1117__I I ) ( _1891_ Q ) ( _1117_ I ) ( _1027_ A1 ) + USE SIGNAL
+    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[7\] ( ANTENNA__1027__A1 I ) ( ANTENNA__1117__I I ) ( _1891_ Q ) ( _1117_ I ) ( _1027_ A1 ) + USE SIGNAL
       + ROUTED Metal2 ( 354480 176400 ) ( * 178640 )
       NEW Metal2 ( 347760 67760 ) ( 348880 * )
       NEW Metal2 ( 348880 67760 ) ( * 84560 )
@@ -22465,7 +22465,7 @@ NETS 1200 ;
       NEW Metal2 ( 238000 179760 ) Via2_VH
       NEW Metal3 ( 348880 119280 ) RECT ( -660 -280 0 280 ) 
       NEW Metal3 ( 351120 178640 ) RECT ( -660 -280 0 280 )  ;
-    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[9\] ( _1893_ Q ) ( _1126_ I ) ( _0973_ A1 ) + USE SIGNAL
+    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[9\] ( _1893_ Q ) ( _1126_ I ) ( _0973_ A1 ) + USE SIGNAL
       + ROUTED Metal2 ( 220080 192080 ) ( * 199920 )
       NEW Metal2 ( 220080 199920 ) ( 225680 * )
       NEW Metal3 ( 210000 198800 ) ( 220080 * )
@@ -22476,7 +22476,7 @@ NETS 1200 ;
       NEW Metal2 ( 220080 198800 ) Via2_VH
       NEW Metal2 ( 210000 198800 ) RECT ( -280 -660 280 0 ) 
       NEW Metal2 ( 220080 198800 ) RECT ( -280 -660 280 0 )  ;
-    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.vsync ( _1894_ Q ) ( _1501_ I1 ) ( _1110_ A2 ) + USE SIGNAL
+    - tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.vsync ( _1894_ Q ) ( _1501_ I1 ) ( _1110_ A2 ) + USE SIGNAL
       + ROUTED Metal2 ( 124880 89040 ) ( * 104720 )
       NEW Metal2 ( 132720 103600 ) ( * 104720 )
       NEW Metal2 ( 131600 104720 ) ( 132720 * )

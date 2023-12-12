@@ -1,7 +1,7 @@
 magic
 tech gf180mcuD
 magscale 1 10
-timestamp 1702302954
+timestamp 1702319781
 << nwell >>
 rect 1258 56071 26440 56096
 rect 1258 55257 58662 56071
@@ -636,7 +636,7 @@ string FIXED_BBOX 0 0 60000 60000
 string LEFclass BLOCK
 string LEFview TRUE
 string GDS_END 2752652
-string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/urish_simon_says/runs/23_12_12_00_24/results/signoff/urish_simon_says.magic.gds
+string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/urish_simon_says/runs/23_12_12_05_05/results/signoff/urish_simon_says.magic.gds
 string GDS_START 371498
 << end >>
 

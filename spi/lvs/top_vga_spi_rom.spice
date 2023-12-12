@@ -503,7 +503,7 @@ XANTENNA__2042__CLK clknet_4_11_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__a
 XFILLER_0_31_19 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XANTENNA_output12_I net12 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 Xclkbuf_4_11_0_clk clknet_0_clk clknet_4_11_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_8
-X_1020_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[3\] _0426_ _0428_
+X_1020_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[3\] _0426_ _0428_
 + _0429_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__oai21_1
 X_1922_ _0039_ clknet_4_15_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[27\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
@@ -604,8 +604,8 @@ XANTENNA__2009__CLKN clknet_4_1_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__a
 XTAP_TAPCELL_ROW_16_214 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_36_193 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XFILLER_0_24_333 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-XANTENNA__1024__A1 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[1\] vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
+XANTENNA__1024__A1 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[1\]
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_51_196 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_8
 XFILLER_0_19_41 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 X_1303_ _0629_ _0705_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
@@ -698,8 +698,8 @@ X_2017_ _0134_ clknet_4_0_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_bu
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
 XFILLER_0_13_294 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XTAP_TAPCELL_ROW_5_154 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
-XANTENNA__1117__I tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[7\] vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
+XANTENNA__1117__I tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[7\]
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_55_139 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XFILLER_0_36_342 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XTAP_TAPCELL_ROW_11_189 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
@@ -847,8 +847,8 @@ X_1378_ _0621_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[75\] _0780_
 + vdd vss vss gf180mcu_fd_sc_mcu7t5v0__or2_1
 XFILLER_0_18_387 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XPHY_EDGE_ROW_45_Left_105 vdd vss gf180mcu_fd_sc_mcu7t5v0__endcap
-XANTENNA__1128__I tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[1\] vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
+XANTENNA__1128__I tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[1\]
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XANTENNA__1798__I _0286_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XPHY_EDGE_ROW_54_Left_114 vdd vss gf180mcu_fd_sc_mcu7t5v0__endcap
 XTAP_TAPCELL_ROW_24_260 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
@@ -914,8 +914,8 @@ X_1833_ _0560_ _0384_ _0503_ _0313_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nan
 XANTENNA__1907__CLKN clknet_4_5_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 X_1695_ _0233_ _0089_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_1
 XANTENNA__1162__S _0563_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
-X_1129_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[0\] _0533_ vdd vdd
-+ vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_1
+X_1129_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[0\] _0533_ vdd
++ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_1
 XFILLER_0_18_2 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 XANTENNA_clkbuf_4_14_0_clk_I clknet_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_7_184 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
@@ -974,8 +974,8 @@ XFILLER_0_40_43 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XFILLER_0_40_32 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 X_0963_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.hpos\[5\] _0372_ vdd vdd vss vss
 + gf180mcu_fd_sc_mcu7t5v0__inv_1
-XANTENNA__1027__A1 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[7\] vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
+XANTENNA__1027__A1 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[7\]
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 X_1515_ _0897_ _0014_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_1
 X_1377_ _0776_ _0778_ _0466_ _0779_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__aoi21_1
 XFILLER_0_4_10 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
@@ -1062,8 +1062,8 @@ XFILLER_0_4_325 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XTAP_TAPCELL_ROW_55_429 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XANTENNA__1862__A1 _0494_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 X_1059_ _0465_ _0467_ _0468_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nand2_1
-X_1128_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[1\] _0532_ vdd vdd
-+ vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
+X_1128_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[1\] _0532_ vdd
++ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
 XFILLER_0_43_261 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_43_272 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_3_391 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
@@ -1106,7 +1106,7 @@ X_1531_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[7\] _0907_ _0908_ 
 + vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nand2_1
 XFILLER_0_38_10 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 XFILLER_0_22_242 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_1462_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[4\] _0833_ _0852_
+X_1462_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[4\] _0833_ _0852_
 + _0854_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__and3_1
 XFILLER_0_38_87 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 XFILLER_0_38_32 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
@@ -1323,8 +1323,8 @@ XFILLER_0_4_338 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 X_1830_ _0536_ _0506_ _0309_ _0310_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nand3_2
 X_1692_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[76\] tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[75\]
 + _0231_ _0232_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__mux2_2
-X_1126_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[9\] _0530_ vdd vdd
-+ vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_2
+X_1126_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[9\] _0530_ vdd
++ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_2
 X_1057_ _0417_ _0466_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
 X_1959_ _0076_ clknet_4_11_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[64\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
@@ -1363,7 +1363,7 @@ XANTENNA__1211__A1 _0497_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_22_244 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XFILLER_0_38_34 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XFILLER_0_10_417 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-X_1460_ _0388_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[1\] _0533_
+X_1460_ _0388_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[1\] _0533_
 + _0852_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__and3_1
 X_1391_ _0694_ _0702_ _0792_ _0555_ _0793_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__oai31_1
 XANTENNA__1278__A1 _0588_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
@@ -1466,7 +1466,7 @@ XFILLER_0_3_361 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 Xoutput17 net17 uio_out[4] vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_8
 XFILLER_0_7_188 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 XFILLER_0_11_150 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
-X_1889_ _0006_ clknet_4_2_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[5\]
+X_1889_ _0006_ clknet_4_2_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[5\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffq_1
 XANTENNA__1216__B _0459_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XANTENNA__1838__A1 _0712_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
@@ -1588,7 +1588,7 @@ XFILLER_0_43_276 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_43_265 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 XFILLER_0_3_384 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 Xoutput18 net18 uo_out[0] vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_8
-X_1888_ _0005_ clknet_4_0_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[4\]
+X_1888_ _0005_ clknet_4_0_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[4\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffq_1
 XANTENNA__1883__CLK clknet_4_0_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XANTENNA__1838__A2 _0498_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
@@ -1681,8 +1681,8 @@ XFILLER_0_33_138 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XANTENNA__1332__A2 _0726_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XANTENNA__1196__I _0427_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_46_14 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-XANTENNA__1020__A1 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[3\] vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
+XANTENNA__1020__A1 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[3\]
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_46_69 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 X_1071_ _0350_ _0480_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_1
 X_1140_ _0378_ net11 _0544_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__or2_1
@@ -1704,7 +1704,7 @@ XFILLER_0_52_255 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 X_1054_ _0452_ _0458_ _0461_ _0462_ _0463_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__aoi22_2
 X_1123_ _0523_ _0526_ _0527_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nand2_1
 XFILLER_0_43_222 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_1887_ _0004_ clknet_4_2_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[3\]
+X_1887_ _0004_ clknet_4_2_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[3\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffq_1
 X_1956_ _0073_ clknet_4_10_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[61\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
@@ -1818,7 +1818,7 @@ XFILLER_0_21_109 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XTAP_TAPCELL_ROW_57_443 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_16_18 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XPHY_EDGE_ROW_27_Left_87 vdd vss gf180mcu_fd_sc_mcu7t5v0__endcap
-X_1122_ _0524_ _0525_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[4\]
+X_1122_ _0524_ _0525_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[4\]
 + _0526_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nor3_1
 XFILLER_0_20_186 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 X_1053_ _0376_ _0462_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
@@ -1826,7 +1826,7 @@ XFILLER_0_43_212 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XFILLER_0_31_407 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_22_61 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_3_331 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_1886_ _0003_ clknet_4_2_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[2\]
+X_1886_ _0003_ clknet_4_2_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[2\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffq_1
 X_1955_ _0072_ clknet_4_10_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[60\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
@@ -1946,8 +1946,8 @@ XTAP_TAPCELL_ROW_57_444 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XANTENNA_clkbuf_0_clk_I clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XPHY_EDGE_ROW_2_Left_62 vdd vss gf180mcu_fd_sc_mcu7t5v0__endcap
 XANTENNA_clkbuf_4_9_0_clk_I clknet_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
-X_1121_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[5\] _0525_ vdd vdd
-+ vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_2
+X_1121_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[5\] _0525_ vdd
++ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_2
 X_1052_ _0459_ _0443_ _0460_ _0454_ _0461_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nor4_2
 XTAP_TAPCELL_ROW_31_300 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_28_210 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
@@ -1955,7 +1955,7 @@ XFILLER_0_7_115 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 X_1954_ _0071_ clknet_4_10_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[59\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
 XFILLER_0_3_365 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-X_1885_ _0002_ clknet_4_2_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[1\]
+X_1885_ _0002_ clknet_4_2_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[1\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffq_1
 XFILLER_0_11_165 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 XANTENNA__1861__I _0332_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
@@ -2074,12 +2074,12 @@ XFILLER_0_37_266 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 XANTENNA__1915__CLKN clknet_4_13_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_20_177 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 X_1051_ _0408_ _0460_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_2
-X_1120_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[6\] _0524_ vdd vdd
-+ vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
+X_1120_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[6\] _0524_ vdd
++ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
 XTAP_TAPCELL_ROW_31_301 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_28_244 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XFILLER_0_28_200 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_1884_ _0001_ clknet_4_2_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[0\]
+X_1884_ _0001_ clknet_4_2_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[0\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffq_1
 X_1953_ _0070_ clknet_4_9_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[58\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
@@ -2099,8 +2099,8 @@ XFILLER_0_21_420 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XTAP_TAPCELL_ROW_51_407 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_48_317 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_8
 X_1034_ _0355_ _0356_ _0443_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nor2_4
-XANTENNA__1438__A1 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[1\] vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
+XANTENNA__1438__A1 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[1\]
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 X_1103_ _0400_ _0509_ _0399_ _0510_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__oai21_2
 X_1936_ _0053_ clknet_4_6_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[41\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
@@ -2184,8 +2184,8 @@ XFILLER_0_5_62 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_5_40 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_49_231 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_32_131 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-XANTENNA__1120__I tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[6\] vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
+XANTENNA__1120__I tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[6\]
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XTAP_TAPCELL_ROW_20_240 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_1_2 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XTAP_TAPCELL_ROW_43_365 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
@@ -2334,8 +2334,8 @@ X_1195_ _0414_ _0597_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
 XFILLER_0_36_85 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 XFILLER_0_46_235 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XFILLER_0_6_387 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_0979_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[2\] _0388_ vdd vdd
-+ vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
+X_0979_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[2\] _0388_ vdd
++ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
 XFILLER_0_10_393 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XANTENNA__1171__A2 _0455_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XTAP_TAPCELL_ROW_40_347 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
@@ -2410,8 +2410,8 @@ XFILLER_0_38_171 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_26_311 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_5_205 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_14_88 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-XANTENNA__1026__A1 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[6\] vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
+XANTENNA__1026__A1 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[6\]
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 X_1564_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[22\] tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[21\]
 + _0924_ _0927_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__mux2_2
 X_1633_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[51\] tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[50\]
@@ -2628,7 +2628,7 @@ XFILLER_0_42_262 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 XFILLER_0_42_251 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XANTENNA__2047__CLK clknet_4_10_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_17_78 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
-X_1030_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[5\] _0362_ _0438_
+X_1030_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[5\] _0362_ _0438_
 + _0439_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__oai21_2
 XFILLER_0_56_387 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_32
 XFILLER_0_56_321 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
@@ -2715,7 +2715,7 @@ Xinput7 ui_in[7] net7 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_1
 XFILLER_0_52_87 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_52_98 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 XFILLER_0_6_313 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_0976_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.quad tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[2\]
+X_0976_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.quad tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[2\]
 + _0385_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nor2_4
 X_1528_ _0904_ _0905_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
 XFILLER_0_10_396 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
@@ -2848,8 +2848,8 @@ X_1527_ _0894_ _0904_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_1
 XFILLER_0_10_364 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 X_1458_ _0814_ _0850_ _0004_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nor2_1
 X_1389_ _0517_ _0557_ _0791_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nand2_1
-XANTENNA__1437__I tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[3\] vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
+XANTENNA__1437__I tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[3\]
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XANTENNA__1855__A1 _0326_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_43_209 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XFILLER_0_36_294 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
@@ -3113,7 +3113,7 @@ XFILLER_0_39_271 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XTAP_TAPCELL_ROW_34_317 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_6_305 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_6_327 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
-X_0973_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[9\] _0364_ _0375_
+X_0973_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[9\] _0364_ _0375_
 + _0381_ _0382_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__oai211_4
 X_1525_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[7\] tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[6\]
 + _0901_ _0903_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__mux2_2
@@ -3256,7 +3256,7 @@ XANTENNA__2023__CLKN clknet_4_0_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__a
 XFILLER_0_10_164 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 X_1369_ _0563_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[67\] _0771_ vdd
 + vdd vss vss gf180mcu_fd_sc_mcu7t5v0__or2_1
-X_1438_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[1\] _0533_ _0834_
+X_1438_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[1\] _0533_ _0834_
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nor2_1
 XFILLER_0_33_256 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XFILLER_0_21_418 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
@@ -3390,8 +3390,8 @@ XFILLER_0_2_321 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 X_1506_ _0890_ _0891_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_2
 XFILLER_0_10_154 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_10_187 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_1437_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[3\] _0833_ vdd vdd
-+ vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_1
+X_1437_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[3\] _0833_ vdd
++ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_1
 XPHY_EDGE_ROW_43_Left_103 vdd vss gf180mcu_fd_sc_mcu7t5v0__endcap
 XFILLER_0_37_92 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_37_81 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
@@ -3461,7 +3461,7 @@ XFILLER_0_20_51 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_29_60 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 XTAP_TAPCELL_ROW_48_391 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XTAP_TAPCELL_ROW_0_123 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
-X_1119_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[3\] _0522_ _0523_
+X_1119_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[3\] _0522_ _0523_
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nor2_1
 XFILLER_0_35_127 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_8
 XFILLER_0_28_190 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
@@ -3683,7 +3683,7 @@ XFILLER_0_29_318 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XTAP_TAPCELL_ROW_29_287 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_52_387 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_32
 X_1203_ _0594_ _0603_ _0604_ _0605_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__aoi21_1
-X_1134_ _0482_ _0521_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[6\]
+X_1134_ _0482_ _0521_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[6\]
 + _0525_ _0538_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nand4_4
 XFILLER_0_34_73 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 X_1065_ _0443_ _0408_ _0474_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nor2_1
@@ -3711,8 +3711,8 @@ XFILLER_0_45_72 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_31_6 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XTAP_TAPCELL_ROW_0_125 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XANTENNA__2043__CLK clknet_4_10_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
-X_1117_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[7\] _0521_ vdd vdd
-+ vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_2
+X_1117_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[7\] _0521_ vdd
++ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_2
 X_1048_ _0456_ _0457_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_2
 XPHY_EDGE_ROW_3_Right_3 vdd vss gf180mcu_fd_sc_mcu7t5v0__endcap
 XFILLER_0_43_173 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
@@ -3927,8 +3927,8 @@ XFILLER_0_5_196 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XANTENNA__1851__A1 _0326_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XANTENNA__1288__B _0626_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 X_1080_ _0382_ _0471_ _0479_ _0488_ _0489_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__aoi211_2
-XANTENNA__1134__A3 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[6\] vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
+XANTENNA__1134__A3 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[6\]
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_55_342 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 X_1982_ _0099_ clknet_4_6_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[87\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
@@ -4006,7 +4006,7 @@ XFILLER_0_40_123 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 X_1664_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[64\] tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[63\]
 + _0213_ _0216_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__mux2_2
 XFILLER_0_56_73 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_1029_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[4\] _0431_ _0438_
+X_1029_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[4\] _0431_ _0438_
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__or2_1
 XANTENNA__1796__I0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[121\] vdd
 + vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
@@ -4037,8 +4037,8 @@ XFILLER_0_44_292 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_50_295 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 X_1363_ _0380_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[82\] _0764_ _0457_
 + _0765_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__oai211_1
-X_1501_ _0878_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.vsync _0886_ _0887_
-+ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__mux2_2
+X_1501_ _0878_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.vsync _0886_
++ _0887_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__mux2_2
 XANTENNA__1137__A1 _0513_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 X_1432_ _0521_ _0828_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
 XTAP_TAPCELL_ROW_53_419 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
@@ -4046,8 +4046,8 @@ X_1294_ _0395_ _0696_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
 XFILLER_0_58_351 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_32
 XFILLER_0_33_218 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_41_262 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-XANTENNA__1119__A1 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[3\] vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
+XANTENNA__1119__A1 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[3\]
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_59_104 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_32
 XFILLER_0_55_310 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_8
 X_1981_ _0098_ clknet_4_7_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[86\]
@@ -4212,7 +4212,7 @@ XFILLER_0_50_43 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_16
 X_1963_ _0080_ clknet_4_14_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[68\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
 XFILLER_0_7_227 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_1894_ _0011_ clknet_4_0_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.vsync
+X_1894_ _0011_ clknet_4_0_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.vsync
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffq_1
 XTAP_TAPCELL_ROW_11_191 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_11_200 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_8
@@ -4268,7 +4268,7 @@ X_1662_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[63\] tt_um_algofoo
 + _0213_ _0215_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__mux2_2
 X_1593_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[35\] tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[34\]
 + _0170_ _0174_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__mux2_2
-X_1027_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[7\] _0426_ _0435_
+X_1027_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[7\] _0426_ _0435_
 + _0436_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__oai21_1
 X_1929_ _0046_ clknet_4_13_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[34\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
@@ -4303,8 +4303,8 @@ XFILLER_0_12_69 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_16
 XFILLER_0_50_242 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_35_294 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_4
 XFILLER_0_35_261 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
-X_1430_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[4\] _0826_ vdd vdd
-+ vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
+X_1430_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[4\] _0826_ vdd
++ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
 X_1361_ _0707_ _0760_ _0761_ _0762_ _0763_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nand4_1
 X_1292_ _0559_ _0639_ _0693_ _0694_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nor3_2
 XFILLER_0_53_76 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
@@ -4348,7 +4348,7 @@ XFILLER_0_34_34 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XTAP_TAPCELL_ROW_28_281 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_7_206 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_11_212 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_1893_ _0010_ clknet_4_3_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[9\]
+X_1893_ _0010_ clknet_4_3_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[9\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffq_1
 X_1189_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[36\] _0590_ _0591_ vdd
 + vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nand2_1
@@ -4389,7 +4389,7 @@ XANTENNA_input7_I ui_in[7] vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_48_237 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_8
 XTAP_TAPCELL_ROW_36_324 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_8_312 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
-X_1026_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[6\] _0427_ _0435_
+X_1026_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[6\] _0427_ _0435_
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__or2_1
 X_1928_ _0045_ clknet_4_13_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[33\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
@@ -4580,7 +4580,7 @@ XFILLER_0_28_358 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_28_314 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 X_1960_ _0077_ clknet_4_3_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[65\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1
-X_1891_ _0008_ clknet_4_8_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[7\]
+X_1891_ _0008_ clknet_4_8_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[7\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffq_1
 XFILLER_0_7_219 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_8
 XANTENNA__1899__CLKN clknet_4_5_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
@@ -4605,8 +4605,8 @@ XTAP_TAPCELL_ROW_25_264 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_0_406 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_18_391 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XFILLER_0_29_36 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_16
-X_1110_ _0514_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.vsync _0515_ vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__xor2_1
+X_1110_ _0514_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.vsync _0515_
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__xor2_1
 X_1041_ _0449_ _0450_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_2
 XFILLER_0_43_169 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 X_1943_ _0060_ clknet_4_12_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[48\]
@@ -4632,7 +4632,7 @@ XTAP_TAPCELL_ROW_13_201 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 X_1590_ _0172_ _0045_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__clkbuf_1
 XFILLER_0_56_34 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 XTAP_TAPCELL_ROW_36_326 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
-X_1024_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[1\] _0426_ _0432_
+X_1024_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[1\] _0426_ _0432_
 + _0433_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__oai21_1
 XTAP_TAPCELL_ROW_44_370 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XFILLER_0_8_314 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
@@ -4688,8 +4688,8 @@ X_2039_ _0156_ clknet_4_12_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.hpos\[
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffq_1
 XFILLER_0_32_289 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XTAP_TAPCELL_ROW_9_179 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
-XANTENNA__1460__A2 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[1\] vdd
-+ vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
+XANTENNA__1460__A2 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[1\]
++ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XFILLER_0_23_256 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_8
 XFILLER_0_23_212 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 X_1410_ net41 _0550_ _0809_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__nand2_1
@@ -4709,7 +4709,7 @@ XFILLER_0_34_37 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_2
 XTAP_TAPCELL_ROW_28_284 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XPHY_EDGE_ROW_16_Right_16 vdd vss gf180mcu_fd_sc_mcu7t5v0__endcap
 XPHY_EDGE_ROW_25_Right_25 vdd vss gf180mcu_fd_sc_mcu7t5v0__endcap
-X_1890_ _0007_ clknet_4_2_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[6\]
+X_1890_ _0007_ clknet_4_2_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[6\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffq_1
 XFILLER_0_11_237 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fill_1
 X_1186_ _0456_ _0588_ vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__buf_1
@@ -4751,7 +4751,7 @@ XFILLER_0_30_387 vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__fillcap_8
 XANTENNA__1898__CLKN clknet_4_5_0_clk vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__antenna
 XTAP_TAPCELL_ROW_13_202 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
 XTAP_TAPCELL_ROW_36_327 vdd vss gf180mcu_fd_sc_mcu7t5v0__filltie
-X_1023_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[0\] _0431_ _0432_
+X_1023_ tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[0\] _0431_ _0432_
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__or2_1
 X_1925_ _0042_ clknet_4_15_0_clk tt_um_algofoogle_vga_spi_rom.vga_spi_rom.data_buffer\[30\]
 + vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffnq_1

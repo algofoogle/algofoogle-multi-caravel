@@ -1,7 +1,7 @@
 magic
 tech gf180mcuD
 magscale 1 5
-timestamp 1702304532
+timestamp 1702321368
 << obsm1 >>
 rect 14672 8538 275528 269206
 << metal2 >>
@@ -2337,8 +2337,8 @@ port 418 nsew signal input
 string FIXED_BBOX 0 0 298020 298020
 string LEFclass BLOCK
 string LEFview TRUE
-string GDS_END 72823790
-string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/user_project_wrapper/runs/23_12_12_00_46/results/signoff/user_project_wrapper.magic.gds
-string GDS_START 70995966
+string GDS_END 72823830
+string GDS_FILE /home/zerotoasic/anton/algofoogle-multi-caravel/openlane/user_project_wrapper/runs/23_12_12_05_27/results/signoff/user_project_wrapper.magic.gds
+string GDS_START 70996006
 << end >>
 

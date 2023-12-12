@@ -1,7 +1,7 @@
 magic
 tech gf180mcuD
 magscale 1 10
-timestamp 1702302759
+timestamp 1702319583
 << metal1 >>
 rect 27010 50318 27022 50370
 rect 27074 50367 27086 50370
@@ -67090,16 +67090,16 @@ rlabel metal2 39032 10584 39032 10584 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom
 rlabel metal2 29288 8512 29288 8512 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.hpos\[8\]
 rlabel metal3 36624 13048 36624 13048 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.hpos\[9\]
 rlabel metal2 28000 8344 28000 8344 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.quad
-rlabel metal2 25592 14056 25592 14056 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[0\]
-rlabel metal2 21112 15848 21112 15848 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[1\]
-rlabel metal2 27552 10584 27552 10584 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[2\]
-rlabel metal2 24584 16296 24584 16296 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[3\]
-rlabel metal3 16800 17640 16800 17640 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[4\]
-rlabel metal3 17808 19320 17808 19320 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[5\]
-rlabel metal2 22120 18144 22120 18144 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[6\]
-rlabel metal2 35448 17752 35448 17752 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[7\]
-rlabel metal2 22008 19600 22008 19600 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.o_vpos\[9\]
-rlabel metal2 12488 9688 12488 9688 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync.vsync
+rlabel metal2 25592 14056 25592 14056 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[0\]
+rlabel metal2 21112 15848 21112 15848 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[1\]
+rlabel metal2 27552 10584 27552 10584 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[2\]
+rlabel metal2 24584 16296 24584 16296 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[3\]
+rlabel metal3 16800 17640 16800 17640 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[4\]
+rlabel metal3 17808 19320 17808 19320 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[5\]
+rlabel metal2 22120 18144 22120 18144 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[6\]
+rlabel metal2 35448 17752 35448 17752 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[7\]
+rlabel metal2 22008 19600 22008 19600 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.o_vpos\[9\]
+rlabel metal2 12488 9688 12488 9688 0 tt_um_algofoogle_vga_spi_rom.vga_spi_rom.vga_sync_vsr.vsync
 rlabel metal2 12152 2058 12152 2058 0 ui_in[0]
 rlabel metal2 11032 910 11032 910 0 ui_in[1]
 rlabel metal2 9912 2058 9912 2058 0 ui_in[2]
