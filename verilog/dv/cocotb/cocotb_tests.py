@@ -13,3 +13,6 @@ from port0_io_test.port0_io_test import port0_io_test
 
 # Uri's user design specific tests
 from simon_test.simon_test import simon_test
+
+# Pawel's tests
+from hyperram_test.hyperram_test import hyperram_test
