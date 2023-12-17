@@ -6,6 +6,8 @@ That code is part of an [Apache-2.0-licensed](https://github.com/AvalonSemicondu
 
 The purpose of this code is to convert a black-and-white (1-bit palette) PNG image to a GDS/LEF pair that can be included as a macro.
 
+![ASIC hat logo with acknowledgement](./asichatv17.png)
+
 ## Usage
 
 ```bash
