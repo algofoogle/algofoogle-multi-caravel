@@ -4,6 +4,6 @@ PDK: gf180mcuD
 PDK_ROOT: /home/zerotoasic/asic_tools/pdk
 USER_PROJECT_ROOT: /home/zerotoasic/CUP
 caravan: false
-clk: 25
+clk: 40
 emailto:
 - null

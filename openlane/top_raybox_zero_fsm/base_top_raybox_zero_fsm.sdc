@@ -51,7 +51,7 @@ puts "\[INFO\]: Setting timing derate to: [expr {$::env(SYNTH_TIMING_DERATE) * 1
 # Reset input delay
 set_input_delay [expr $::env(CLOCK_PERIOD) * 0.5 + 2] -clock [get_clocks {clk}] [get_ports {wb_rst_i}]
 # Anton's alternate name for wb_rst_i (i.e. the name of the port that it connects to in top_raybox_zero_fsm):
-set_input_delay [expr $::env(CLOCK_PERIOD) * 0.5 + 2] -clock [get_clocks {clk}] [get_ports {i_reset}]
+set_input_delay [expr $::env(CLOCK_PERIOD) * 0.35 + 1] -clock [get_clocks {clk}] [get_ports {i_reset}]
 
 #NOTE: Anton commented these out because I don't have ports with these names in the design that this SDC belongs to:
 # # Multicycle paths

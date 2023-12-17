@@ -4,6 +4,7 @@ from gpio_test.gpio_test import gpio_test
 
 # Anton's tests
 from mux_test.mux_test import mux_test
+from trzf_basic.trzf_basic import trzf_basic # top_raybox_zero_fsm
 
 # Diego's user design specific tests
 from simple_add_test.simple_add_test import simple_add_test
