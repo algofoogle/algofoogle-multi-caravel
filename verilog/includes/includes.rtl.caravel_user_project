@@ -16,6 +16,9 @@
 # Caravel user project includes
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v
 
+# ASIC hat logo:
+-v $(USER_PROJECT_VERILOG)/rtl/asic_hat_logo.v
+
 # Anton's mux:
 -v $(USER_PROJECT_VERILOG)/rtl/mux/top_design_mux.v
 

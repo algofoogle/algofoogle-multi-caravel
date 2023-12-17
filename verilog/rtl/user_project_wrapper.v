@@ -471,7 +471,16 @@ module user_project_wrapper (
 
     //// END: INSTANTIATION OF ANTON'S top_vga_spi_rom -------------------
 
+    asic_hat_logo asic_hat_logo (
+    `ifdef USE_POWER_PINS
+        .vdd(vdd),
+        .vss(vss)
+    `endif
+    );
+
+
 
 endmodule	// user_project_wrapper
 
 `default_nettype wire
+

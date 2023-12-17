@@ -589,6 +589,8 @@ module user_project_wrapper (user_clock2,
  wire \vgasp_uo_out[6] ;
  wire \vgasp_uo_out[7] ;
 
+ asic_hat_logo asic_hat_logo (.vss(vss),
+    .vdd(vdd));
  top_design_mux top_design_mux (.diego_clk(diego_clk),
     .i_mux_auto_reset_enb(la_data_in[54]),
     .i_mux_io5_reset_enb(la_data_in[48]),

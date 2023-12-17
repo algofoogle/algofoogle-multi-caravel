@@ -22,6 +22,7 @@
         "$PDK_ROOT/$PDK/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice"
     ],
     "LVS_VERILOG_FILES": [
+        "$UPRJ_ROOT/verilog/gl/asic_hat_logo.v",
         "$UPRJ_ROOT/verilog/gl/top_design_mux.v",
         "$UPRJ_ROOT/verilog/gl/top_raybox_zero_fsm.v",
         "$UPRJ_ROOT/verilog/gl/wrapped_wb_hyperram.v",

@@ -20,6 +20,7 @@
     "CLOCK_PERIOD": 40,
     "MACRO_PLACEMENT_CFG": "dir::macro.cfg",
     "VERILOG_FILES_BLACKBOX": [
+        "dir::../../verilog/rtl/asic_hat_logo.v",
         "dir::../../verilog/gl/top_raybox_zero_fsm.v",
         "dir::../../verilog/gl/top_design_mux.v",
         "dir::../../verilog/gl/wrapped_wb_hyperram.v",
@@ -29,6 +30,7 @@
         "dir::../../verilog/gl/top_vga_spi_rom.v"
     ],
     "EXTRA_LEFS": [
+        "dir::../../lef/asic_hat_logo.lef",
         "dir::../../lef/top_raybox_zero_fsm.lef",
         "dir::../../lef/top_design_mux.lef",
         "dir::../../lef/wrapped_wb_hyperram.lef",
@@ -38,6 +40,7 @@
         "dir::../../lef/top_vga_spi_rom.lef"
     ],
     "EXTRA_GDS_FILES": [
+        "dir::../../gds/asic_hat_logo.gds",
         "dir::../../gds/top_raybox_zero_fsm.gds",
         "dir::../../gds/top_design_mux.gds",
         "dir::../../gds/wrapped_wb_hyperram.gds",
@@ -92,6 +95,7 @@
         "dir::../../spef/multicorner/top_vga_spi_rom.max.spef"
     ],
     "FP_PDN_MACRO_HOOKS": [
+        "asic_hat_logo        vdd vss vdd vss",
         "top_raybox_zero_fsm  vdd vss vdd vss",
         "top_raybox_zero_fsm2 vdd vss vdd vss",
         "top_design_mux       vdd vss vdd vss",
