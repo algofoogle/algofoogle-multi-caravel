@@ -40,19 +40,17 @@ There are other things to consider that I haven't documented in full yet, but he
 
 *   Make sure you place the coordinates of vdd/vss over large enough areas of white pixels.
 *   Ensure those areas of pixels that will hence become the vdd/vss nets are not shorted with each other, i.e. they are islands of white pixels.
-*   Ensure those respective areas of white pixels over enough vertical area that they can cross the actual PDN rails.
+*   Ensure those respective areas of white pixels cover enough vertical area that they can cross the actual PDN rails.
 *   Avoid very small clusters of white pixels (esp. avoid individual white pixels, and probably also black pixels) because these might lead to DRC errors.
 *   Create a blackbox wrapper Verilog file for the macro in `verilog/rtl/`
 *   Add the macro and its related files in all the relevant areas. For example, check the contents of this repo to look for `asic_hat_logo` throughout the following:
 
-    ```
-    lvs/user_project_wrapper/lvs_config.json
-    openlane/user_project_wrapper/config.json
-    openlane/user_project_wrapper/macro.cfg
-    verilog/gl/user_project_wrapper.v
-    verilog/includes/includes.gl.caravel_user_project
-    verilog/includes/includes.rtl.caravel_user_project
-    verilog/rtl/user_project_wrapper.v
-    verilog/rtl/asic_hat_logo.v
-    ```
+    *   [lvs/user_project_wrapper/lvs_config.json](../lvs/user_project_wrapper/lvs_config.json)
+    *   [openlane/user_project_wrapper/config.json](../openlane/user_project_wrapper/config.json)
+    *   [openlane/user_project_wrapper/macro.cfg](../openlane/user_project_wrapper/macro.cfg)
+    *   [verilog/gl/user_project_wrapper.v](../verilog/gl/user_project_wrapper.v)
+    *   [verilog/includes/includes.gl.caravel_user_project](../verilog/includes/includes.gl.caravel_user_project)
+    *   [verilog/includes/includes.rtl.caravel_user_project](../verilog/includes/includes.rtl.caravel_user_project)
+    *   [verilog/rtl/user_project_wrapper.v](../verilog/rtl/user_project_wrapper.v)
+    *   [verilog/rtl/asic_hat_logo.v](../verilog/rtl/asic_hat_logo.v)
 
