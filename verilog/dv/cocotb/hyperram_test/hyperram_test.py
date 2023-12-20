@@ -65,11 +65,15 @@ async def hyperram_test(dut):
 
     # wait for CS to be activated
     await wait_for_gpio(caravelEnv, o_ncs, 0)
+    cocotb.log.info('HyperRAM is selected')
 
     # wait for CS to be deactivated
     await wait_for_gpio(caravelEnv, o_ncs, 1)
+    cocotb.log.info('HyperRAM is deselected')
 
     # await ClockCycles(caravelEnv.clk, 100)
     await caravelEnv.wait_mgmt_gpio(1)
     await caravelEnv.wait_mgmt_gpio(0)
+    cocotb.log.info('Simulation finished')
 
+    await ClockCycles(caravelEnv.clk, 10)
