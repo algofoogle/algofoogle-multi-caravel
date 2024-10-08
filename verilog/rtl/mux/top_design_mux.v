@@ -414,15 +414,15 @@ module top_design_mux (
                 };
                 io_out = {
                     6'h3F,                  //  8 IO[37:32] (unused)    inputs
-                    r_mux_io5_reset_enb,    //  2 IO[31:30] dedicated   OUTPUTS
+                    r_mux_io5_reset_enb,    //  2 IO[31:30] dedicated   OUTPUTS 2xDFF
                     io5_reset,              //  1 IO[29]    dedicated   OUTPUT
                     sys_reset,              //  1 IO[28]    dedicated   OUTPUT
-                    r_mux_sel0,             //  2 IO[26]    dedicated   OUTPUTS
-                    r_mux_sel1,             //  2 IO[24]    dedicated   OUTPUTS
-                    r_mux_sel2,             //  2 IO[22]    dedicated   OUTPUTS
-                    r_mux_sel3,             //  2 IO[20]    dedicated   OUTPUTS
-                    r_mux_sys_reset_enb,    //  2 IO[18]    dedicated   OUTPUTS
-                    r_mux_auto_reset_enb,   //  2 IO[17:16] dedicated   OUTPUTS
+                    r_mux_sel0,             //  2 IO[27:26] dedicated   OUTPUTS 2xDFF
+                    r_mux_sel1,             //  2 IO[25:24] dedicated   OUTPUTS 2xDFF
+                    r_mux_sel2,             //  2 IO[23:22] dedicated   OUTPUTS 2xDFF
+                    r_mux_sel3,             //  2 IO[21:20] dedicated   OUTPUTS 2xDFF
+                    r_mux_sys_reset_enb,    //  2 IO[19:18] dedicated   OUTPUTS 2xDFF
+                    r_mux_auto_reset_enb,   //  2 IO[17:16] dedicated   OUTPUTS 2xDFF
                     i_design_reset,         //  8 IO[15:8]  dedicated   OUTPUTS
                     8'hFF                   //  8 IO[7:0]   (unused)    inputs
                 };
