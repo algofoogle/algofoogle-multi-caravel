@@ -141,10 +141,14 @@ void main()
     // If MUX_DESIGN is 13, hopefully now we should see 0x55AA presenting on GPIO[31:16].
 
     // Now blink the gpio endlessly at about 12.5Hz to show we're done:
+    uint32_t la0 = 0b10101100111000111100001111100000; // This is just a pattern we rotate through.
     while (1) {
         reg_gpio_out = 1;   // LED D3 OFF
+        LA0_CPU_OUT = la0;
+        la0 = (la0 << 1) | (la0 >> 31); // Rotate pattern left by 1.
         delay(400000);
         reg_gpio_out = 0;   // LED D3 ON
         delay(400000);
     }
 }
+
