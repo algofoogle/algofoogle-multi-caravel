@@ -1,5 +1,7 @@
 #include <defs.h>
 
+// This test just blinks Caravel's gpio pin.
+
 void delay(const int d)
 {
     // Configure timer for a single-shot countdown:

@@ -12,7 +12,16 @@ Firmware examples include:
 *   [basic_blink](./basic_blink/):
     *   Simply sets up mgmt gpio for output, then blinks it (LED D3) at about 2.5Hz
 *   [mux_test](./mux_test/):
-    *   Tells mux to select design 13, configures GPIO[37:8] as BIDIR, then enters blink loop.
+    *   Tells mux to select design 13, configures GPIO[37:6] as BIDIR, then enters blink loop.
     *   Bit pattern measured on GPIO[31:16] should be `0101010110101010` -- verified.
     *   Override which design to write by doing (say): `MUX_DESIGN=14 make clean flash`
     *   NOTE: The basic mux config in this file always keeps all designs in reset.
+*   [clk_test](./clk_test/):
+    *   Enables clock debug, i.e. `wb_clk_i` output on GPIO14, user_clock2 output on GPIO15
+    *   Enables the DLL and configures the clock for 2.5x speed (25MHz from 10MHz source)
+    *   Goes into a blink loop at the end
+*   [trzf_test](./trzf_test/):
+    *   Selects design 0 ("trzf", or "top_raybox_zero_fsm"), configures GPIO[37:8] as BIDIR, resets the design, and selects gpout[2:0] as follows:
+        *   gpout[0] = 3 (clk/4)
+        *   gpout[1] = 4 (hpos[0] = clk/2)
+        *   gpout[2] = 1 (clk)
