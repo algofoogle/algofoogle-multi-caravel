@@ -90,6 +90,9 @@ void main()
     // Apply the above configuration:
     GPIOs_loadConfigs();
 
+    // Enable Wishbone bus
+    reg_wb_enable = 1;
+
     // Pulse gpio again to show that the firmware configured GPIOS
     pulse_gpio();       // 2nd pulse
 
